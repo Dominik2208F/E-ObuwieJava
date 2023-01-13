@@ -4,11 +4,33 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6ad0fbd7-17e6-49ec-a959-040d4af90de3" name="Changes" comment="" />
+    <list default="true" id="6ad0fbd7-17e6-49ec-a959-040d4af90de3" name="Changes" comment="E-obuwie1">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/ManufacturerPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/ManufacturerPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/TestClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/TestClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/org/example/ManufacturerPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/org/example/ManufacturerPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/org/example/TestClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/org/example/TestClass.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="5171610f-d4d5-49fe-98fb-184017b9ea73" />
+        <option name="url" value="https://github.com/Dominik2208F/E-ObuwieJava.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -27,8 +49,8 @@
     "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.TestClass.addTwoRandomProductToBasketAndCheckSumValueInSummary">
-    <configuration name="TestClass.addTwoRandomProductToBasketAndCheckSumValueInSummary" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.TestClass.checkStoreAvailability">
+    <configuration name="TestClass.addProductsToFavouriteAndDelete" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="E-ObuwiePOPJava-master" />
       <extension name="coverage">
         <pattern>
@@ -38,13 +60,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="org.example" />
       <option name="MAIN_CLASS_NAME" value="org.example.TestClass" />
-      <option name="METHOD_NAME" value="addTwoRandomProductToBasketAndCheckSumValueInSummary" />
+      <option name="METHOD_NAME" value="addProductsToFavouriteAndDelete" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestClass.lookForManVansNumber40ByTopMarkTab" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestClass.checkStoreAvailability" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="E-ObuwiePOPJava-master" />
       <extension name="coverage">
         <pattern>
@@ -54,13 +76,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="org.example" />
       <option name="MAIN_CLASS_NAME" value="org.example.TestClass" />
-      <option name="METHOD_NAME" value="lookForManVansNumber40ByTopMarkTab" />
+      <option name="METHOD_NAME" value="checkStoreAvailability" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestClass.lookForManVansNumber42ByHeaders" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestClass.setNewLebel" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="E-ObuwiePOPJava-master" />
       <extension name="coverage">
         <pattern>
@@ -70,7 +92,39 @@
       </extension>
       <option name="PACKAGE_NAME" value="org.example" />
       <option name="MAIN_CLASS_NAME" value="org.example.TestClass" />
-      <option name="METHOD_NAME" value="lookForManVansNumber42ByHeaders" />
+      <option name="METHOD_NAME" value="setNewLebel" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestClass.setPriceRangeBarOnLeftSide" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="E-ObuwiePOPJava-master" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example" />
+      <option name="MAIN_CLASS_NAME" value="org.example.TestClass" />
+      <option name="METHOD_NAME" value="setPriceRangeBarOnLeftSide" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestClass.setkWidthRangeBaronLeftSide" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="E-ObuwiePOPJava-master" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example" />
+      <option name="MAIN_CLASS_NAME" value="org.example.TestClass" />
+      <option name="METHOD_NAME" value="setkWidthRangeBaronLeftSide" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -78,9 +132,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.TestClass.addTwoRandomProductToBasketAndCheckSumValueInSummary" />
-        <item itemvalue="JUnit.TestClass.lookForManVansNumber42ByHeaders" />
-        <item itemvalue="JUnit.TestClass.lookForManVansNumber40ByTopMarkTab" />
+        <item itemvalue="JUnit.TestClass.checkStoreAvailability" />
+        <item itemvalue="JUnit.TestClass.addProductsToFavouriteAndDelete" />
+        <item itemvalue="JUnit.TestClass.setNewLebel" />
+        <item itemvalue="JUnit.TestClass.setkWidthRangeBaronLeftSide" />
+        <item itemvalue="JUnit.TestClass.setPriceRangeBarOnLeftSide" />
       </list>
     </recent_temporary>
   </component>
@@ -93,6 +149,37 @@
       <option name="presentableId" value="Default" />
       <updated>1673619083507</updated>
     </task>
+    <task id="LOCAL-00001" summary="E-obuwie">
+      <created>1673620342864</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1673620342864</updated>
+    </task>
+    <task id="LOCAL-00002" summary="E-obuwie1">
+      <created>1673620355933</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1673620355933</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="E-obuwie" />
+    <MESSAGE value="E-obuwie1" />
+    <option name="LAST_COMMIT_MESSAGE" value="E-obuwie1" />
   </component>
 </project>
