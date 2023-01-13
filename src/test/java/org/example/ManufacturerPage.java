@@ -86,7 +86,7 @@ public class ManufacturerPage implements IHelper {
          Thread.sleep(2000);
      }
      catch(Exception e) {
-         System.out.println("Element nie został wyświetlony");
+         System.out.println("Sales banner nie został wyświetlony");
      }
       }
     public void chooseStyle(String value){

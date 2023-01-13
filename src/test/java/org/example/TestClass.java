@@ -67,6 +67,7 @@ public class TestClass {
         mainpage.selectTopMark("Vans");
         manufacturerPage.chooseSexCategory("Damskie");
         manufacturerPage.clickOnSaleBanner();
+        mainpage.CloseNewsLetter();
         manufacturerPage.chooseModel("Sportowe");
         manufacturerPage.chooseStyle("Lifestyle");
         manufacturerPage.chooseSize("40");
@@ -79,7 +80,8 @@ public class TestClass {
         manufacturerPage.clickOnSaleBanner();
         mainpage.typeInSearchBox("Vans");
         manufacturerPage.chooseSexCategory("Męskie");
-        manufacturerPage.clickOnSaleBanner();
+       // manufacturerPage.clickOnSaleBanner();
+        mainpage.CloseNewsLetter();
         manufacturerPage.chooseModel("Sportowe");
         manufacturerPage.clickOnSaleBanner();
         manufacturerPage.chooseStyle("Trampki");
@@ -131,7 +133,7 @@ public class TestClass {
        productPage.chooseSizeFromRightList("42");
        productPage.gotoBasket();
        basketPage.returnToMainpageFromBasket();
-       mainpage.CloseNewsLetter();
+      // mainpage.CloseNewsLetter();
 
        //First Product in Basket
 
@@ -157,6 +159,7 @@ public class TestClass {
        mainpage.clickOnTrampkiCategoryOnDropDownList();
        manufacturerPage.clickOnSaleBanner();
        manufacturerPage.setMaxAndMinPrice("200","300");
+       manufacturerPage.clickOnSaleBanner();
        manufacturerPage.checkPriceHandlerHasBeenMovedToRequestedPriceRange("200.0","300.0");
        manufacturerPage.PriceFilterButton.click();
        manufacturerPage.checkIfPricesHaveBeenNarowedAfterFilter(200.0,300.0);
@@ -190,7 +193,8 @@ public class TestClass {
       mainpage.mouseHoverOnMenCategory();
       mainpage.clickOnSztybletyDropDownList();
       manufacturerPage.clickOnSaleBanner();
-      manufacturerPage.chooseProduct("1", "Value1");
+      manufacturerPage.chooseProduct("2", "Value1");
+      manufacturerPage.clickOnSaleBanner();
       mainpage.CloseNewsLetter();
       productPage.AddToFavourite();
       productPage.clickonFavouriteHeaders();
