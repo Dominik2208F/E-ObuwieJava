@@ -14,8 +14,8 @@ import java.util.concurrent.TimeUnit;
 
 public class BaseTest {
 
-  protected    MainPage mainpage;
-   protected   ManufacturerPage manufacturerPage;
+   protected  MainPage mainpage;
+   protected  ManufacturerPage manufacturerPage;
    protected ProductPage productPage;
    protected BasketPage basketPage;
    protected FavouritePage favouritePage;
@@ -34,15 +34,9 @@ public class BaseTest {
         // Page init
         basepage =new BasePage(driver);
         mainpage= new MainPage(driver);
-      //  manufacturerPage= new ManufacturerPage(driver);
-      //  productPage= new ProductPage(driver);
-      //  basketPage = new BasketPage(driver);
-     //   favouritePage = new FavouritePage(driver);
-        //
         mainpage.acceptCookies();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         Buffer.ClearBuffer();
-
 
     }
 

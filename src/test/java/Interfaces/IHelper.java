@@ -72,11 +72,6 @@ public interface IHelper {
         System.out.println("input value = " + String.valueOf(value));
 
     }
-    default void setValueInField(WebElement element, CharSequence... value) {
-        new WebDriverWait(GetDriver(),30)
-                .until(ExpectedConditions.visibilityOf(element));
-        element.sendKeys(value);
-    }
 
    default void MouseHover(WebElement x){
         //Creating object of an Actions class

@@ -4,31 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6ad0fbd7-17e6-49ec-a959-040d4af90de3" name="Changes" comment="E-obuwie fix">
-      <change afterPath="$PROJECT_DIR$/src/test/java/Base/BasePage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/Base/BaseTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/Tests/BasketPageTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/Tests/FavouritePageTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/Tests/MainPageTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/Tests/ManufacturerMenuTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/Tests/ProductPageTests.java" afterDir="false" />
+    <list default="true" id="6ad0fbd7-17e6-49ec-a959-040d4af90de3" name="Changes" comment="POP implementation">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/BasketPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Pages/BasketPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/Buffer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Interfaces/Buffer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/FavouritePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Pages/FavouritePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/IHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Interfaces/IHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/MainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Pages/MainPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/ManufacturerPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Pages/ManufacturerPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/ProductPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Pages/ProductPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/TestClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Tests/TestClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/org/example/BasketPage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/org/example/Buffer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/org/example/FavouritePage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/org/example/IHelper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/org/example/MainPage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/org/example/ManufacturerPage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/org/example/ProductPage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/org/example/TestClass.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Base/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Base/BaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Interfaces/IHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Interfaces/IHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Tests/TestClass.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,6 +37,9 @@
         <option name="url" value="https://github.com/Dominik2208F/E-ObuwieJava.git" />
       </UrlAndAccount>
     </option>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/test/java/Tests/BasketPageTests.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -203,7 +186,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673621624294</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="POP implementation">
+      <created>1673801532674</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1673801532674</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -221,6 +211,7 @@
     <MESSAGE value="E-obuwie" />
     <MESSAGE value="E-obuwie1" />
     <MESSAGE value="E-obuwie fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="E-obuwie fix" />
+    <MESSAGE value="POP implementation" />
+    <option name="LAST_COMMIT_MESSAGE" value="POP implementation" />
   </component>
 </project>
