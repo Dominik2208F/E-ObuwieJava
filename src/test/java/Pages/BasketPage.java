@@ -1,4 +1,7 @@
-package org.example;
+package Pages;
+import Base.BasePage;
+import Interfaces.Buffer;
+import Interfaces.IHelper;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -8,13 +11,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class BasketPage implements IHelper {
-
-    public WebDriver driver;
+public class BasketPage  extends BasePage implements IHelper {
 
     public BasketPage(WebDriver driver) {
-        this.driver = driver;
-        PageFactory.initElements(driver, this);
+        super(driver);
+       // PageFactory.initElements(driver, this);
     }
 
     @FindBy(xpath = "//a[contains(@class,'cart__continue-shopping')]")
@@ -23,10 +24,11 @@ public class BasketPage implements IHelper {
     List<WebElement> Reducedprice;
     @FindBy(xpath="//*[contains(text(),'Łącznie')]/parent::span/following-sibling::span/child::span")
     WebElement summaryPriceLabel;
-    public void returnToMainpageFromBasket() {
+    public MainPage returnToMainpageFromBasket() {
 
 
         ContinueShoopingButton.click();
+        return new MainPage(driver);
     }
 
 

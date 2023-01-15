@@ -1,4 +1,9 @@
-package org.example;
+package Pages;
+import Base.BasePage;
+import Interfaces.Buffer;
+import Interfaces.IHelper;
+import com.sun.media.sound.SoftMidiAudioFileReader;
+import com.sun.org.apache.bcel.internal.generic.RETURN;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -11,13 +16,13 @@ import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
-public class ManufacturerPage implements IHelper {
+public class ManufacturerPage extends BasePage implements IHelper {
 
-    public WebDriver driver;
+
 
     public ManufacturerPage(WebDriver driver) {
-        this.driver = driver;
-        PageFactory.initElements(driver, this);
+        super(driver);
+     //  PageFactory.initElements(driver, this);
     }
 
     @FindBy(xpath="//ul[@class='sidebar-section__list filter-link__list']/child::li/a")
@@ -51,6 +56,7 @@ public class ManufacturerPage implements IHelper {
     @FindBy(xpath="//div[@class='e-range__handle e-range__handle-upper']")
     private WebElement PriceHandlerUpper;
     @FindBy(xpath="//a[not(contains(@type,'button'))][contains(text(),'Filtruj')]")
+    public
     WebElement PriceFilterButton;
 
     @FindBy(xpath="//div[@class='products-list__regular-price' or @class='products-list__special-price']")
@@ -70,15 +76,17 @@ public class ManufacturerPage implements IHelper {
     private WebElement NewButton;
 
 
-    public void chooseSexCategory(String value){
+    public ManufacturerPage chooseSexCategory(String value){
 
         clickEqualsListElement(LeftFilterCategory,value);
+        return this;
     }
-    public void chooseModel(String value){
+    public ManufacturerPage chooseModel(String value){
 
         clickEqualsListElement(LeftFilterCategoryModel,value);
+        return this;
     }
-    public void clickOnSaleBanner(){
+    public ManufacturerPage clickOnSaleBanner(){
      try {
          if (Banner.isEnabled()) {
              Banner.click();
@@ -88,16 +96,19 @@ public class ManufacturerPage implements IHelper {
      catch(Exception e) {
          System.out.println("Sales banner nie został wyświetlony");
      }
+     return this;
       }
-    public void chooseStyle(String value){
+    public ManufacturerPage chooseStyle(String value){
 
         clickEqualsListElement(LeftFilterCategoryStyle,value);
+        return this;
     }
-    public void chooseSize(String value){
+    public ManufacturerPage chooseSize(String value){
 
         clickEqualsListElement(LeftFiiferSize,value);
+        return this;
     }
-    public void verifyFilterLabel(String... x){
+    public ManufacturerPage verifyFilterLabel(String... x){
 
         List<String> FilterTextList= new ArrayList<>();
 
@@ -107,35 +118,38 @@ public class ManufacturerPage implements IHelper {
         }
         for(int i=0;i<FilterTextList.size();i++)
         assertEquals("Filter option are not correct", FilterTextList.get(i), x[i]);
-
+        return this;
     }
-    public void verifySizeValueFIlter(String sieze){
+    public ManufacturerPage verifySizeValueFIlter(String sieze){
         System.out.println("Value from Website is " +SizeValueFilter.getText());
         assertEquals("value filter is not correct",sieze,SizeValueFilter.getText());
+        return this;
     }
-    public void searchManufacturer( String x){
+    public ManufacturerPage searchManufacturer( String x){
 
         SearchManufacturer.sendKeys(x);
         String DropdownList= String.format( "//button[@data-href-slug='%s']",x);
         WebElement FirstELementfromList =driver.findElement(By.xpath(DropdownList));
         FirstELementfromList.click();
         Filter.click();
+        return this;
     }
-    public void verifyTitlleOfManufacturer(){
+    public ManufacturerPage verifyTitlleOfManufacturer(){
 
         Assert.assertEquals("Vans - buty i akcesoria",HeaderofManufacturer.getText());
+        return this;
     }
-    public void chooseProduct(String number,String KeyToBuffer) {
+    public ProductPage chooseProduct(String number,String KeyToBuffer) {
 
         String NumberofProduct= String.format("//a[@data-testid='category-product-item-link%s']",number);
         WebElement Number=GetDriver().findElement(By.xpath(NumberofProduct));
         String CollectPrice= String.format("//a[@data-testid='category-product-item-link%s']//div[@class='products-list__price-box']//div[@class='products-list__special-price']",number);
         Buffer.SetValueInBuffer(KeyToBuffer,GetDriver().findElement(By.xpath(CollectPrice)).getText().replace("zł"," "));
         Number.click();
-
+        return new ProductPage(driver);
     }
 
-    public void setMaxAndMinPrice(String value1, String value2) throws InterruptedException {
+    public  ManufacturerPage setMaxAndMinPrice(String value1, String value2) throws InterruptedException {
 
 
          MinPrice.sendKeys(Keys.CONTROL + "a",Keys.DELETE);
@@ -147,10 +161,10 @@ public class ManufacturerPage implements IHelper {
         Thread.sleep(1000);
         Maxprice.sendKeys(value2);
         MinPrice.sendKeys(Keys.TAB);
-
+        return this;
     }
 
-    public void checkPriceHandlerHasBeenMovedToRequestedPriceRange(String value1, String value2)  {
+    public ManufacturerPage checkPriceHandlerHasBeenMovedToRequestedPriceRange(String value1, String value2)  {
 
        String Value1= PriceHandlerUpper.getAttribute("aria-valuenow");
        System.out.println(Value1);
@@ -159,10 +173,10 @@ public class ManufacturerPage implements IHelper {
        PriceFilterButton.click();
        Assert.assertEquals(value2,Value1);
        Assert.assertEquals(value1,Value2);
-
+       return this;
     }
 
-    public void checkIfPricesHaveBeenNarowedAfterFilter(double range1, double range2) throws InterruptedException {
+    public ManufacturerPage checkIfPricesHaveBeenNarowedAfterFilter(double range1, double range2) throws InterruptedException {
 
         List<Double> ListofAllPrices = new ArrayList<>();
          for( WebElement x: PricesOnWebsiteRegularAndReduced){
@@ -176,6 +190,7 @@ public class ManufacturerPage implements IHelper {
              Assert.assertTrue(checkifPriceisInArequestedRange(range1,range2,x));
 
          }
+         return this;
     }
     public boolean checkifPriceisInArequestedRange(double min, double max,double z){
 
@@ -190,7 +205,7 @@ public class ManufacturerPage implements IHelper {
         }
     }
 
-    public void setWidthOfShoes(String min, String Max){
+    public ManufacturerPage setWidthOfShoes(String min, String Max){
 
         if(min.equals("Wąski")){
 
@@ -203,24 +218,30 @@ public class ManufacturerPage implements IHelper {
             WidthShoesSliderLower.sendKeys(Keys.RIGHT);
         }
       FilterWidth.click();
-
+            return this;
     }
 
-    public void checkifNewLebelisDisplayedOnEveryProduct(){
+    public ManufacturerPage checkifNewLebelisDisplayedOnEveryProduct(){
 
         for(WebElement we : NewsLebel){
 
             Assert.assertTrue(we.isDisplayed());
             }
-
+        return this;
         }
 
-        public void clickOnNewLebel()
+        public ManufacturerPage clickOnNewLebel()
         {
 
             NewButton.click();
+            return this;
         }
 
+        public ManufacturerPage clickPriceFilterButton(){
+
+        PriceFilterButton.click();
+        return this;
+        }
 
 
     @Override

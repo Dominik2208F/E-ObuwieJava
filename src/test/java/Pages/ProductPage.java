@@ -1,4 +1,9 @@
-package org.example;
+package Pages;
+import Base.BasePage;
+import Base.BaseTest;
+import Interfaces.Buffer;
+import Interfaces.IHelper;
+import jdk.jfr.internal.tool.Main;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -7,16 +12,14 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.util.ArrayList;
 import java.util.List;
 
-public class ProductPage implements IHelper {
+public class ProductPage extends BasePage implements IHelper {
 
-    public WebDriver driver;
 
     public ProductPage(WebDriver driver) {
-        this.driver = driver;
-        PageFactory.initElements(driver, this);
+       super(driver);
+    //    PageFactory.initElements(driver, this);
     }
 
     @FindBy(xpath="//div[@class='e-product-price__special']")
@@ -41,62 +44,67 @@ public class ProductPage implements IHelper {
     private WebElement StoreAvailability;
     @FindBy(xpath="//div[@class='availability-sidebar__wrapper']")
     private WebElement StoreSlider;
-    public void checkPriceOnProductCard(String keyToCompare){
+    public ProductPage checkPriceOnProductCard(String keyToCompare){
 
         System.out.println("Get method buffer " + Buffer.GetValueBufferKey(keyToCompare));
         Assert.assertEquals(ProductPrice.getText().replace("zł"," "),Buffer.GetValueBufferKey(keyToCompare));
+        return this;
     }
 
-    public void verifyLayoutOnProductCard(){
+    public ProductPage verifyLayoutOnProductCard(){
         FavouriteButton.isDisplayed();
         AddToBasket.isDisplayed();
         ProductAvailability.isDisplayed();
         FreeSendandReturnTooltip.isDisplayed();
-
+     return this;
 
     }
-    public void clickOnAddToBasket(){
+    public ProductPage clickOnAddToBasket(){
 
         AddToBasket.click();
+        return this;
     }
-    public void chooseSizeFromRightList(String x){
+    public ProductPage chooseSizeFromRightList(String x){
 
         new WebDriverWait(driver,10)
                 .until(ExpectedConditions.visibilityOf(SizeListPickerList));
 
         clickEqualsListElement(ListofSizePickerList,x);
-
+        return this;
 
     }
 
-    public void gotoBasket(){
+    public BasketPage gotoBasket(){
 
         GotoBasket.click();
+        return new BasketPage(driver);
     }
 
-    public void AddToFavourite() throws InterruptedException {
+    public ProductPage AddToFavourite() throws InterruptedException {
         FavouriteButton.click();
         Thread.sleep(2000);
-
+        return this;
     }
-    public void clickonFavouriteHeaders(){
+    public FavouritePage clickonFavouriteHeaders(){
 
         FavouriteLink.click();
 
         System.out.println(FavouriteLink.getText().trim());
         String Counter= String.format("Ulubione (%s)",Buffer.GetActualSize());
         Assert.assertEquals(FavouriteLink.getText().trim(),Counter);
-
+      return new FavouritePage(driver);
     }
 
-    public void clickonStoreAvailability(){
+    public ProductPage clickonStoreAvailability(){
 
         StoreAvailability.click();
+        return this;
     }
 
-    public void checkStoreAvailability(){
+    public ProductPage checkStoreAvailability(){
 
         Assert.assertTrue(StoreSlider.isDisplayed());
+        return this;
     }
 
     @Override

@@ -1,4 +1,7 @@
-package org.example;
+package Pages;
+import Base.BasePage;
+import Interfaces.IHelper;
+import jdk.jfr.internal.tool.Main;
 import org.openqa.selenium.By;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
@@ -13,14 +16,12 @@ import java.util.Arrays;
 import java.util.List;
 
 
-public class MainPage implements IHelper {
+public class MainPage extends BasePage implements IHelper {
 
-
-    public WebDriver driver;
 
     public MainPage(WebDriver driver) {
-        this.driver = driver;
-        PageFactory.initElements(driver, this);
+        super(driver);
+      //  PageFactory.initElements(driver, this);
     }
 
     public WebDriver GetDriver(){
@@ -59,11 +60,11 @@ public class MainPage implements IHelper {
     @FindBy(id="close-promo-popup")
     private WebElement popup;
 
-    public void headersVerification() throws InterruptedException {
+    public MainPage headersVerification(String... listaheaders) throws InterruptedException {
         Thread.sleep(5000);
-        List<String> ExpectedHeaders = Arrays.asList("NOWOŚCI", "DAMSKIE", "MĘSKIE", "DZIECIĘCE", "SPORT", "AKCESORIA", "PREMIUM", "TOREBKI", "WYPRZEDAŻ");
-
-        checkIfListContainsAllExpectedElements(ActualHeadersPath,ExpectedHeaders);
+        Arrays.asList( listaheaders);
+        checkIfListContainsAllExpectedElements(ActualHeadersPath,Arrays.asList( listaheaders));
+        return this;
     }
     public void verifyList( String expectedValue){
         new WebDriverWait(driver, Duration.ofSeconds(5)).until(ExpectedConditions.visibilityOfAllElements(ActualHeadersPath));
@@ -74,7 +75,7 @@ public class MainPage implements IHelper {
         new WebDriverWait(driver, Duration.ofSeconds(5)).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//ul[@id='mega-menu-list']/li")));
         clickIn(AcceptCookiesElement,5);
     }
-    public void selectTopMark(String mark)  {
+    public ManufacturerPage selectTopMark(String mark)  {
      // Thread.sleep(5000);
         try {
 
@@ -88,34 +89,40 @@ public class MainPage implements IHelper {
             System.out.println("Exception Złapany");
 
         }
+        return new ManufacturerPage(driver);
     }
-    public void typeInSearchBox(String value)  {
+    public ManufacturerPage typeInSearchBox(String value)  {
         try{
         setValueInField(Manufacturer,value);
         clickIn(SearchButton);}
         catch(Exception e){
 
         }
+        return new ManufacturerPage(driver);
     }
-    public void mouseHoverOnMenCategory() throws InterruptedException {
+    public MainPage mouseHoverOnMenCategory() throws InterruptedException {
         Thread.sleep(3000);
         MouseHover(MensLabelHeaders);
+        return this;
     }
-    public void clickOnTrampkiCategoryOnDropDownList(){
+    public ManufacturerPage clickOnTrampkiCategoryOnDropDownList(){
         ClickOnDropDownList(TrampkiChooseDropDown);
+        return new ManufacturerPage(driver);
     }
-    public void clickOnSneakearsCategoryOnDropDownList(){
+    public ManufacturerPage clickOnSneakearsCategoryOnDropDownList(){
         ClickOnDropDownList(SneakearsChild);
+        return new ManufacturerPage(driver);
     }
-    public void mouseHoveronChildCategory() throws InterruptedException {
+    public MainPage mouseHoveronChildCategory() throws InterruptedException {
 
         Thread.sleep(2000);
         MouseHover(ChildLabelHeaders);
+        return this;
     }
-    public void clickOnSztybletyDropDownList() {
+    public ManufacturerPage clickOnSztybletyDropDownList() {
 
         ClickOnDropDownList(SztybletyChooseDropDown);
-
+     return new ManufacturerPage(driver);
 
     }
 
