@@ -10,6 +10,8 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
+import static Pages.ProductPage.FavouriteLink;
+
 public class FavouritePage extends BasePage implements IHelper {
 
 
@@ -38,8 +40,12 @@ public class FavouritePage extends BasePage implements IHelper {
 
     public FavouritePage checkifAllDelated(){
 
-        Assert.assertEquals(ProductPage.FavouriteLink.getText().trim(),"Ulubione (0)");
+        Assert.assertEquals(FavouriteLink.getText().trim(),"Ulubione (0)");
         return this;
+    }
+    public String GetValueFromFavouriteLabel(){
+
+        return FavouriteLink.getText().trim();
     }
 
 

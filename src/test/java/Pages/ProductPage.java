@@ -5,6 +5,7 @@ import Interfaces.Buffer;
 import Interfaces.IHelper;
 import jdk.jfr.internal.tool.Main;
 import org.junit.Assert;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -86,11 +87,15 @@ public class ProductPage extends BasePage implements IHelper {
     }
     public FavouritePage clickonFavouriteHeaders(){
 
-        FavouriteLink.click();
+
 
         System.out.println(FavouriteLink.getText().trim());
         String Counter= String.format("Ulubione (%s)",Buffer.GetActualSize());
         Assert.assertEquals(FavouriteLink.getText().trim(),Counter);
+        FavouriteLink.sendKeys(Keys.DOWN);
+        FavouriteLink.click();
+
+
       return new FavouritePage(driver);
     }
 

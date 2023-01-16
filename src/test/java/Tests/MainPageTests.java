@@ -1,6 +1,8 @@
 package Tests;
 
 import Base.BaseTest;
+import Interfaces.IHelper;
+import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.Arrays;
@@ -20,11 +22,13 @@ public class MainPageTests extends BaseTest {
         assertEquals("https://www.eobuwie.com.pl/",driver.getCurrentUrl());
     }
     @Test
-    public void checkHeaders() throws InterruptedException {
-        mainpage.headersVerification( "NOWOŚCI", "DAMSKIE", "MĘSKIE", "DZIECIĘCE", "SPORT", "AKCESORIA", "PREMIUM", "TOREBKI", "WYPRZEDAŻ");
-        mainpage.verifyList("WYPRZEDAŻ");
+    public void checkHeaders()  {
 
-
+        Arrays.asList("NOWOŚCI", "DAMSKIE", "MĘSKIE", "DZIECIĘCE", "SPORT", "AKCESORIA", "PREMIUM", "TOREBKI", "WYPRZEDAŻ");
+      //  Assert.assertTrue(manufacturerPage.ListAreEqual(Arrays.asList("NOWOŚCI", "DAMSKIE", "MĘSKIE", "DZIECIĘCE", "SPORT", "AKCESORIA", "PREMIUM", "TOREBKI", "WYPRZEDAŻ"), manufacturerPage.convertWebElementsListToString(mainpage.GetActualHeaders())));
+        mainpage.checkIfListContainsAllExpectedElements(mainpage.GetActualHeaders(),Arrays.asList("NOWOŚCI", "DAMSKIE", "MĘSKIE", "DZIECIĘCE", "SPORT", "AKCESORIA", "PREMIUM", "TOREBKI", "WYPRZEDAŻ"));
+        Assert.assertTrue(mainpage.verifyElementExistInList(mainpage.GetActualHeaders(),"WYPRZEDAŻ"));
+        }
     }
 
-}
+

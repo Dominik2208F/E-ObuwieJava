@@ -43,7 +43,10 @@ public class ManufacturerMenuTests extends BaseTest {
         manufacturerPage= mainpage.clickOnTrampkiCategoryOnDropDownList();
 
         mainpage.clickOnSaleBanner();
-        manufacturerPage.clickOnNewLebel().checkifNewLebelisDisplayedOnEveryProduct();
+        manufacturerPage.clickOnNewLebel();
+
+        Assert.assertTrue("New lebel is not available on every product",manufacturerPage.featuresAreDisplayed());
+
     }
 
 

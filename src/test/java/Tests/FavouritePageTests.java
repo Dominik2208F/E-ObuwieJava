@@ -1,5 +1,7 @@
 package Tests;
 import Base.BaseTest;
+import Pages.ProductPage;
+import org.junit.Assert;
 import org.junit.Test;
 
 
@@ -30,8 +32,9 @@ public class FavouritePageTests extends BaseTest {
                 AddToFavourite().
                 clickonFavouriteHeaders();
 
-        favouritePage.RemoveFavourites().
-                checkifAllDelated();
+        favouritePage.RemoveFavourites();
+
+        Assert.assertEquals(favouritePage.GetValueFromFavouriteLabel(),"Ulubione (0)");
 
     }
 

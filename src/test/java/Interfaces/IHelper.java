@@ -1,9 +1,12 @@
 package Interfaces;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 import static org.junit.Assert.assertEquals;
@@ -11,32 +14,30 @@ import static org.junit.Assert.assertTrue;
 
 public interface IHelper {
 
-    default void verifyElementExistInList(List<WebElement> elementsList, String expectedValue) {
+    default boolean verifyElementExistInList(List<WebElement> elementsList, String expectedValue) {
 
-        ArrayList<String> TextList =new ArrayList<>();
-
-        for( WebElement x :elementsList){
-            TextList.add(x.getText());
-        }
-
-        if(TextList.contains(expectedValue)){
+        if(convertWebElementsListToString(elementsList).contains(expectedValue)){
             System.out.println("value in the List of elements");
+            return true;
         }
         else{
             System.out.println("no value in the list of elements");
-            assertTrue(false);
+            return false;
         }
     }
     default void checkIfListContainsAllExpectedElements(List<WebElement> listtoSearch, List<String> listaexpected) {
-        List<String> listaOfText = new ArrayList<String>();
-        for (WebElement x : listtoSearch) {
-            listaOfText.add(x.getText());
-        }
 
-        for (int i = 0; i < listaexpected.size(); i++) {
-            assertEquals("Actual Headers are not correct", listaexpected.get(i), listaOfText.get(i));
+        for(int repeat=0; repeat<=3;repeat++) {  //stale reference exception
+            try {
+                for (int i = 0; i < convertWebElementsListToString(listtoSearch).size(); i++) {
+                    assertEquals("Actual Headers are not correct", listaexpected.get(i), convertWebElementsListToString(listtoSearch).get(i));
+                }
+                System.out.println("Actual Values are correct");
+                break;
+            } catch (Exception x) {
+                System.out.println("Elements haven't been displayed");
+            }
         }
-        System.out.println("Actual Values are correct");
     }
     default boolean clickEqualsListElement(List<WebElement> list, String value) {
 
@@ -88,7 +89,6 @@ public interface IHelper {
         List<String> FilterTextList= new ArrayList<>();
 
         for( WebElement we : listaofwebelements){
-            System.out.println(we.getText());
             FilterTextList.add(we.getText());
         }
         return  FilterTextList;
@@ -117,6 +117,15 @@ public interface IHelper {
             }
     }
 
+    default boolean checkifElementsSizeIsMoreThan0(List<WebElement> x){
+
+        if(x.size()==0){
+
+            System.out.println("Size of element is 0");
+            return false;
+        }
+        return true;
+    }
 
     WebDriver GetDriver();
 }

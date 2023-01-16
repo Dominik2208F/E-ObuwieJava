@@ -54,11 +54,17 @@ public class MainPage extends BasePage implements IHelper {
     @FindBy(id = "newsletter_banner_exit_salomon")
     private WebElement Banner;
 
-    public MainPage headersVerification(String... listaheaders) throws InterruptedException {
-        Thread.sleep(5000);
-        Arrays.asList( listaheaders);
-        checkIfListContainsAllExpectedElements(ActualHeadersPath,Arrays.asList( listaheaders));
-        return this;
+    //public MainPage headersVerification(String... listaheaders) throws InterruptedException {
+    //    Thread.sleep(5000);
+    //    Arrays.asList( listaheaders);
+   //     checkIfListContainsAllExpectedElements(ActualHeadersPath,Arrays.asList( listaheaders));
+   //     return this;
+   // }
+
+    public List<WebElement> GetActualHeaders(){
+
+        return ActualHeadersPath;
+
     }
     public MainPage clickOnSaleBanner() {
         try {
@@ -76,7 +82,7 @@ public class MainPage extends BasePage implements IHelper {
     public void verifyList( String expectedValue){
         new WebDriverWait(driver, Duration.ofSeconds(5)).until(ExpectedConditions.visibilityOfAllElements(ActualHeadersPath));
         verifyElementExistInList(ActualHeadersPath, expectedValue);
-        clickEqualsListElement(ActualHeadersPath,expectedValue);
+       // clickEqualsListElement(ActualHeadersPath,expectedValue);
     }
     public void acceptCookies() {
         new WebDriverWait(driver, Duration.ofSeconds(5)).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//ul[@id='mega-menu-list']/li")));

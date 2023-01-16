@@ -53,13 +53,10 @@ public class ManufacturerPage extends BasePage implements IHelper {
     @FindBy(xpath = "//a[not(contains(@type,'button'))][contains(text(),'Filtruj')]")
     public
     WebElement PriceFilterButton;
-
     @FindBy(xpath = "//div[@class='products-list__regular-price' or @class='products-list__special-price']")
     List<WebElement> PricesOnWebsiteRegularAndReduced;
-
     @FindBy(xpath = "//div[contains(normalize-space(@class),'e-range--pips')]//div[@class='e-range__handle e-range__handle-upper']")
     private WebElement WidthShoesSliderUpper;
-
     @FindBy(xpath = "//div[contains(normalize-space(@class),'e-range--pips')]//div[@class='e-range__handle e-range__handle-lower']")
     private WebElement WidthShoesSliderLower;
     @FindBy(xpath = "(//a[not(contains(@type,'button'))][contains(text(),'Filtruj')])[2]")
@@ -222,6 +219,17 @@ public class ManufacturerPage extends BasePage implements IHelper {
         }
         return this;
     }
+
+    public boolean featuresAreDisplayed(){
+
+        for (WebElement we : NewsLebel) {
+
+            if(!we.isDisplayed())
+                return false;
+        }
+        return true;
+    }
+
 
     public ManufacturerPage clickOnNewLebel() {
 
