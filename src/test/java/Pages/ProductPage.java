@@ -19,7 +19,6 @@ public class ProductPage extends BasePage implements IHelper {
 
     public ProductPage(WebDriver driver) {
        super(driver);
-    //    PageFactory.initElements(driver, this);
     }
 
     @FindBy(xpath="//div[@class='e-product-price__special']")
@@ -101,10 +100,10 @@ public class ProductPage extends BasePage implements IHelper {
         return this;
     }
 
-    public ProductPage checkStoreAvailability(){
+    public WebElement GetStoreAvailability(){
 
         Assert.assertTrue(StoreSlider.isDisplayed());
-        return this;
+        return StoreSlider;
     }
 
     @Override

@@ -11,7 +11,7 @@ public class FavouritePageTests extends BaseTest {
         //First
         mainpage.mouseHoverOnMenCategory();
         manufacturerPage= mainpage.clickOnSztybletyDropDownList();
-        manufacturerPage.clickOnSaleBanner();
+        mainpage.clickOnSaleBanner();
         productPage= manufacturerPage.chooseProduct("2", "Value1");
       //  manufacturerPage.clickOnSaleBanner();
         mainpage.CloseNewsLetter();

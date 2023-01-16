@@ -2,10 +2,7 @@ package Pages;
 import Base.BasePage;
 import Interfaces.IHelper;
 import jdk.jfr.internal.tool.Main;
-import org.openqa.selenium.By;
-import org.openqa.selenium.StaleElementReferenceException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -21,7 +18,7 @@ public class MainPage extends BasePage implements IHelper {
 
     public MainPage(WebDriver driver) {
         super(driver);
-      //  PageFactory.initElements(driver, this);
+
     }
 
     public WebDriver GetDriver(){
@@ -30,19 +27,14 @@ public class MainPage extends BasePage implements IHelper {
 
     @FindBy(xpath = "//button[contains(text(),'Zgoda')]")
     private WebElement AcceptCookiesElement;
-
     @FindBy(xpath = "//ul[@id='mega-menu-list']/li")
     private List<WebElement> ActualHeadersPath;
-
     @FindBy(xpath = "//a[@class='brands-section__slide']/child::img")
     private List<WebElement> TopMarksList;
-
     @FindBy(xpath = "//form[@class='header-search snr']/child::input")
     private WebElement Manufacturer;
-
     @FindBy(xpath="//form[@class='header-search snr']//button[@title='Szukaj']")
     private WebElement SearchButton;
-
     @FindBy(xpath="//ul[@class='sidebar-section__list filter-link__list']/child::li/a")
     private List<WebElement> LeftFilterCategory;
     @FindBy(xpath="//ul[@class='sidebar-section__list filter-link__list']/li/a")
@@ -59,6 +51,8 @@ public class MainPage extends BasePage implements IHelper {
     private WebElement SztybletyChooseDropDown;
     @FindBy(id="close-promo-popup")
     private WebElement popup;
+    @FindBy(id = "newsletter_banner_exit_salomon")
+    private WebElement Banner;
 
     public MainPage headersVerification(String... listaheaders) throws InterruptedException {
         Thread.sleep(5000);
@@ -66,9 +60,22 @@ public class MainPage extends BasePage implements IHelper {
         checkIfListContainsAllExpectedElements(ActualHeadersPath,Arrays.asList( listaheaders));
         return this;
     }
+    public MainPage clickOnSaleBanner() {
+        try {
+            if (Banner.isEnabled()) {
+                Banner.click();
+            }
+            Thread.sleep(2000);
+        } catch (Exception e) {
+            System.out.println("Sales banner has not been displayed");
+        }
+        return this;
+    }
+
+
     public void verifyList( String expectedValue){
         new WebDriverWait(driver, Duration.ofSeconds(5)).until(ExpectedConditions.visibilityOfAllElements(ActualHeadersPath));
-        verifyElementsInListEquals(ActualHeadersPath, expectedValue);
+        verifyElementExistInList(ActualHeadersPath, expectedValue);
         clickEqualsListElement(ActualHeadersPath,expectedValue);
     }
     public void acceptCookies() {
@@ -81,12 +88,13 @@ public class MainPage extends BasePage implements IHelper {
 
             for (WebElement x : TopMarksList) {
                 if (mark.equals(x.getAttribute("alt"))) {
+                 //   ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();", x);
                     Actions actions = new Actions(driver);
                     actions.moveToElement(x).click().perform();
                 }
             }
         } catch (StaleElementReferenceException ex) {
-            System.out.println("Exception Złapany");
+            System.out.println("Top mark bar is not visible on page");
 
         }
         return new ManufacturerPage(driver);
@@ -102,26 +110,26 @@ public class MainPage extends BasePage implements IHelper {
     }
     public MainPage mouseHoverOnMenCategory() throws InterruptedException {
         Thread.sleep(3000);
-        MouseHover(MensLabelHeaders);
+        mouseHover(MensLabelHeaders);
         return this;
     }
     public ManufacturerPage clickOnTrampkiCategoryOnDropDownList(){
-        ClickOnDropDownList(TrampkiChooseDropDown);
+        clickOnDropDownList(TrampkiChooseDropDown);
         return new ManufacturerPage(driver);
     }
     public ManufacturerPage clickOnSneakearsCategoryOnDropDownList(){
-        ClickOnDropDownList(SneakearsChild);
+        clickOnDropDownList(SneakearsChild);
         return new ManufacturerPage(driver);
     }
     public MainPage mouseHoveronChildCategory() throws InterruptedException {
 
         Thread.sleep(2000);
-        MouseHover(ChildLabelHeaders);
+        mouseHover(ChildLabelHeaders);
         return this;
     }
     public ManufacturerPage clickOnSztybletyDropDownList() {
 
-        ClickOnDropDownList(SztybletyChooseDropDown);
+        clickOnDropDownList(SztybletyChooseDropDown);
      return new ManufacturerPage(driver);
 
     }

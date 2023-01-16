@@ -18,7 +18,7 @@ public class FavouritePage extends BasePage implements IHelper {
 
     public FavouritePage(WebDriver driver) {
         super(driver);
-      //  PageFactory.initElements(driver, this);
+
     }
 
 

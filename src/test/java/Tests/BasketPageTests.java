@@ -12,10 +12,9 @@ public class BasketPageTests extends BaseTest {
 
         manufacturerPage= mainpage.clickOnSztybletyDropDownList();
 
-        manufacturerPage.
-                clickOnSaleBanner().
-                chooseSize("42").
-                clickOnSaleBanner();
+        mainpage.clickOnSaleBanner();
+        manufacturerPage.chooseSize("42");
+        mainpage.clickOnSaleBanner();
 
         mainpage.CloseNewsLetter();
 
@@ -35,9 +34,8 @@ public class BasketPageTests extends BaseTest {
         mainpage.
                 mouseHoverOnMenCategory().
                 clickOnSztybletyDropDownList();
-        manufacturerPage.
-                chooseSize("42").
-                clickOnSaleBanner();
+        manufacturerPage.chooseSize("42");
+        mainpage.clickOnSaleBanner();
 
         productPage= manufacturerPage.
                 chooseProduct("2","Value2").

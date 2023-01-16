@@ -11,7 +11,7 @@ import static org.junit.Assert.assertTrue;
 
 public interface IHelper {
 
-    default void verifyElementsInListEquals(List<WebElement> elementsList, String expectedValue) {
+    default void verifyElementExistInList(List<WebElement> elementsList, String expectedValue) {
 
         ArrayList<String> TextList =new ArrayList<>();
 
@@ -20,10 +20,10 @@ public interface IHelper {
         }
 
         if(TextList.contains(expectedValue)){
-            System.out.println("Wartość jest");
+            System.out.println("value in the List of elements");
         }
         else{
-            System.out.println("Wartości nie ma");
+            System.out.println("no value in the list of elements");
             assertTrue(false);
         }
     }
@@ -46,10 +46,9 @@ public interface IHelper {
                 return true;
             }
         }
-        System.out.println("Nie znaleziono pasującego elementu. Pozostanie domyślny.");
+        System.out.println("Elements hasn't been found in the list of provided elements.");
         return false;
     }
-
     default void clickIn(WebElement element, Integer... time) {
         Integer periodOfTime = time.length > 0 ? time[0] : 30;
         new WebDriverWait(GetDriver(),30)
@@ -72,26 +71,52 @@ public interface IHelper {
         System.out.println("input value = " + String.valueOf(value));
 
     }
-
-   default void MouseHover(WebElement x){
-        //Creating object of an Actions class
+    default void mouseHover(WebElement x){
         Actions action = new Actions(GetDriver());
-
-//Performing the mouse hover action on the target element.
         action.moveToElement(x).perform();
     }
-
-    default void ClickOnDropDownList(WebElement element) {
+    default void clickOnDropDownList(WebElement element) {
         try {
-
             element.click();
 
         } catch (Exception e) {
-
         }
     }
+
+    default List<String> convertWebElementsListToString(List<WebElement> listaofwebelements){
+
+        List<String> FilterTextList= new ArrayList<>();
+
+        for( WebElement we : listaofwebelements){
+            System.out.println(we.getText());
+            FilterTextList.add(we.getText());
+        }
+        return  FilterTextList;
+    }
+
+    default List<Double>convertWebElementsLisToDouble(List<WebElement> listofwebelements){
+
+        List<Double> ListofAllPrices = new ArrayList<>();
+        for (WebElement x : listofwebelements) {
+            if (x.isDisplayed()) {
+                ListofAllPrices.add((Double.valueOf(x.getText().replace(",", ".").replace(" zł", "").replaceAll("\\s", ""))));
+            }
+        }
+            return ListofAllPrices;
+    }
+
+    default boolean ListAreEqual(List<String>l1, List<String> l2) {
+
+            if (l2.equals(l1)) {
+                System.out.println("Elements are equal");
+                return true;
+            }
+            else{
+                System.out.println("Elements are not equal");
+                return false;
+            }
+    }
+
+
     WebDriver GetDriver();
-
-
-
 }

@@ -4,11 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6ad0fbd7-17e6-49ec-a959-040d4af90de3" name="Changes" comment="POP implementation">
+    <list default="true" id="6ad0fbd7-17e6-49ec-a959-040d4af90de3" name="Changes" comment="POP implementation v1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Base/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Base/BaseTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/Interfaces/IHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Interfaces/IHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Tests/TestClass.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Pages/BasketPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Pages/BasketPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Pages/FavouritePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Pages/FavouritePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Pages/MainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Pages/MainPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Pages/ManufacturerPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Pages/ManufacturerPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Pages/ProductPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Pages/ProductPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Tests/BasketPageTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Tests/BasketPageTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Tests/FavouritePageTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Tests/FavouritePageTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Tests/ManufacturerMenuTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Tests/ManufacturerMenuTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Tests/ProductPageTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Tests/ProductPageTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,8 +65,8 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;
   }
 }</component>
-  <component name="RunManager" selected="JUnit.BasketPageTests.addTwoRandomProductToBasketAndCheckSumValueInSummary">
-    <configuration name="BasketPageTests.addTwoRandomProductToBasketAndCheckSumValueInSummary" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.ManufacturerMenuTests.lookForMaaVansNumber40ByTopMarkTab">
+    <configuration name="ManufacturerMenuTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="E-ObuwiePOPJava-master" />
       <extension name="coverage">
         <pattern>
@@ -68,14 +75,29 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="Tests" />
-      <option name="MAIN_CLASS_NAME" value="Tests.BasketPageTests" />
-      <option name="METHOD_NAME" value="addTwoRandomProductToBasketAndCheckSumValueInSummary" />
+      <option name="MAIN_CLASS_NAME" value="Tests.ManufacturerMenuTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ManufacturerMenuTests.lookForMaaVansNumber40ByTopMarkTab" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="E-ObuwiePOPJava-master" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Tests" />
+      <option name="MAIN_CLASS_NAME" value="Tests.ManufacturerMenuTests" />
+      <option name="METHOD_NAME" value="lookForMaaVansNumber40ByTopMarkTab" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BasketPageTests.checkAddingProductToBasket" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ManufacturerMenuTests.lookForManVansNumber40ByTopMarkTab" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="E-ObuwiePOPJava-master" />
       <extension name="coverage">
         <pattern>
@@ -84,14 +106,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="Tests" />
-      <option name="MAIN_CLASS_NAME" value="Tests.BasketPageTests" />
-      <option name="METHOD_NAME" value="checkAddingProductToBasket" />
+      <option name="MAIN_CLASS_NAME" value="Tests.ManufacturerMenuTests" />
+      <option name="METHOD_NAME" value="lookForManVansNumber40ByTopMarkTab" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FavouritePageTests.addProductsToFavouriteAndDelete" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ManufacturerMenuTests.lookForManVansNumber42BySearchBox" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="E-ObuwiePOPJava-master" />
       <extension name="coverage">
         <pattern>
@@ -100,8 +122,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="Tests" />
-      <option name="MAIN_CLASS_NAME" value="Tests.FavouritePageTests" />
-      <option name="METHOD_NAME" value="addProductsToFavouriteAndDelete" />
+      <option name="MAIN_CLASS_NAME" value="Tests.ManufacturerMenuTests" />
+      <option name="METHOD_NAME" value="lookForManVansNumber42BySearchBox" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -123,29 +145,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ManufacturerMenuTests.setkWidthRangeBaronLeftSide" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="E-ObuwiePOPJava-master" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="Tests" />
-      <option name="MAIN_CLASS_NAME" value="Tests.ManufacturerMenuTests" />
-      <option name="METHOD_NAME" value="setkWidthRangeBaronLeftSide" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.BasketPageTests.addTwoRandomProductToBasketAndCheckSumValueInSummary" />
-        <item itemvalue="JUnit.BasketPageTests.checkAddingProductToBasket" />
-        <item itemvalue="JUnit.FavouritePageTests.addProductsToFavouriteAndDelete" />
+        <item itemvalue="JUnit.ManufacturerMenuTests.lookForMaaVansNumber40ByTopMarkTab" />
+        <item itemvalue="JUnit.ManufacturerMenuTests.lookForManVansNumber40ByTopMarkTab" />
+        <item itemvalue="JUnit.ManufacturerMenuTests.lookForManVansNumber42BySearchBox" />
+        <item itemvalue="JUnit.ManufacturerMenuTests" />
         <item itemvalue="JUnit.ManufacturerMenuTests.setPriceRangeBarOnLeftSide" />
-        <item itemvalue="JUnit.ManufacturerMenuTests.setkWidthRangeBaronLeftSide" />
       </list>
     </recent_temporary>
   </component>
@@ -193,7 +199,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673801532674</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="POP implementation v1">
+      <created>1673802343005</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1673802343005</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -212,6 +225,7 @@
     <MESSAGE value="E-obuwie1" />
     <MESSAGE value="E-obuwie fix" />
     <MESSAGE value="POP implementation" />
-    <option name="LAST_COMMIT_MESSAGE" value="POP implementation" />
+    <MESSAGE value="POP implementation v1" />
+    <option name="LAST_COMMIT_MESSAGE" value="POP implementation v1" />
   </component>
 </project>

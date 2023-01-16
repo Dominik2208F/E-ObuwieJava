@@ -15,15 +15,14 @@ public class BasketPage  extends BasePage implements IHelper {
 
     public BasketPage(WebDriver driver) {
         super(driver);
-       // PageFactory.initElements(driver, this);
     }
 
     @FindBy(xpath = "//a[contains(@class,'cart__continue-shopping')]")
-    WebElement ContinueShoopingButton;
+    private  WebElement ContinueShoopingButton;
     @FindBy(xpath = "//div[contains(normalize-space(@class),'cart-item__price--discounted')]")
-    List<WebElement> Reducedprice;
+    private List<WebElement> Reducedprice;
     @FindBy(xpath="//*[contains(text(),'Łącznie')]/parent::span/following-sibling::span/child::span")
-    WebElement summaryPriceLabel;
+    private WebElement summaryPriceLabel;
     public MainPage returnToMainpageFromBasket() {
 
 
