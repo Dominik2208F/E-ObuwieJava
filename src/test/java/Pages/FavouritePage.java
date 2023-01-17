@@ -15,43 +15,27 @@ import static Pages.ProductPage.FavouriteLink;
 public class FavouritePage extends BasePage implements IHelper {
 
 
-    @FindBy(xpath="//button[@class='favourites__remove-button']")
+    @FindBy(xpath = "//button[@class='favourites__remove-button']")
     private List<WebElement> RemoveButton;
-
     public FavouritePage(WebDriver driver) {
         super(driver);
 
     }
-
-
     public FavouritePage RemoveFavourites() throws InterruptedException {
 
-        int counter=0;
-        for(WebElement we : RemoveButton){
+        for (WebElement we : RemoveButton) {
 
-            if(we.isDisplayed()) {
+            if (we.isDisplayed()) {
                 we.click();
-                counter++;
                 Thread.sleep(2000);
             }
         }
         return this;
     }
-
-    public FavouritePage checkifAllDelated(){
-
-        Assert.assertEquals(FavouriteLink.getText().trim(),"Ulubione (0)");
-        return this;
-    }
-    public String GetValueFromFavouriteLabel(){
+    public String GetValueFromFavouriteLabel() {
 
         return FavouriteLink.getText().trim();
     }
-
-
-
-
-
     @Override
     public WebDriver GetDriver() {
         return null;

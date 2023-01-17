@@ -1,4 +1,5 @@
 package Pages;
+
 import Base.BasePage;
 import Interfaces.Buffer;
 import Interfaces.IHelper;
@@ -11,6 +12,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -51,10 +53,9 @@ public class ManufacturerPage extends BasePage implements IHelper {
     @FindBy(xpath = "//div[@class='e-range__handle e-range__handle-upper']")
     private WebElement PriceHandlerUpper;
     @FindBy(xpath = "//a[not(contains(@type,'button'))][contains(text(),'Filtruj')]")
-    public
-    WebElement PriceFilterButton;
+    private WebElement PriceFilterButton;
     @FindBy(xpath = "//div[@class='products-list__regular-price' or @class='products-list__special-price']")
-    List<WebElement> PricesOnWebsiteRegularAndReduced;
+    private List<WebElement> PricesOnWebsiteRegularAndReduced;
     @FindBy(xpath = "//div[contains(normalize-space(@class),'e-range--pips')]//div[@class='e-range__handle e-range__handle-upper']")
     private WebElement WidthShoesSliderUpper;
     @FindBy(xpath = "//div[contains(normalize-space(@class),'e-range--pips')]//div[@class='e-range__handle e-range__handle-lower']")
@@ -63,10 +64,14 @@ public class ManufacturerPage extends BasePage implements IHelper {
     private WebElement FilterWidth;
     @FindBy(xpath = "//div[@class='e-badge e-badge--color-brand']")
     private List<WebElement> NewsLebel;
-
     @FindBy(xpath = "(//a[contains(text(),'Nowość')])[7]")
     private WebElement NewButton;
 
+
+    //String are used to choose element on website be argument in function(1,2,3). No need to do a path related to every product on ManufacturerPage.
+    String DropdownList = "//button[@data-href-slug='%s']";
+    String NumberOfProductOnList = "//a[@data-testid='category-product-item-link%s']";
+    String CollectPriceToBuffer = "//a[@data-testid='category-product-item-link%s']//div[@class='products-list__price-box']//div[@class='products-list__special-price']";
 
     public ManufacturerPage chooseSexCategory(String value) {
 
@@ -79,7 +84,6 @@ public class ManufacturerPage extends BasePage implements IHelper {
         clickEqualsListElement(LeftFilterCategoryModel, value);
         return this;
     }
-
 
     public ManufacturerPage chooseStyle(String value) {
 
@@ -115,8 +119,7 @@ public class ManufacturerPage extends BasePage implements IHelper {
     public ManufacturerPage searchManufacturer(String x) {
 
         SearchManufacturer.sendKeys(x);
-        String DropdownList = String.format("//button[@data-href-slug='%s']", x);
-        WebElement FirstELementfromList = driver.findElement(By.xpath(DropdownList));
+        WebElement FirstELementfromList = driver.findElement(ConvertStringToXpath(x, DropdownList));
         FirstELementfromList.click();
         Filter.click();
         return this;
@@ -127,13 +130,11 @@ public class ManufacturerPage extends BasePage implements IHelper {
         return HeaderofManufacturer.getText();
     }
 
-    public ProductPage chooseProduct(String number, String KeyToBuffer) {
+    public ProductPage chooseProduct(String numberofproductToConvert, String KeyToBuffer) {
 
-        String NumberofProduct = String.format("//a[@data-testid='category-product-item-link%s']", number);
-        WebElement Number = GetDriver().findElement(By.xpath(NumberofProduct));
-        String CollectPrice = String.format("//a[@data-testid='category-product-item-link%s']//div[@class='products-list__price-box']//div[@class='products-list__special-price']", number);
-        Buffer.SetValueInBuffer(KeyToBuffer, GetDriver().findElement(By.xpath(CollectPrice)).getText().replace("zł", " "));
-        Number.click();
+        WebElement Product = GetDriver().findElement(ConvertStringToXpath(numberofproductToConvert, NumberOfProductOnList));
+        Buffer.SetValueInBuffer(KeyToBuffer, GetDriver().findElement(ConvertStringToXpath(numberofproductToConvert, CollectPriceToBuffer)).getText().replace("zł", " "));
+        Product.click();
         return new ProductPage(driver);
     }
 
@@ -155,36 +156,27 @@ public class ManufacturerPage extends BasePage implements IHelper {
     public boolean checkPriceHandlerHasBeenMovedToRequestedPriceRange(String value1, String value2) {
 
         String PriceHandlerUpperValue = PriceHandlerUpper.getAttribute("aria-valuenow");
-        System.out.println(PriceHandlerUpperValue);
         String PricehandlerLowerValue = PricehandlerLower.getAttribute("aria-valuenow");
-        System.out.println(PricehandlerLowerValue);
+
         PriceFilterButton.click();
         if (value2.equals(PriceHandlerUpperValue) && (value1.equals(PricehandlerLowerValue))) {
             return true;
-        }
-        else{
+        } else {
             System.out.println("Handler don't have required value");
             return false;
-
         }
 
     }
 
     public List<Double> GetPricesFromWebsite() {
 
-        convertWebElementsLisToDouble(PricesOnWebsiteRegularAndReduced);
-
-      //  for (Double x : convertWebElementsLisToDouble(PricesOnWebsiteRegularAndReduced)) {
-//
-      //      Assert.assertTrue(checkifPriceisInArequestedRange(range1, range2, x));
-//
-     //   }
-        return convertWebElementsLisToDouble(PricesOnWebsiteRegularAndReduced);
+        convertWebElementsListToDouble(PricesOnWebsiteRegularAndReduced);
+        return convertWebElementsListToDouble(PricesOnWebsiteRegularAndReduced);
     }
 
     public boolean checkifPriceisInArequestedRange(double min, double max, List<Double> listofdoubles) {
 
-        for(Double currentwebsitevalue: listofdoubles) {
+        for (Double currentwebsitevalue : listofdoubles) {
 
             if (!(currentwebsitevalue > min && currentwebsitevalue < max)) {
                 System.out.println(currentwebsitevalue + "Value is not in a range");
@@ -211,25 +203,18 @@ public class ManufacturerPage extends BasePage implements IHelper {
         return this;
     }
 
-    public ManufacturerPage checkifNewLebelisDisplayedOnEveryProduct() {
+    public boolean featuresAreDisplayed() {
 
         for (WebElement we : NewsLebel) {
 
-            Assert.assertTrue(we.isDisplayed());
-        }
-        return this;
-    }
-
-    public boolean featuresAreDisplayed(){
-
-        for (WebElement we : NewsLebel) {
-
-            if(!we.isDisplayed())
+            if (!we.isDisplayed())
                 return false;
-        }
-        return true;
-    }
 
+        }
+        System.out.println("Lebels has been updated");
+        return true;
+
+    }
 
     public ManufacturerPage clickOnNewLebel() {
 

@@ -29,18 +29,13 @@ public class BasketPage  extends BasePage implements IHelper {
         ContinueShoopingButton.click();
         return new MainPage(driver);
     }
-
-
     public void compareSumInBasketWithLabelPrice(){
 
         comparePricesBasedOnList(Buffer.GetValue(),Reducedprice);
 
     }
-
     public void comparePricesBasedOnList(List<String> bufferlist, List<WebElement> summarylist) {
-
         double summedvalueofWebElementInBasket = 0;
-
         List<Double> IntegerValueofWebElementPrice = new ArrayList<>();
         List<String> ValueofWebsiteElements = new ArrayList<>();
         List<Double> DoubleValueFromBuffer = new ArrayList<>();
@@ -50,7 +45,6 @@ public class BasketPage  extends BasePage implements IHelper {
             ValueofWebsiteElements.add(x.getText().replace("zł", " ").trim());
 
         }
-
         //1)
         Assert.assertTrue(bufferlist.equals(ValueofWebsiteElements));
 
@@ -59,9 +53,7 @@ public class BasketPage  extends BasePage implements IHelper {
             IntegerValueofWebElementPrice.add(Double.parseDouble(ValueofWebsiteElements.get(i).replace(',', '.')));
 
         }
-
         summedvalueofWebElementInBasket = IntegerValueofWebElementPrice.stream().mapToDouble(Double::valueOf).sum();
-
 
         for (String x : bufferlist) {
             DoubleValueFromBuffer.add(Double.parseDouble(x.replace(',', '.')));
@@ -69,14 +61,11 @@ public class BasketPage  extends BasePage implements IHelper {
         }
 
         double BufferSumedValue = DoubleValueFromBuffer.stream().mapToDouble(Double::valueOf).sum();
-
+        //2//3
         Assert.assertEquals(Double.doubleToLongBits(BufferSumedValue), Double.doubleToLongBits(summedvalueofWebElementInBasket));
-
-
         Assert.assertEquals(Double.doubleToLongBits(summedvalueofWebElementInBasket), Double.doubleToLongBits(Double.valueOf(summaryPriceLabel.getText().replace("zł", " ").replace(',', '.').replaceAll("\\s", ""))));
 
     }
-
     @Override
     public WebDriver GetDriver() {
         return this.driver;

@@ -7,7 +7,7 @@ import java.util.Arrays;
 
 
 public class ManufacturerMenuTests extends BaseTest {
-
+  // działa wszystko na 1 run
     @Test //działa
     public void setPriceRangeBarOnLeftSide() throws InterruptedException {
 
@@ -71,11 +71,10 @@ public class ManufacturerMenuTests extends BaseTest {
 
     @Test //działa
     public void lookForManVansNumber42BySearchBox()  {
-
-        manufacturerPage= mainpage.typeInSearchBox("Vans");
         mainpage.clickOnSaleBanner();
+        manufacturerPage= mainpage.typeInSearchBox("Vans");
         manufacturerPage.chooseSexCategory("Męskie");
-        // manufacturerPage.clickOnSaleBanner();
+        mainpage.clickOnSaleBanner();
         mainpage.CloseNewsLetter();
         manufacturerPage.chooseModel("Sportowe");
         mainpage.clickOnSaleBanner();

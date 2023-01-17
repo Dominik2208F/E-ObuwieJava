@@ -11,7 +11,7 @@ import static org.junit.Assert.assertEquals;
 
 public class MainPageTests extends BaseTest {
 
-
+//działa wszystko na raz
     @Test
     public void checkTittle(){
         driver.get("https://www.eobuwie.pl");

@@ -30,7 +30,7 @@ public interface IHelper {
         for(int repeat=0; repeat<=3;repeat++) {  //stale reference exception
             try {
                 for (int i = 0; i < convertWebElementsListToString(listtoSearch).size(); i++) {
-                    assertEquals("Actual Headers are not correct", listaexpected.get(i), convertWebElementsListToString(listtoSearch).get(i));
+                    assertEquals("Actual Headers are not correct on" +listaexpected.get(i), listaexpected.get(i), convertWebElementsListToString(listtoSearch).get(i));
                 }
                 System.out.println("Actual Values are correct");
                 break;
@@ -94,7 +94,7 @@ public interface IHelper {
         return  FilterTextList;
     }
 
-    default List<Double>convertWebElementsLisToDouble(List<WebElement> listofwebelements){
+    default List<Double>convertWebElementsListToDouble(List<WebElement> listofwebelements){
 
         List<Double> ListofAllPrices = new ArrayList<>();
         for (WebElement x : listofwebelements) {
@@ -125,6 +125,11 @@ public interface IHelper {
             return false;
         }
         return true;
+    }
+
+    default By ConvertStringToXpath(String elementToFullfillXpath,String xpathInstring){
+
+        return By.xpath((String.format(xpathInstring,elementToFullfillXpath)));
     }
 
     WebDriver GetDriver();

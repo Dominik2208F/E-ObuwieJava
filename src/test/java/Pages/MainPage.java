@@ -1,15 +1,12 @@
 package Pages;
 import Base.BasePage;
 import Interfaces.IHelper;
-import jdk.jfr.internal.tool.Main;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
-import java.util.Arrays;
 import java.util.List;
 
 
@@ -24,7 +21,6 @@ public class MainPage extends BasePage implements IHelper {
     public WebDriver GetDriver(){
         return driver;
     }
-
     @FindBy(xpath = "//button[contains(text(),'Zgoda')]")
     private WebElement AcceptCookiesElement;
     @FindBy(xpath = "//ul[@id='mega-menu-list']/li")
@@ -68,7 +64,7 @@ public class MainPage extends BasePage implements IHelper {
     }
     public MainPage clickOnSaleBanner() {
         try {
-            if (Banner.isEnabled()) {
+            if (Banner.isDisplayed()) {
                 Banner.click();
             }
             Thread.sleep(2000);
@@ -77,24 +73,15 @@ public class MainPage extends BasePage implements IHelper {
         }
         return this;
     }
-
-
-    public void verifyList( String expectedValue){
-        new WebDriverWait(driver, Duration.ofSeconds(5)).until(ExpectedConditions.visibilityOfAllElements(ActualHeadersPath));
-        verifyElementExistInList(ActualHeadersPath, expectedValue);
-       // clickEqualsListElement(ActualHeadersPath,expectedValue);
-    }
     public void acceptCookies() {
         new WebDriverWait(driver, Duration.ofSeconds(5)).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//ul[@id='mega-menu-list']/li")));
         clickIn(AcceptCookiesElement,5);
     }
     public ManufacturerPage selectTopMark(String mark)  {
-     // Thread.sleep(5000);
         try {
 
             for (WebElement x : TopMarksList) {
                 if (mark.equals(x.getAttribute("alt"))) {
-                 //   ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();", x);
                     Actions actions = new Actions(driver);
                     actions.moveToElement(x).click().perform();
                 }
@@ -107,6 +94,7 @@ public class MainPage extends BasePage implements IHelper {
     }
     public ManufacturerPage typeInSearchBox(String value)  {
         try{
+
         setValueInField(Manufacturer,value);
         clickIn(SearchButton);}
         catch(Exception e){
@@ -139,7 +127,6 @@ public class MainPage extends BasePage implements IHelper {
      return new ManufacturerPage(driver);
 
     }
-
     public void CloseNewsLetter(){
         if(popup.isDisplayed()) {
             popup.click();

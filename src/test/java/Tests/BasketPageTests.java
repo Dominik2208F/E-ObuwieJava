@@ -1,6 +1,7 @@
 package Tests;
 import Base.BaseTest;
-import Pages.ManufacturerPage;
+import Interfaces.Buffer;
+import org.junit.Assert;
 import org.junit.Test;
 
 public class BasketPageTests extends BaseTest {
@@ -19,11 +20,14 @@ public class BasketPageTests extends BaseTest {
         mainpage.CloseNewsLetter();
 
         productPage= manufacturerPage.
-                chooseProduct("1","Value1").
-                checkPriceOnProductCard("Value1").
-                verifyLayoutOnProductCard().
-                clickOnAddToBasket().
-                chooseSizeFromRightList("42");
+                chooseProduct("1","Value1");
+
+
+        Assert.assertEquals(productPage.GetCurrentProductPrice(), Buffer.GetValueBufferKey("Value1"));
+
+        productPage.verifyLayoutOnProductCard().
+                    clickOnAddToBasket().
+                    chooseSizeFromRightList("42");
 
         basketPage= productPage.gotoBasket();
         mainpage =basketPage.returnToMainpageFromBasket();
@@ -38,9 +42,12 @@ public class BasketPageTests extends BaseTest {
         mainpage.clickOnSaleBanner();
 
         productPage= manufacturerPage.
-                chooseProduct("2","Value2").
-                checkPriceOnProductCard("Value2").
-                verifyLayoutOnProductCard().
+                chooseProduct("2","Value2");
+
+
+        Assert.assertEquals(productPage.GetCurrentProductPrice(), Buffer.GetValueBufferKey("Value2"));
+
+           productPage.verifyLayoutOnProductCard().
                 clickOnAddToBasket().
                 chooseSizeFromRightList("42");
 
@@ -53,11 +60,12 @@ public class BasketPageTests extends BaseTest {
         mainpage.
                 mouseHoveronChildCategory();
 
-        manufacturerPage=mainpage. clickOnSneakearsCategoryOnDropDownList();
+        manufacturerPage=mainpage.clickOnSneakearsCategoryOnDropDownList();
 
         productPage =manufacturerPage.chooseProduct("3","Value1");
+
+        Assert.assertEquals(productPage.GetCurrentProductPrice(), Buffer.GetValueBufferKey("Value1"));
         productPage.
-                checkPriceOnProductCard("Value1").
                 verifyLayoutOnProductCard();
 
         mainpage.CloseNewsLetter();
