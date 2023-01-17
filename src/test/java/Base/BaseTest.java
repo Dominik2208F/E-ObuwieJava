@@ -22,7 +22,6 @@ public class BaseTest {
    protected FavouritePage favouritePage;
    protected WebDriver driver;
    protected BasePage basepage;
-   protected WebDriverWait wait;
 
     @Before
     public void setUp(){
@@ -36,10 +35,11 @@ public class BaseTest {
         // Page init
         basepage =new BasePage(driver);
         mainpage= new MainPage(driver);
+        //
         mainpage.acceptCookies();
         driver.manage().timeouts().implicitlyWait(6, TimeUnit.SECONDS);
         Buffer.ClearBuffer();
-        WebDriverWait wait = new WebDriverWait(driver, 5);
+
 
 
     }

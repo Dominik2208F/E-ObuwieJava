@@ -1,22 +1,14 @@
 package Pages;
-
 import Base.BasePage;
 import Interfaces.Buffer;
 import Interfaces.IHelper;
-import com.sun.media.sound.SoftMidiAudioFileReader;
-import com.sun.org.apache.bcel.internal.generic.RETURN;
-import org.junit.Assert;
-import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
-
-import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.Assert.assertEquals;
+
 
 public class ManufacturerPage extends BasePage implements IHelper {
 

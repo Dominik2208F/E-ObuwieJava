@@ -1,6 +1,5 @@
 package Tests;
 import Base.BaseTest;
-import Pages.ProductPage;
 import org.junit.Assert;
 import org.junit.Test;
 

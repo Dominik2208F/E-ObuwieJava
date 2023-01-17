@@ -1,20 +1,18 @@
 package Pages;
-
 import Base.BasePage;
-import Base.BaseTest;
 import Interfaces.Buffer;
 import Interfaces.IHelper;
 import Interfaces.IWeiters;
-import jdk.jfr.internal.tool.Main;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
+
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class ProductPage extends BasePage implements IHelper, IWeiters {
@@ -46,6 +44,9 @@ public class ProductPage extends BasePage implements IHelper, IWeiters {
     private WebElement StoreAvailability;
     @FindBy(xpath = "//div[@class='availability-sidebar__wrapper']")
     private WebElement StoreSlider;
+    @FindBy(xpath = "(//div[@class='product-image-gallery__main-item']/img)[1]")
+    private List<WebElement>Image;
+
     String CounterBuffer = String.format("Ulubione (%s)", Buffer.GetActualSize());
 
     public String GetCurrentProductPrice() {
@@ -62,6 +63,41 @@ public class ProductPage extends BasePage implements IHelper, IWeiters {
 
     }
 
+    public boolean verifyElementsAreDisplayed(WebElement...x) {
+
+        List<WebElement> list = Arrays.asList(x);
+
+        for (WebElement el : list) {
+
+            if(!el.isDisplayed()){
+               return false;
+            }
+        }
+    return true;
+    }
+
+    public WebElement getFavouriteButton(){
+
+        return FavouriteButton;
+    }
+
+    public WebElement getAddToBasketButton(){
+
+        return AddToBasket;
+    }
+
+    public WebElement getProductAvailability(){
+        return ProductAvailability;
+    }
+
+    public WebElement getFreeSendandReturnTooltip(){
+        return FreeSendandReturnTooltip;
+    }
+
+    public List<WebElement> getImage(){
+
+        return Image;
+    }
     public ProductPage clickOnAddToBasket() {
 
         AddToBasket.click();

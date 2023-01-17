@@ -14,6 +14,7 @@ import static org.junit.Assert.assertTrue;
 
 public interface IHelper {
 
+    // Interface to implement methods when it is required
     default boolean verifyElementExistInList(List<WebElement> elementsList, String expectedValue) {
 
         if(convertWebElementsListToString(elementsList).contains(expectedValue)){
@@ -83,7 +84,6 @@ public interface IHelper {
         } catch (Exception e) {
         }
     }
-
     default List<String> convertWebElementsListToString(List<WebElement> listaofwebelements){
 
         List<String> FilterTextList= new ArrayList<>();
@@ -93,7 +93,6 @@ public interface IHelper {
         }
         return  FilterTextList;
     }
-
     default List<Double>convertWebElementsListToDouble(List<WebElement> listofwebelements){
 
         List<Double> ListofAllPrices = new ArrayList<>();
@@ -104,7 +103,6 @@ public interface IHelper {
         }
             return ListofAllPrices;
     }
-
     default boolean ListAreEqual(List<String>l1, List<String> l2) {
 
             if (l2.equals(l1)) {
@@ -116,7 +114,6 @@ public interface IHelper {
                 return false;
             }
     }
-
     default boolean checkifElementsSizeIsMoreThan0(List<WebElement> x){
 
         if(x.size()==0){
@@ -126,11 +123,9 @@ public interface IHelper {
         }
         return true;
     }
-
     default By ConvertStringToXpath(String elementToFullfillXpath,String xpathInstring){
 
         return By.xpath((String.format(xpathInstring,elementToFullfillXpath)));
     }
-
     WebDriver GetDriver();
 }

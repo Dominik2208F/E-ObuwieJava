@@ -6,6 +6,8 @@ import java.util.List;
 
 public class Buffer {
 
+    // Hashmap is used to "store" current value of Price(or any another element atribute) by a specific key on test to allow than a comparison in Assertion.
+    //Buffer is cleaned up in every test by a default set up in BaseTest
     public static HashMap<String, String > Buffer = new HashMap<String, String>();
 
     public static void ClearBuffer(){
