@@ -3,13 +3,11 @@ package Base;
 import Interfaces.Buffer;
 import Pages.*;
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.jsoup.Connection;
 import org.junit.After;
 import org.junit.Before;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.concurrent.TimeUnit;
 

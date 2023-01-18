@@ -8,11 +8,12 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-public interface IHelper {
+public interface IHelper  {
 
     // Interface to implement methods when it is required
     default boolean verifyElementExistInList(List<WebElement> elementsList, String expectedValue) {
@@ -135,5 +136,35 @@ public interface IHelper {
 
         return By.xpath((String.format(xpathInstring,elementToFullfillXpath)));
     }
+    default boolean verifyElementsFromListAreDisplayed(List<WebElement> x) {
+        int counter=1;
+        for (WebElement el : x) {
+            counter++;
+            new Actions(GetDriver())
+                    .moveToElement(el).perform();
+            if(!el.isDisplayed()){
+
+                System.out.println(" Element number " + counter + "with text "  +  el.getText() + " hasn't been displayed");
+                return false;
+            }
+        }
+        System.out.println("Comments have been displayed");
+        return true;
+    }
+
+    default boolean verifyElementsAreDisplayed(WebElement...x) {
+
+        List<WebElement> list = Arrays.asList(x);
+
+        for (WebElement el : list) {
+
+            if(!el.isDisplayed()){
+                return false;
+            }
+        }
+        return true;
+    }
+
+
     WebDriver GetDriver();
 }

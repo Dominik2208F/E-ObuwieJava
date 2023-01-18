@@ -4,10 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6ad0fbd7-17e6-49ec-a959-040d4af90de3" name="Changes" comment="new tests.">
+    <list default="true" id="6ad0fbd7-17e6-49ec-a959-040d4af90de3" name="Changes" comment="tests, assertions">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Base/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Base/BaseTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/Interfaces/IHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Interfaces/IHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Pages/BasketPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Pages/BasketPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/Pages/ProductPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Pages/ProductPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Tests/BasketPageTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Tests/BasketTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Tests/FavouritePageTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Tests/FavouriteSectionTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/Tests/MainPageTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Tests/MainPageTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/Tests/ProductPageTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Tests/ProductPageTests.java" afterDir="false" />
     </list>
@@ -41,7 +45,7 @@
     </option>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/src/test/java/Tests/BasketPageTests.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/test/java/Tests/BasketTests.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -60,7 +64,23 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;
   }
 }</component>
-  <component name="RunManager" selected="JUnit.MainPageTests.checkHeaders">
+  <component name="RunManager" selected="JUnit.ProductPageTests.checkStoreAvailability">
+    <configuration name="FavouriteSectionTests.deleteProductsFromFavouriteSection" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="E-ObuwiePOPJava-master" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Tests" />
+      <option name="MAIN_CLASS_NAME" value="Tests.FavouriteSectionTests" />
+      <option name="METHOD_NAME" value="deleteProductsFromFavouriteSection" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="MainPageTests.checkHeaders" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="E-ObuwiePOPJava-master" />
       <extension name="coverage">
@@ -77,23 +97,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ManufacturerMenuTests.setPriceRangeBarOnLeftSide" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="E-ObuwiePOPJava-master" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="Tests" />
-      <option name="MAIN_CLASS_NAME" value="Tests.ManufacturerMenuTests" />
-      <option name="METHOD_NAME" value="setPriceRangeBarOnLeftSide" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ProductPageTests.checkIfImagesAreDisplayedOnProductPage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ProductPageTests.checkCommentsSectionIsDisplayed" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="E-ObuwiePOPJava-master" />
       <extension name="coverage">
         <pattern>
@@ -103,13 +107,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="Tests" />
       <option name="MAIN_CLASS_NAME" value="Tests.ProductPageTests" />
-      <option name="METHOD_NAME" value="checkIfImagesAreDisplayedOnProductPage" />
+      <option name="METHOD_NAME" value="checkCommentsSectionIsDisplayed" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProductPageTests.checkLayoutOnProductCard" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ProductPageTests.checkStoreAvailability" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="E-ObuwiePOPJava-master" />
       <extension name="coverage">
         <pattern>
@@ -119,13 +123,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="Tests" />
       <option name="MAIN_CLASS_NAME" value="Tests.ProductPageTests" />
-      <option name="METHOD_NAME" value="checkLayoutOnProductCard" />
+      <option name="METHOD_NAME" value="checkStoreAvailability" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProductPageTests.checkPaymentmethodToolTip" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Tests in E-ObuwiePOPJava-master" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="E-ObuwiePOPJava-master" />
       <extension name="coverage">
         <pattern>
@@ -134,20 +138,18 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="Tests" />
-      <option name="MAIN_CLASS_NAME" value="Tests.ProductPageTests" />
-      <option name="METHOD_NAME" value="checkPaymentmethodToolTip" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ProductPageTests.checkStoreAvailability" />
         <item itemvalue="JUnit.MainPageTests.checkHeaders" />
-        <item itemvalue="JUnit.ProductPageTests.checkPaymentmethodToolTip" />
-        <item itemvalue="JUnit.ProductPageTests.checkIfImagesAreDisplayedOnProductPage" />
-        <item itemvalue="JUnit.ProductPageTests.checkLayoutOnProductCard" />
-        <item itemvalue="JUnit.ManufacturerMenuTests.setPriceRangeBarOnLeftSide" />
+        <item itemvalue="JUnit.Tests in E-ObuwiePOPJava-master" />
+        <item itemvalue="JUnit.FavouriteSectionTests.deleteProductsFromFavouriteSection" />
+        <item itemvalue="JUnit.ProductPageTests.checkCommentsSectionIsDisplayed" />
       </list>
     </recent_temporary>
   </component>
@@ -230,7 +232,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673960817561</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="tests, assertions">
+      <created>1674043901561</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1674043901561</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -254,24 +263,25 @@
     <MESSAGE value="refactoring 2/3" />
     <MESSAGE value="wait,thread sleep delete" />
     <MESSAGE value="new tests." />
-    <option name="LAST_COMMIT_MESSAGE" value="new tests." />
+    <MESSAGE value="tests, assertions" />
+    <option name="LAST_COMMIT_MESSAGE" value="tests, assertions" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/Interfaces/IHelper.java</url>
-          <line>40</line>
+          <line>41</line>
           <option name="timeStamp" value="18" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/Interfaces/IHelper.java</url>
-          <line>84</line>
+          <line>85</line>
           <option name="timeStamp" value="19" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/Interfaces/IHelper.java</url>
-          <line>62</line>
+          <line>63</line>
           <option name="timeStamp" value="20" />
         </line-breakpoint>
       </breakpoints>

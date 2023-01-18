@@ -23,7 +23,7 @@ public class MainPageTests extends BaseTest {
     }
     @Test
     public void checkHeaders()  {
-
+        mainpage.clickOnSaleBanner();
         Assert.assertTrue(mainpage.checkIfListContainsAllExpectedElements(mainpage.GetActualHeaders(),Arrays.asList("NOWOŚCI", "DAMSKIE", "MĘSKIE", "DZIECIĘCE", "SPORT", "AKCESORIA", "PREMIUM", "TOREBKI", "WYPRZEDAŻ")));
         Assert.assertTrue(mainpage.verifyElementExistInList(mainpage.GetActualHeaders(),"WYPRZEDAŻ"));
         }

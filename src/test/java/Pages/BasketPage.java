@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class BasketPage  extends BasePage implements IHelper {
+public class BasketPage extends BasePage implements IHelper {
 
     public BasketPage(WebDriver driver) {
         super(driver);

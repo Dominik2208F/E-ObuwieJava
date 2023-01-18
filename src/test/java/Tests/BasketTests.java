@@ -1,10 +1,12 @@
 package Tests;
 import Base.BaseTest;
 import Interfaces.Buffer;
+import Interfaces.IHelper;
 import org.junit.Assert;
 import org.junit.Test;
+import org.openqa.selenium.WebDriver;
 
-public class BasketPageTests extends BaseTest {
+public class BasketTests extends BaseTest implements IHelper {
 
     @Test //done
     public void addTwoRandomProductToBasketAndCheckSumValueInSummary() throws InterruptedException {
@@ -24,14 +26,13 @@ public class BasketPageTests extends BaseTest {
 
 
         Assert.assertEquals(productPage.GetCurrentProductPrice(), Buffer.GetValueBufferKey("Value1"));
+        Assert.assertTrue(verifyElementsAreDisplayed(productPage.getProductAvailability(), productPage.getFavouriteButton(), productPage.getAddToBasketButton(), productPage.getFreeSendandReturnTooltip()));
 
-        productPage.verifyLayoutOnProductCard().
-                    clickOnAddToBasket().
+                   productPage.clickOnAddToBasket().
                     chooseSizeFromRightList("42");
 
-        basketPage= productPage.gotoBasket();
+        basketPage= productPage.goToBasket();
         mainpage =basketPage.returnToMainpageFromBasket();
-        // mainpage.CloseNewsLetter();
 
         //First Product in Basket
 
@@ -46,12 +47,12 @@ public class BasketPageTests extends BaseTest {
 
 
         Assert.assertEquals(productPage.GetCurrentProductPrice(), Buffer.GetValueBufferKey("Value2"));
+        Assert.assertTrue(verifyElementsAreDisplayed(productPage.getProductAvailability(), productPage.getFavouriteButton(), productPage.getAddToBasketButton(), productPage.getFreeSendandReturnTooltip()));
 
-           productPage.verifyLayoutOnProductCard().
-                clickOnAddToBasket().
+        productPage.clickOnAddToBasket().
                 chooseSizeFromRightList("42");
 
-        basketPage=productPage.gotoBasket();
+        basketPage=productPage.goToBasket();
         basketPage.compareSumInBasketWithLabelPrice();
 
     }
@@ -65,18 +66,21 @@ public class BasketPageTests extends BaseTest {
         productPage =manufacturerPage.chooseProduct("3","Value1");
 
         Assert.assertEquals(productPage.GetCurrentProductPrice(), Buffer.GetValueBufferKey("Value1"));
-        productPage.
-                verifyLayoutOnProductCard();
+        Assert.assertTrue(verifyElementsAreDisplayed(productPage.getProductAvailability(), productPage.getFavouriteButton(), productPage.getAddToBasketButton(), productPage.getFreeSendandReturnTooltip()));
 
         mainpage.CloseNewsLetter();
 
         productPage.
                 clickOnAddToBasket().
                 chooseSizeFromRightList("32");
-        basketPage= productPage.gotoBasket();
+        basketPage= productPage.goToBasket();
 
 
     }
 
 
+    @Override
+    public WebDriver GetDriver() {
+        return this.driver;
+    }
 }

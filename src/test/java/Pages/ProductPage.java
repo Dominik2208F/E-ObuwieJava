@@ -7,12 +7,11 @@ import org.junit.Assert;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class ProductPage extends BasePage implements IHelper, IWeiters {
@@ -46,13 +45,13 @@ public class ProductPage extends BasePage implements IHelper, IWeiters {
     private WebElement StoreSlider;
     @FindBy(xpath = "(//div[@class='product-image-gallery__main-item']/img)[1]")
     private List<WebElement>Image;
-
     @FindBy(xpath="//button[@class='e-tooltip-button product-right__availability-methods']/span")
     private WebElement PaymentTooltip;
-
     @FindBy(xpath="(//div[@class='content-tooltip-extra__content'])[1]/div/following-sibling::div")
     private List<WebElement> PaymentAvailableMethods;
 
+    @FindBy(xpath="//ul[@id='customer-reviews']/li/p[@class='product-review-item__review']")
+    private List <WebElement> CommentsFromCustomers;
     String CounterBuffer = String.format("Ulubione (%s)", Buffer.GetActualSize());
 
     public String GetCurrentProductPrice() {
@@ -60,26 +59,20 @@ public class ProductPage extends BasePage implements IHelper, IWeiters {
         return ProductPrice.getText().replace("zł", " ");
     }
 
-    public ProductPage verifyLayoutOnProductCard() {
-        FavouriteButton.isDisplayed();
-        AddToBasket.isDisplayed();
-        ProductAvailability.isDisplayed();
-        FreeSendandReturnTooltip.isDisplayed();
-        return this;
-
-    }
-
-    public boolean verifyElementsAreDisplayed(WebElement...x) {
-
-        List<WebElement> list = Arrays.asList(x);
-
-        for (WebElement el : list) {
-
+    public boolean verifyElementsFromListAreDisplayed(List<WebElement> x) {
+        int counter=1;
+        for (WebElement el : x) {
+            counter++;
+            new Actions(driver)
+                    .moveToElement(el).perform();
             if(!el.isDisplayed()){
-               return false;
+
+                System.out.println(" Element number " + counter + "with text "  +  el.getText() + " hasn't been displayed");
+                return false;
             }
         }
-    return true;
+        System.out.println("Comments have been displayed");
+        return true;
     }
 
     public WebElement getFavouriteButton(){
@@ -114,10 +107,9 @@ public class ProductPage extends BasePage implements IHelper, IWeiters {
         wait.until(ExpectedConditions.visibilityOf(SizeListPickerList));
         clickEqualsListElement(ListofSizePickerList, x);
         return this;
-
     }
 
-    public BasketPage gotoBasket() {
+    public BasketPage goToBasket() {
 
         GotoBasket.click();
         return new BasketPage(driver);
@@ -139,7 +131,7 @@ public class ProductPage extends BasePage implements IHelper, IWeiters {
         return new FavouritePage(driver);
     }
 
-    public ProductPage clickonStoreAvailability() {
+    public ProductPage clickOnStoreAvailability() {
 
         StoreAvailability.click();
         return this;
@@ -157,6 +149,12 @@ public class ProductPage extends BasePage implements IHelper, IWeiters {
    public List<WebElement> getListOfPaymentMethods(){
 
         return PaymentAvailableMethods;
+   }
+
+   public List<WebElement> getListOfCommnents(){
+
+        return CommentsFromCustomers;
+
    }
 
     @Override

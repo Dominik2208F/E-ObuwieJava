@@ -18,11 +18,11 @@ public class ProductPageTests extends BaseTest implements IHelper {
         mainpage.mouseHoveronChildCategory();
         manufacturerPage=mainpage.clickOnSneakearsCategoryOnDropDownList();
         mainpage.clickOnSaleBanner();
-        productPage= manufacturerPage.chooseProduct("10","Value1");
+        productPage= manufacturerPage.chooseProduct("11","Value1");
         mainpage.CloseNewsLetter();
 
         productPage.
-                clickonStoreAvailability().
+                clickOnStoreAvailability().
                 chooseSizeFromRightList("36");
 
         Assert.assertTrue("Elements is not displayed",productPage.GetStoreAvailability().isDisplayed());
@@ -30,7 +30,7 @@ public class ProductPageTests extends BaseTest implements IHelper {
     }
 
     @Test
-    public void checkLayoutOnProductCard() throws InterruptedException {
+    public void checkVisibilityOfButtonsOnProductCard() throws InterruptedException {
 
         mainpage.mouseHoveronChildCategory();
         manufacturerPage=mainpage.clickOnSneakearsCategoryOnDropDownList();
@@ -38,7 +38,7 @@ public class ProductPageTests extends BaseTest implements IHelper {
         productPage= manufacturerPage.chooseProduct("15","Value1");
         mainpage.CloseNewsLetter();
 
-        Assert.assertTrue(productPage.verifyElementsAreDisplayed(productPage.getProductAvailability(), productPage.getFavouriteButton(), productPage.getAddToBasketButton(), productPage.getFreeSendandReturnTooltip()));
+        Assert.assertTrue(verifyElementsAreDisplayed(productPage.getProductAvailability(), productPage.getFavouriteButton(), productPage.getAddToBasketButton(), productPage.getFreeSendandReturnTooltip()));
 
     }
 
@@ -54,7 +54,7 @@ public class ProductPageTests extends BaseTest implements IHelper {
     }
 
     @Test
-    public void checkPaymentmethodToolTip() throws InterruptedException {
+    public void checkPaymentMethodToolTip() throws InterruptedException {
 
         mainpage.mouseHoveronChildCategory();
         manufacturerPage=mainpage.clickOnSneakearsCategoryOnDropDownList();
@@ -67,9 +67,20 @@ public class ProductPageTests extends BaseTest implements IHelper {
     }
 
 
+    @Test
+    public void checkCommentsSectionIsDisplayed() throws InterruptedException {
+
+        mainpage.mouseHoveronChildCategory();
+        manufacturerPage=mainpage.clickOnSneakearsCategoryOnDropDownList();
+        mainpage.clickOnSaleBanner();
+        productPage= manufacturerPage.chooseProduct("26","Value1");
+        mainpage.CloseNewsLetter();
+        Assert.assertTrue(verifyElementsFromListAreDisplayed(productPage.getListOfCommnents()));
+    }
 
 
 
+//interface override to methods
     @Override
     public boolean checkifElementsSizeIsMoreThan0(List<WebElement> x) {
         return IHelper.super.checkifElementsSizeIsMoreThan0(x);
@@ -77,6 +88,6 @@ public class ProductPageTests extends BaseTest implements IHelper {
 
     @Override
     public WebDriver GetDriver() {
-        return null;
+        return super.driver;
     }
 }
