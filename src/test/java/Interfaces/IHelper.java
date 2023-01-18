@@ -17,28 +17,36 @@ public interface IHelper {
     // Interface to implement methods when it is required
     default boolean verifyElementExistInList(List<WebElement> elementsList, String expectedValue) {
 
-        if(convertWebElementsListToString(elementsList).contains(expectedValue)){
-            System.out.println("value in the List of elements");
+        if (convertWebElementsListToString(elementsList).contains(expectedValue)) {
+            System.out.println("value is in the List of elements");
             return true;
-        }
-        else{
+        } else {
             System.out.println("no value in the list of elements");
             return false;
         }
     }
-    default void checkIfListContainsAllExpectedElements(List<WebElement> listtoSearch, List<String> listaexpected) {
+    default boolean checkIfListContainsAllExpectedElements(List<WebElement> listtoSearch, List<String> listaexpected) {
 
-        for(int repeat=0; repeat<=3;repeat++) {  //stale reference exception
+        for (int repeat = 0; repeat <= 3; repeat++) {  //stale reference exception
+
             try {
-                for (int i = 0; i < convertWebElementsListToString(listtoSearch).size(); i++) {
-                    assertEquals("Actual Headers are not correct on" +listaexpected.get(i), listaexpected.get(i), convertWebElementsListToString(listtoSearch).get(i));
+                List<String> convertedlist=convertWebElementsListToString(listtoSearch);
+                if (convertedlist.equals(listaexpected)) {
+                    System.out.println("Actual Values are the same");
+                    return true;
+
+
+                } else {
+                    convertedlist.removeAll(listaexpected);
+                    System.out.println("Value are not the same - Values from website that are different than expected " + convertedlist);
+                    return false;
                 }
-                System.out.println("Actual Values are correct");
-                break;
+
             } catch (Exception x) {
                 System.out.println("Elements haven't been displayed");
             }
         }
+        return true;
     }
     default boolean clickEqualsListElement(List<WebElement> list, String value) {
 

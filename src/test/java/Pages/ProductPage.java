@@ -47,6 +47,12 @@ public class ProductPage extends BasePage implements IHelper, IWeiters {
     @FindBy(xpath = "(//div[@class='product-image-gallery__main-item']/img)[1]")
     private List<WebElement>Image;
 
+    @FindBy(xpath="//button[@class='e-tooltip-button product-right__availability-methods']/span")
+    private WebElement PaymentTooltip;
+
+    @FindBy(xpath="(//div[@class='content-tooltip-extra__content'])[1]/div/following-sibling::div")
+    private List<WebElement> PaymentAvailableMethods;
+
     String CounterBuffer = String.format("Ulubione (%s)", Buffer.GetActualSize());
 
     public String GetCurrentProductPrice() {
@@ -142,6 +148,16 @@ public class ProductPage extends BasePage implements IHelper, IWeiters {
     public WebElement GetStoreAvailability() {
         return StoreSlider;
     }
+
+    public ProductPage clickOnPaymentTooltipButton(){
+
+        PaymentTooltip.click();
+        return this;
+    }
+   public List<WebElement> getListOfPaymentMethods(){
+
+        return PaymentAvailableMethods;
+   }
 
     @Override
     public WebDriver GetDriver() {

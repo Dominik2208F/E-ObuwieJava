@@ -6,6 +6,7 @@ import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import java.util.Arrays;
 import java.util.List;
 
 public class ProductPageTests extends BaseTest implements IHelper {
@@ -42,7 +43,7 @@ public class ProductPageTests extends BaseTest implements IHelper {
     }
 
     @Test
-    public void checkIfImagesAreDisplayedOnProductPage() throws InterruptedException {
+    public void checkImagesDisplayedOnProductPage() throws InterruptedException {
 
         mainpage.mouseHoveronChildCategory();
         manufacturerPage=mainpage.clickOnSneakearsCategoryOnDropDownList();
@@ -51,6 +52,22 @@ public class ProductPageTests extends BaseTest implements IHelper {
         mainpage.CloseNewsLetter();
         Assert.assertTrue(checkifElementsSizeIsMoreThan0(productPage.getImage()));
     }
+
+    @Test
+    public void checkPaymentmethodToolTip() throws InterruptedException {
+
+        mainpage.mouseHoveronChildCategory();
+        manufacturerPage=mainpage.clickOnSneakearsCategoryOnDropDownList();
+        mainpage.clickOnSaleBanner();
+        productPage= manufacturerPage.chooseProduct("26","Value1");
+        mainpage.CloseNewsLetter();
+        productPage.clickOnPaymentTooltipButton();
+
+        Assert.assertTrue(mainpage.checkIfListContainsAllExpectedElements(productPage.getListOfPaymentMethods(), Arrays.asList("Szybki przelew", "Blik", "Płatne przy odbiorze", "PayPal", "PayPo", "Przelew bankowy")));
+    }
+
+
+
 
 
     @Override
