@@ -15,7 +15,7 @@ import static org.junit.Assert.assertTrue;
 
 public interface IHelper  {
 
-    // Interface to implement methods when it is required
+    // Interface to implement methods when it is required on TestPage
     default boolean verifyElementExistInList(List<WebElement> elementsList, String expectedValue) {
 
         if (convertWebElementsListToString(elementsList).contains(expectedValue)) {
