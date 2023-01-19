@@ -95,7 +95,7 @@ public class MainPage extends BasePage implements IHelper {
         return new ManufacturerPage(driver);
     }
     public MainPage mouseHoverOnMenCategory(){
-        wait.until(ExpectedConditions.elementToBeClickable(MensLabelHeaders));
+        wait.until(ExpectedConditions.visibilityOf(MensLabelHeaders));
         mouseHover(MensLabelHeaders);
         return this;
     }
@@ -107,7 +107,7 @@ public class MainPage extends BasePage implements IHelper {
         clickOnDropDownList(SneakearsChild);
         return new ManufacturerPage(driver);
     }
-    public MainPage mouseHoveronChildCategory() {
+    public MainPage mouseHoverOnChildCategory() {
         mouseHover(ChildLabelHeaders);
         return this;
     }

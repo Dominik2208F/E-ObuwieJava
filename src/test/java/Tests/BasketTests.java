@@ -9,7 +9,7 @@ import org.openqa.selenium.WebDriver;
 public class BasketTests extends BaseTest implements IHelper {
 
     @Test //done
-    public void addTwoRandomProductToBasketAndCheckSumValueInSummary() {
+    public void TwoProductToBasketCheckSummary() {
         mainpage.
                 mouseHoverOnMenCategory();
 
@@ -32,7 +32,7 @@ public class BasketTests extends BaseTest implements IHelper {
                     chooseSizeFromRightList("42");
 
         basketPage= productPage.goToBasket();
-        mainpage =basketPage.returnToMainpageFromBasket();
+        mainpage =basketPage.returnToMainPageFromBasket();
 
         //First Product in Basket
 
@@ -59,7 +59,7 @@ public class BasketTests extends BaseTest implements IHelper {
     @Test //done
     public void checkAddingProductToBasket() {
         mainpage.
-                mouseHoveronChildCategory();
+                mouseHoverOnChildCategory();
 
         manufacturerPage=mainpage.clickOnSneakearsCategoryOnDropDownList();
 

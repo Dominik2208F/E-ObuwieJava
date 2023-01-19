@@ -14,7 +14,6 @@ public class FavouriteSectionTests extends BaseTest {
         manufacturerPage= mainpage.clickOnSztybletyDropDownList();
         mainpage.clickOnSaleBanner();
         productPage= manufacturerPage.chooseProduct("2", "Value1");
-      //  manufacturerPage.clickOnSaleBanner();
         mainpage.CloseNewsLetter();
 
         productPage.
@@ -45,7 +44,6 @@ public class FavouriteSectionTests extends BaseTest {
         manufacturerPage= mainpage.clickOnSztybletyDropDownList();
         mainpage.clickOnSaleBanner();
         productPage= manufacturerPage.chooseProduct("2", "Value1");
-        //  manufacturerPage.clickOnSaleBanner();
         mainpage.CloseNewsLetter();
 
         productPage.

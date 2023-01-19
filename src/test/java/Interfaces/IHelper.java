@@ -57,7 +57,7 @@ public interface IHelper  {
                 return true;
             }
         }
-        System.out.println("Elements hasn't been found in the list of provided elements.");
+        System.out.println("Element hasn't been found in the list of provided elements.");
         return false;
     }
     default void clickIn(WebElement element, Integer... time) {
@@ -123,7 +123,7 @@ public interface IHelper  {
                 return false;
             }
     }
-    default boolean checkifElementsSizeIsMoreThan0(List<WebElement> x){
+    default boolean checkIfElementsSizeIsMoreThan0(List<WebElement> x){
 
         if(x.size()==0){
 

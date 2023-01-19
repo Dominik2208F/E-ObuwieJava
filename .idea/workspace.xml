@@ -4,12 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6ad0fbd7-17e6-49ec-a959-040d4af90de3" name="Changes" comment="fixes">
+    <list default="true" id="6ad0fbd7-17e6-49ec-a959-040d4af90de3" name="Changes" comment=".">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Pages/FavouritePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Pages/FavouritePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Interfaces/IHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Interfaces/IHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Pages/BasketPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Pages/BasketPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/Pages/MainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Pages/MainPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/Pages/ManufacturerPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Pages/ManufacturerPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Pages/ProductPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Pages/ProductPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/Tests/BasketTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Tests/BasketTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/Tests/FavouriteSectionTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Tests/FavouriteSectionTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/Tests/ManufacturerMenuTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Tests/ManufacturerMenuTests.java" afterDir="false" />
@@ -64,7 +64,7 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;
   }
 }</component>
-  <component name="RunManager" selected="JUnit.ManufacturerMenuTests.setPriceRangeBarOnLeftSide">
+  <component name="RunManager" selected="JUnit.ManufacturerMenuTests.setWidthRangeBatonLeftSide">
     <configuration name="BasketTests.addTwoRandomProductToBasketAndCheckSumValueInSummary" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="E-ObuwiePOPJava-master" />
       <extension name="coverage">
@@ -97,22 +97,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MainPageTests.checkHeaders" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="E-ObuwiePOPJava-master" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="Tests" />
-      <option name="MAIN_CLASS_NAME" value="Tests.MainPageTests" />
-      <option name="METHOD_NAME" value="checkHeaders" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="ManufacturerMenuTests.setPriceRangeBarOnLeftSide" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="E-ObuwiePOPJava-master" />
       <extension name="coverage">
@@ -124,6 +108,22 @@
       <option name="PACKAGE_NAME" value="Tests" />
       <option name="MAIN_CLASS_NAME" value="Tests.ManufacturerMenuTests" />
       <option name="METHOD_NAME" value="setPriceRangeBarOnLeftSide" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ManufacturerMenuTests.setWidthRangeBatonLeftSide" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="E-ObuwiePOPJava-master" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Tests" />
+      <option name="MAIN_CLASS_NAME" value="Tests.ManufacturerMenuTests" />
+      <option name="METHOD_NAME" value="setWidthRangeBatonLeftSide" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -147,11 +147,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ManufacturerMenuTests.setWidthRangeBatonLeftSide" />
         <item itemvalue="JUnit.ManufacturerMenuTests.setPriceRangeBarOnLeftSide" />
         <item itemvalue="JUnit.FavouriteSectionTests.deleteProductsToFavourite" />
         <item itemvalue="JUnit.BasketTests.addTwoRandomProductToBasketAndCheckSumValueInSummary" />
         <item itemvalue="JUnit.ProductPageTests.checkStoreAvailability" />
-        <item itemvalue="JUnit.MainPageTests.checkHeaders" />
       </list>
     </recent_temporary>
   </component>
@@ -255,7 +255,21 @@
       <option name="project" value="LOCAL" />
       <updated>1674137558961</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="get rid of sleeps">
+      <created>1674139115106</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1674139115106</updated>
+    </task>
+    <task id="LOCAL-00015" summary=".">
+      <created>1674139141817</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1674139141817</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -283,7 +297,9 @@
     <MESSAGE value="Test changes" />
     <MESSAGE value="Tests changes" />
     <MESSAGE value="fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixes" />
+    <MESSAGE value="get rid of sleeps" />
+    <MESSAGE value="." />
+    <option name="LAST_COMMIT_MESSAGE" value="." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -292,16 +308,6 @@
           <url>file://$PROJECT_DIR$/src/test/java/Interfaces/IHelper.java</url>
           <line>41</line>
           <option name="timeStamp" value="18" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/Interfaces/IHelper.java</url>
-          <line>85</line>
-          <option name="timeStamp" value="19" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/Interfaces/IHelper.java</url>
-          <line>63</line>
-          <option name="timeStamp" value="20" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/Pages/MainPage.java</url>
@@ -315,16 +321,10 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/Pages/ManufacturerPage.java</url>
-          <line>212</line>
+          <line>218</line>
           <option name="timeStamp" value="24" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
-    <watches-manager>
-      <configuration name="JUnit">
-        <watch expression="convertWebElementsListToString(listtoSearch)" />
-        <watch expression="convertWebElementsListToString(listtoSearch).removeAll(listaexpected)" />
-      </configuration>
-    </watches-manager>
   </component>
 </project>

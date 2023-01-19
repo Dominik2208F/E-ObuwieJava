@@ -22,7 +22,7 @@ public class BasketPage extends BasePage implements IHelper {
     private List<WebElement> Reducedprice;
     @FindBy(xpath="//*[contains(text(),'Łącznie')]/parent::span/following-sibling::span/child::span")
     private WebElement summaryPriceLabel;
-    public MainPage returnToMainpageFromBasket() {
+    public MainPage returnToMainPageFromBasket() {
 
 
         ContinueShoopingButton.click();

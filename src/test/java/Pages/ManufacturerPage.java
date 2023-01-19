@@ -5,6 +5,7 @@ import Interfaces.IHelper;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import java.util.List;
 
@@ -58,7 +59,12 @@ public class ManufacturerPage extends BasePage implements IHelper {
     private List<WebElement> NewsLebel;
     @FindBy(xpath = "(//a[contains(text(),'Nowość')])[7]")
     private WebElement NewButton;
-
+   @FindAll
+            ({
+                    @FindBy(xpath="(//span[@class='current-filters__text current-filters__text--value'])[2]"),
+                    @FindBy(xpath= "(//span[@class='current-filters__text current-filters__text--value'])[1]"),
+            })
+     private List<WebElement> FilterSummary;
 
     //String are used to choose element on website be argument in function(1,2,3). No need to do a path related to every product on ManufacturerPage.
     String DropdownList = "//button[@data-href-slug='%s']";
@@ -220,6 +226,10 @@ public class ManufacturerPage extends BasePage implements IHelper {
         return this;
     }
 
+    public List<WebElement> getListOfFilterSummarry(){
+
+        return FilterSummary;
+    }
 
     @Override
     public WebDriver GetDriver() {

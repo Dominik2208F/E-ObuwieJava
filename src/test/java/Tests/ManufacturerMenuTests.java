@@ -25,19 +25,22 @@ public class ManufacturerMenuTests extends BaseTest {
     }
 
     @Test //done
-    public void setkWidthRangeBaronLeftSide()  {
-
+    public void setWidthRangeBatonLeftSide()  {
+        mainpage.clickOnSaleBanner();
         mainpage.mouseHoverOnMenCategory();
         manufacturerPage = mainpage.clickOnTrampkiCategoryOnDropDownList();
 
         mainpage.clickOnSaleBanner();
         manufacturerPage.setWidthOfShoes("Standardowy", "Szeroki");
 
+        Assert.assertTrue(manufacturerPage.verifyElementExistInList(manufacturerPage.getListOfFilterSummarry(),"Standardowy"));
+        Assert.assertTrue(manufacturerPage.verifyElementExistInList(manufacturerPage.getListOfFilterSummarry(),"Szeroki"));
+
     }
 
     @Test //działa
 
-    public void setNewLebel()  {
+    public void setNewLabels()  {
         mainpage.mouseHoverOnMenCategory();
         manufacturerPage = mainpage.clickOnTrampkiCategoryOnDropDownList();
 
@@ -50,7 +53,7 @@ public class ManufacturerMenuTests extends BaseTest {
 
 
     @Test //done //działa
-    public void lookForMaaVansNumber40ByTopMarkTab() {
+    public void SearchingVansNumber40ByTopMarkTabWomen() {
 
         mainpage.clickOnSaleBanner();
         manufacturerPage = mainpage.selectTopMark("Vans");
@@ -68,7 +71,7 @@ public class ManufacturerMenuTests extends BaseTest {
     }
 
     @Test //działa
-    public void lookForManVansNumber42BySearchBox() {
+    public void SearchingVansNumber42BySearchBoxMen() {
         mainpage.clickOnSaleBanner();
         manufacturerPage = mainpage.typeInSearchBox("Vans");
         manufacturerPage.chooseSexCategory("Męskie");
@@ -86,7 +89,7 @@ public class ManufacturerMenuTests extends BaseTest {
     }
 
     @Test //działa
-    public void lookForManVansNumber42ByHeaders() {
+    public void SearchingVansNumber42ByHeaders() {
 
         mainpage.mouseHoverOnMenCategory();
         manufacturerPage = mainpage.clickOnTrampkiCategoryOnDropDownList();

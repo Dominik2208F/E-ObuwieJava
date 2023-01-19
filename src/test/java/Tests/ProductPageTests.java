@@ -15,7 +15,7 @@ public class ProductPageTests extends BaseTest implements IHelper {
     public void checkStoreAvailability(){
 
 
-        mainpage.mouseHoveronChildCategory();
+        mainpage.mouseHoverOnChildCategory();
         manufacturerPage=mainpage.clickOnSneakearsCategoryOnDropDownList();
         mainpage.clickOnSaleBanner();
         productPage= manufacturerPage.chooseProduct("11","Value1");
@@ -32,7 +32,7 @@ public class ProductPageTests extends BaseTest implements IHelper {
     @Test
     public void checkVisibilityOfButtonsOnProductCard(){
 
-        mainpage.mouseHoveronChildCategory();
+        mainpage.mouseHoverOnChildCategory();
         manufacturerPage=mainpage.clickOnSneakearsCategoryOnDropDownList();
         mainpage.clickOnSaleBanner();
         productPage= manufacturerPage.chooseProduct("15","Value1");
@@ -45,18 +45,18 @@ public class ProductPageTests extends BaseTest implements IHelper {
     @Test
     public void checkImagesDisplayedOnProductPage()  {
 
-        mainpage.mouseHoveronChildCategory();
+        mainpage.mouseHoverOnChildCategory();
         manufacturerPage=mainpage.clickOnSneakearsCategoryOnDropDownList();
         mainpage.clickOnSaleBanner();
         productPage= manufacturerPage.chooseProduct("15","Value1");
         mainpage.CloseNewsLetter();
-        Assert.assertTrue(checkifElementsSizeIsMoreThan0(productPage.getImage()));
+        Assert.assertTrue(checkIfElementsSizeIsMoreThan0(productPage.getImage()));
     }
 
     @Test
     public void checkPaymentMethodToolTip() {
 
-        mainpage.mouseHoveronChildCategory();
+        mainpage.mouseHoverOnChildCategory();
         manufacturerPage=mainpage.clickOnSneakearsCategoryOnDropDownList();
         mainpage.clickOnSaleBanner();
         productPage= manufacturerPage.chooseProduct("26","Value1");
@@ -70,7 +70,7 @@ public class ProductPageTests extends BaseTest implements IHelper {
     @Test
     public void checkCommentsSectionIsDisplayed(){
 
-        mainpage.mouseHoveronChildCategory();
+        mainpage.mouseHoverOnChildCategory();
         manufacturerPage=mainpage.clickOnSneakearsCategoryOnDropDownList();
         mainpage.clickOnSaleBanner();
         productPage= manufacturerPage.chooseProduct("26","Value1");
@@ -82,8 +82,8 @@ public class ProductPageTests extends BaseTest implements IHelper {
 
 //interface override to methods
     @Override
-    public boolean checkifElementsSizeIsMoreThan0(List<WebElement> x) {
-        return IHelper.super.checkifElementsSizeIsMoreThan0(x);
+    public boolean checkIfElementsSizeIsMoreThan0(List<WebElement> x) {
+        return IHelper.super.checkIfElementsSizeIsMoreThan0(x);
     }
 
     @Override
