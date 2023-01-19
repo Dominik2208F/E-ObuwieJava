@@ -19,7 +19,6 @@ public interface IWeiters  {
             System.out.println("Positive verification - element is visible: " + element);
         }
     }
-
     default void elementsAreNotEmpty(List<WebElement> elements) {
         new WebDriverWait(GetDriver(), 3).until(ExpectedConditions.visibilityOfAllElements(elements));
         for (WebElement element : elements) {
@@ -27,12 +26,10 @@ public interface IWeiters  {
             System.out.println("Positive verification - element is not empty and has value: " + element.getText() + ". Element: " + element);
         }
     }
-
     default boolean textOfElementIsEquals(WebElement element, String text) {
         new WebDriverWait(GetDriver(), 3).until(ExpectedConditions.visibilityOf(element));
         return element.getText().equals(text);
     }
-
     default void waitforElementTextWillBeChanged(WebElement element,String textTobeChanged){
 
         while(!textOfElementIsEquals(element,textTobeChanged)){

@@ -151,7 +151,6 @@ public interface IHelper  {
         System.out.println("Comments have been displayed");
         return true;
     }
-
     default boolean verifyElementsAreDisplayed(WebElement...x) {
 
         List<WebElement> list = Arrays.asList(x);

@@ -4,16 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6ad0fbd7-17e6-49ec-a959-040d4af90de3" name="Changes" comment="tests, assertions">
+    <list default="true" id="6ad0fbd7-17e6-49ec-a959-040d4af90de3" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/Base/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Base/BaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Interfaces/Buffer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Interfaces/Buffer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/Interfaces/IHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Interfaces/IHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Pages/BasketPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Pages/BasketPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Interfaces/IWeiters.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Interfaces/IWeiters.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Pages/FavouritePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Pages/FavouritePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Pages/MainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Pages/MainPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Pages/ManufacturerPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Pages/ManufacturerPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/Pages/ProductPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Pages/ProductPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Tests/BasketPageTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Tests/BasketTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Tests/FavouritePageTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Tests/FavouriteSectionTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Tests/MainPageTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Tests/MainPageTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Tests/ProductPageTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Tests/ProductPageTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +64,7 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;
   }
 }</component>
-  <component name="RunManager" selected="JUnit.ProductPageTests.checkStoreAvailability">
+  <component name="RunManager" selected="JUnit.FavouriteSectionTests.deleteProductsToFavourite">
     <configuration name="FavouriteSectionTests.deleteProductsFromFavouriteSection" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="E-ObuwiePOPJava-master" />
       <extension name="coverage">
@@ -81,6 +81,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="FavouriteSectionTests.deleteProductsToFavourite" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="E-ObuwiePOPJava-master" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Tests" />
+      <option name="MAIN_CLASS_NAME" value="Tests.FavouriteSectionTests" />
+      <option name="METHOD_NAME" value="deleteProductsToFavourite" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="MainPageTests.checkHeaders" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="E-ObuwiePOPJava-master" />
       <extension name="coverage">
@@ -92,22 +108,6 @@
       <option name="PACKAGE_NAME" value="Tests" />
       <option name="MAIN_CLASS_NAME" value="Tests.MainPageTests" />
       <option name="METHOD_NAME" value="checkHeaders" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ProductPageTests.checkCommentsSectionIsDisplayed" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="E-ObuwiePOPJava-master" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="Tests" />
-      <option name="MAIN_CLASS_NAME" value="Tests.ProductPageTests" />
-      <option name="METHOD_NAME" value="checkCommentsSectionIsDisplayed" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -145,11 +145,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.FavouriteSectionTests.deleteProductsToFavourite" />
         <item itemvalue="JUnit.ProductPageTests.checkStoreAvailability" />
         <item itemvalue="JUnit.MainPageTests.checkHeaders" />
         <item itemvalue="JUnit.Tests in E-ObuwiePOPJava-master" />
         <item itemvalue="JUnit.FavouriteSectionTests.deleteProductsFromFavouriteSection" />
-        <item itemvalue="JUnit.ProductPageTests.checkCommentsSectionIsDisplayed" />
       </list>
     </recent_temporary>
   </component>
@@ -239,7 +239,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674043901561</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Tests changes">
+      <created>1674052460711</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1674052460711</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -264,7 +271,9 @@
     <MESSAGE value="wait,thread sleep delete" />
     <MESSAGE value="new tests." />
     <MESSAGE value="tests, assertions" />
-    <option name="LAST_COMMIT_MESSAGE" value="tests, assertions" />
+    <MESSAGE value="Test changes" />
+    <MESSAGE value="Tests changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Tests changes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

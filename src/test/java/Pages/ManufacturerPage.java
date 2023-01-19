@@ -88,15 +88,6 @@ public class ManufacturerPage extends BasePage implements IHelper {
         clickEqualsListElement(LeftFiiferSize, value);
         return this;
     }
-/*
-    public ManufacturerPage verifyFilterLabel(String... x) {
-        convertWebElementsListToString(getFilterHomeTop());
-        for (int i = 0; i < convertWebElementsListToString(FilterHomeTop).size(); i++)
-            assertEquals("Filter option are not correct", convertWebElementsListToString(getFilterHomeTop()).get(i), x[i]);
-        return this;
-    }
-
-*/
 
     public List<WebElement> getFilterHomeTop() {
 

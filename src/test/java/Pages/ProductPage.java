@@ -49,7 +49,6 @@ public class ProductPage extends BasePage implements IHelper, IWeiters {
     private WebElement PaymentTooltip;
     @FindBy(xpath="(//div[@class='content-tooltip-extra__content'])[1]/div/following-sibling::div")
     private List<WebElement> PaymentAvailableMethods;
-
     @FindBy(xpath="//ul[@id='customer-reviews']/li/p[@class='product-review-item__review']")
     private List <WebElement> CommentsFromCustomers;
     String CounterBuffer = String.format("Ulubione (%s)", Buffer.GetActualSize());
@@ -57,22 +56,6 @@ public class ProductPage extends BasePage implements IHelper, IWeiters {
     public String GetCurrentProductPrice() {
 
         return ProductPrice.getText().replace("zł", " ");
-    }
-
-    public boolean verifyElementsFromListAreDisplayed(List<WebElement> x) {
-        int counter=1;
-        for (WebElement el : x) {
-            counter++;
-            new Actions(driver)
-                    .moveToElement(el).perform();
-            if(!el.isDisplayed()){
-
-                System.out.println(" Element number " + counter + "with text "  +  el.getText() + " hasn't been displayed");
-                return false;
-            }
-        }
-        System.out.println("Comments have been displayed");
-        return true;
     }
 
     public WebElement getFavouriteButton(){

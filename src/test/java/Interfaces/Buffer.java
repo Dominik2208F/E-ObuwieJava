@@ -14,22 +14,18 @@ public class Buffer {
 
         Buffer.clear();
     }
-
     public static void SetValueInBuffer(String key, String value){
 
         Buffer.put(key,value);
     }
-
     public static String  GetValueBufferKey(String key){
 
       return Buffer.get(key);
     }
-
     public static int GetActualSize(){
 
         return Buffer.size();
     }
-
     public static List<String>  GetValue(){
 
        List<String> valuesFromHashMap= new ArrayList<>();

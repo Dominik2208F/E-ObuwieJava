@@ -4,6 +4,8 @@ import Interfaces.IHelper;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+
 import java.util.List;
 import static Pages.ProductPage.FavouriteLink;
 
@@ -22,7 +24,7 @@ public class FavouritePage extends BasePage implements IHelper {
 
             if (we.isDisplayed()) {
                 we.click();
-                Thread.sleep(2000);
+               wait.until(ExpectedConditions.invisibilityOf(we));
             }
         }
         return this;

@@ -50,13 +50,6 @@ public class MainPage extends BasePage implements IHelper {
     @FindBy(id = "newsletter_banner_exit_salomon")
     private WebElement Banner;
 
-    //public MainPage headersVerification(String... listaheaders) throws InterruptedException {
-    //    Thread.sleep(5000);
-    //    Arrays.asList( listaheaders);
-   //     checkIfListContainsAllExpectedElements(ActualHeadersPath,Arrays.asList( listaheaders));
-   //     return this;
-   // }
-
     public List<WebElement> GetActualHeaders(){
 
         return ActualHeadersPath;
