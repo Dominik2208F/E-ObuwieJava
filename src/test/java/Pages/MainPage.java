@@ -60,7 +60,6 @@ public class MainPage extends BasePage implements IHelper {
             if (Banner.isDisplayed()) {
                 Banner.click();
             }
-            Thread.sleep(2000);
         } catch (Exception e) {
             System.out.println("Sales banner has not been displayed");
         }
@@ -95,8 +94,8 @@ public class MainPage extends BasePage implements IHelper {
         }
         return new ManufacturerPage(driver);
     }
-    public MainPage mouseHoverOnMenCategory() throws InterruptedException {
-        Thread.sleep(3000);
+    public MainPage mouseHoverOnMenCategory(){
+        wait.until(ExpectedConditions.elementToBeClickable(MensLabelHeaders));
         mouseHover(MensLabelHeaders);
         return this;
     }
@@ -108,14 +107,11 @@ public class MainPage extends BasePage implements IHelper {
         clickOnDropDownList(SneakearsChild);
         return new ManufacturerPage(driver);
     }
-    public MainPage mouseHoveronChildCategory() throws InterruptedException {
-
-        Thread.sleep(2000);
+    public MainPage mouseHoveronChildCategory() {
         mouseHover(ChildLabelHeaders);
         return this;
     }
     public ManufacturerPage clickOnSztybletyDropDownList() {
-
         clickOnDropDownList(SztybletyChooseDropDown);
      return new ManufacturerPage(driver);
 

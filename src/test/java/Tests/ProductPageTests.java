@@ -12,7 +12,7 @@ import java.util.List;
 public class ProductPageTests extends BaseTest implements IHelper {
 
     @Test
-    public void checkStoreAvailability() throws InterruptedException {
+    public void checkStoreAvailability(){
 
 
         mainpage.mouseHoveronChildCategory();
@@ -30,7 +30,7 @@ public class ProductPageTests extends BaseTest implements IHelper {
     }
 
     @Test
-    public void checkVisibilityOfButtonsOnProductCard() throws InterruptedException {
+    public void checkVisibilityOfButtonsOnProductCard(){
 
         mainpage.mouseHoveronChildCategory();
         manufacturerPage=mainpage.clickOnSneakearsCategoryOnDropDownList();
@@ -43,7 +43,7 @@ public class ProductPageTests extends BaseTest implements IHelper {
     }
 
     @Test
-    public void checkImagesDisplayedOnProductPage() throws InterruptedException {
+    public void checkImagesDisplayedOnProductPage()  {
 
         mainpage.mouseHoveronChildCategory();
         manufacturerPage=mainpage.clickOnSneakearsCategoryOnDropDownList();
@@ -54,7 +54,7 @@ public class ProductPageTests extends BaseTest implements IHelper {
     }
 
     @Test
-    public void checkPaymentMethodToolTip() throws InterruptedException {
+    public void checkPaymentMethodToolTip() {
 
         mainpage.mouseHoveronChildCategory();
         manufacturerPage=mainpage.clickOnSneakearsCategoryOnDropDownList();
@@ -68,7 +68,7 @@ public class ProductPageTests extends BaseTest implements IHelper {
 
 
     @Test
-    public void checkCommentsSectionIsDisplayed() throws InterruptedException {
+    public void checkCommentsSectionIsDisplayed(){
 
         mainpage.mouseHoveronChildCategory();
         manufacturerPage=mainpage.clickOnSneakearsCategoryOnDropDownList();

@@ -44,13 +44,13 @@ public class ProductPage extends BasePage implements IHelper, IWeiters {
     @FindBy(xpath = "//div[@class='availability-sidebar__wrapper']")
     private WebElement StoreSlider;
     @FindBy(xpath = "(//div[@class='product-image-gallery__main-item']/img)[1]")
-    private List<WebElement>Image;
-    @FindBy(xpath="//button[@class='e-tooltip-button product-right__availability-methods']/span")
+    private List<WebElement> Image;
+    @FindBy(xpath = "//button[@class='e-tooltip-button product-right__availability-methods']/span")
     private WebElement PaymentTooltip;
-    @FindBy(xpath="(//div[@class='content-tooltip-extra__content'])[1]/div/following-sibling::div")
+    @FindBy(xpath = "(//div[@class='content-tooltip-extra__content'])[1]/div/following-sibling::div")
     private List<WebElement> PaymentAvailableMethods;
-    @FindBy(xpath="//ul[@id='customer-reviews']/li/p[@class='product-review-item__review']")
-    private List <WebElement> CommentsFromCustomers;
+    @FindBy(xpath = "//ul[@id='customer-reviews']/li/p[@class='product-review-item__review']")
+    private List<WebElement> CommentsFromCustomers;
     String CounterBuffer = String.format("Ulubione (%s)", Buffer.GetActualSize());
 
     public String GetCurrentProductPrice() {
@@ -58,28 +58,29 @@ public class ProductPage extends BasePage implements IHelper, IWeiters {
         return ProductPrice.getText().replace("zł", " ");
     }
 
-    public WebElement getFavouriteButton(){
+    public WebElement getFavouriteButton() {
 
         return FavouriteButton;
     }
 
-    public WebElement getAddToBasketButton(){
+    public WebElement getAddToBasketButton() {
 
         return AddToBasket;
     }
 
-    public WebElement getProductAvailability(){
+    public WebElement getProductAvailability() {
         return ProductAvailability;
     }
 
-    public WebElement getFreeSendandReturnTooltip(){
+    public WebElement getFreeSendandReturnTooltip() {
         return FreeSendandReturnTooltip;
     }
 
-    public List<WebElement> getImage(){
+    public List<WebElement> getImage() {
 
         return Image;
     }
+
     public ProductPage clickOnAddToBasket() {
 
         AddToBasket.click();
@@ -124,21 +125,22 @@ public class ProductPage extends BasePage implements IHelper, IWeiters {
         return StoreSlider;
     }
 
-    public ProductPage clickOnPaymentTooltipButton(){
+    public ProductPage clickOnPaymentTooltipButton() {
 
         PaymentTooltip.click();
         return this;
     }
-   public List<WebElement> getListOfPaymentMethods(){
+
+    public List<WebElement> getListOfPaymentMethods() {
 
         return PaymentAvailableMethods;
-   }
+    }
 
-   public List<WebElement> getListOfCommnents(){
+    public List<WebElement> getListOfCommnents() {
 
         return CommentsFromCustomers;
 
-   }
+    }
 
     @Override
     public WebDriver GetDriver() {

@@ -18,7 +18,7 @@ public class FavouritePage extends BasePage implements IHelper {
         super(driver);
 
     }
-    public FavouritePage RemoveFavourites() throws InterruptedException {
+    public FavouritePage RemoveFavourites() {
 
         for (WebElement we : RemoveButton) {
 

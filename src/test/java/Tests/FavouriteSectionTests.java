@@ -7,7 +7,7 @@ import org.junit.Test;
 public class FavouriteSectionTests extends BaseTest {
 
     @Test //done /działa
-    public void deleteProductsToFavourite() throws InterruptedException {
+    public void deleteProductsToFavourite() {
 
         //First
         mainpage.mouseHoverOnMenCategory();
@@ -38,7 +38,7 @@ public class FavouriteSectionTests extends BaseTest {
     }
 
     @Test
-    public void addProductsFromFavouriteSection() throws InterruptedException {
+    public void addProductsFromFavouriteSection(){
 
         //First
         mainpage.mouseHoverOnMenCategory();

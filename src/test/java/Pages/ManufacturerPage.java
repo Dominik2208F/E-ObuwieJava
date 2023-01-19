@@ -121,20 +121,29 @@ public class ManufacturerPage extends BasePage implements IHelper {
         return new ProductPage(driver);
     }
 
-    public ManufacturerPage setMaxAndMinPrice(String value1, String value2) throws InterruptedException {
+    public ManufacturerPage setMaxAndMinPrice(String value1, String value2) {
 
-
-        MinPrice.sendKeys(Keys.CONTROL + "a", Keys.DELETE);
-        Thread.sleep(1000);
-        MinPrice.sendKeys(value1);
-        MinPrice.sendKeys(Keys.TAB);
-        Thread.sleep(1000);
-        Maxprice.sendKeys(Keys.CONTROL + "a", Keys.DELETE);
-        Thread.sleep(1000);
-        Maxprice.sendKeys(value2);
-        MinPrice.sendKeys(Keys.TAB);
+        MoveForward(value1,value2);
         return this;
     }
+    public void MoveForward(String value1,String value2){
+
+        for(int i=1; i<=2; i++){
+
+                if(i==1) {
+                    MinPrice.sendKeys(Keys.CONTROL + "a", Keys.DELETE);
+                    MinPrice.sendKeys(value1);
+                    MinPrice.sendKeys(Keys.TAB);
+                }
+                else{
+                    Maxprice.sendKeys(Keys.CONTROL + "a", Keys.DELETE);
+                    Maxprice.sendKeys(value2);
+                    MinPrice.sendKeys(Keys.TAB);
+                }
+
+
+            }
+        }
 
     public boolean checkPriceHandlerHasBeenMovedToRequestedPriceRange(String value1, String value2) {
 
@@ -157,7 +166,7 @@ public class ManufacturerPage extends BasePage implements IHelper {
         return convertWebElementsListToDouble(PricesOnWebsiteRegularAndReduced);
     }
 
-    public boolean checkifPriceisInArequestedRange(double min, double max, List<Double> listofdoubles) {
+    public boolean checkIfPAllRoductsPricesAreInRequestedRange(double min, double max, List<Double> listofdoubles) {
 
         for (Double currentwebsitevalue : listofdoubles) {
 

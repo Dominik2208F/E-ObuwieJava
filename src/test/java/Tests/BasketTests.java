@@ -9,7 +9,7 @@ import org.openqa.selenium.WebDriver;
 public class BasketTests extends BaseTest implements IHelper {
 
     @Test //done
-    public void addTwoRandomProductToBasketAndCheckSumValueInSummary() throws InterruptedException {
+    public void addTwoRandomProductToBasketAndCheckSumValueInSummary() {
         mainpage.
                 mouseHoverOnMenCategory();
 
@@ -57,7 +57,7 @@ public class BasketTests extends BaseTest implements IHelper {
 
     }
     @Test //done
-    public void checkAddingProductToBasket() throws InterruptedException {
+    public void checkAddingProductToBasket() {
         mainpage.
                 mouseHoveronChildCategory();
 

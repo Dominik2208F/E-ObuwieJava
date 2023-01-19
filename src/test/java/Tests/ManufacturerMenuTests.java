@@ -8,7 +8,7 @@ import java.util.Arrays;
 public class ManufacturerMenuTests extends BaseTest {
     // działa wszystko na 1 run
     @Test //działa
-    public void setPriceRangeBarOnLeftSide() throws InterruptedException {
+    public void setPriceRangeBarOnLeftSide() {
 
         mainpage.mouseHoverOnMenCategory();
         manufacturerPage = mainpage.clickOnTrampkiCategoryOnDropDownList();
@@ -21,11 +21,11 @@ public class ManufacturerMenuTests extends BaseTest {
         mainpage.CloseNewsLetter();
 
         manufacturerPage.clickPriceFilterButton();
-        Assert.assertTrue("Prices after handler changes are not correct", manufacturerPage.checkifPriceisInArequestedRange(200.0, 300.0, manufacturerPage.GetPricesFromWebsite()));
+        Assert.assertTrue("Prices after handler changes are not correct", manufacturerPage.checkIfPAllRoductsPricesAreInRequestedRange(200.0, 300.0, manufacturerPage.GetPricesFromWebsite()));
     }
 
     @Test //done
-    public void setkWidthRangeBaronLeftSide() throws InterruptedException {
+    public void setkWidthRangeBaronLeftSide()  {
 
         mainpage.mouseHoverOnMenCategory();
         manufacturerPage = mainpage.clickOnTrampkiCategoryOnDropDownList();
@@ -37,7 +37,7 @@ public class ManufacturerMenuTests extends BaseTest {
 
     @Test //działa
 
-    public void setNewLebel() throws InterruptedException {
+    public void setNewLebel()  {
         mainpage.mouseHoverOnMenCategory();
         manufacturerPage = mainpage.clickOnTrampkiCategoryOnDropDownList();
 
@@ -86,7 +86,7 @@ public class ManufacturerMenuTests extends BaseTest {
     }
 
     @Test //działa
-    public void lookForManVansNumber42ByHeaders() throws InterruptedException {
+    public void lookForManVansNumber42ByHeaders() {
 
         mainpage.mouseHoverOnMenCategory();
         manufacturerPage = mainpage.clickOnTrampkiCategoryOnDropDownList();
