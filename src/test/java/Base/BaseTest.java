@@ -1,4 +1,5 @@
 package Base;
+import Data.RegistrationData;
 import Interfaces.Buffer;
 import Pages.*;
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -19,6 +20,7 @@ public class BaseTest {
 
    protected WebDriver driver;
    protected BasePage basepage;
+   protected RegistrationPage registrationPage;
 
     @Before
     public void setUp(){

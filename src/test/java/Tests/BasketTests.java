@@ -10,6 +10,7 @@ public class BasketTests extends BaseTest implements IHelper {
 
     @Test //done
     public void TwoProductToBasketCheckSummary() {
+        mainpage.clickOnSaleBanner();
         mainpage.
                 mouseHoverOnMenCategory();
 

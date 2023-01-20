@@ -9,7 +9,7 @@ public class ManufacturerMenuTests extends BaseTest {
     // działa wszystko na 1 run
     @Test //działa
     public void setPriceRangeBarOnLeftSide() {
-
+        mainpage.clickOnSaleBanner();
         mainpage.mouseHoverOnMenCategory();
         manufacturerPage = mainpage.clickOnTrampkiCategoryOnDropDownList();
         mainpage.clickOnSaleBanner();
@@ -41,6 +41,7 @@ public class ManufacturerMenuTests extends BaseTest {
     @Test //działa
 
     public void setNewLabels()  {
+        mainpage.clickOnSaleBanner();
         mainpage.mouseHoverOnMenCategory();
         manufacturerPage = mainpage.clickOnTrampkiCategoryOnDropDownList();
 
@@ -90,7 +91,7 @@ public class ManufacturerMenuTests extends BaseTest {
 
     @Test //działa
     public void SearchingVansNumber42ByHeaders() {
-
+        mainpage.clickOnSaleBanner();
         mainpage.mouseHoverOnMenCategory();
         manufacturerPage = mainpage.clickOnTrampkiCategoryOnDropDownList();
         mainpage.clickOnSaleBanner();

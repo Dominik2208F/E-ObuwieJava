@@ -7,9 +7,10 @@ import org.junit.Test;
 public class FavouriteSectionTests extends BaseTest {
 
     @Test //done /działa
-    public void deleteProductsToFavourite() {
+    public void deleteProductsFromFavourite() {
 
         //First
+        mainpage.clickOnSaleBanner();
         mainpage.mouseHoverOnMenCategory();
         manufacturerPage= mainpage.clickOnSztybletyDropDownList();
         mainpage.clickOnSaleBanner();

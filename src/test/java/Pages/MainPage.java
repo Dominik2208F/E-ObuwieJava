@@ -49,6 +49,8 @@ public class MainPage extends BasePage implements IHelper {
     private WebElement popup;
     @FindBy(id = "newsletter_banner_exit_salomon")
     private WebElement Banner;
+    @FindBy(xpath="//a[@data-testid='header-register-link']")
+    private WebElement RegisterButton;
 
     public List<WebElement> GetActualHeaders(){
 
@@ -120,6 +122,12 @@ public class MainPage extends BasePage implements IHelper {
         if(popup.isDisplayed()) {
             popup.click();
         }
+    }
+
+    public RegistrationPage clickInRegistrationButton(){
+
+           RegisterButton.click();
+           return new RegistrationPage(driver);
     }
 
 }
