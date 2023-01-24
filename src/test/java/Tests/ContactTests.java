@@ -37,7 +37,6 @@ public class ContactTests extends BaseTest implements IHelper {
         mainpage.clickOnSaleBanner();
         contactPage.clickOnChatButton();
 
-
     }
 
 

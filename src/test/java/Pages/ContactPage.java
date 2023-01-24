@@ -1,5 +1,7 @@
 package Pages;
 import Base.BasePage;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -50,41 +52,32 @@ public class ContactPage extends BasePage {
     public ContactPage clickOnSendProduct(){
 
         HowToSendBackProduct.click();
-
         return this;
     }
     public ContactPage clickOnTermOfDelivery(){
-
-        TermOfDelivery.click();
 
         return this;
     }
     public ContactPage clickOnPayback(){
 
         Payback.click();
-
         return this;
     }
     public ContactPage clickOnOrderCancel(){
-
         OrderCancel.click();
-
         return this;
     }
     public ContactPage clickOnComplain(){
 
         Complain.click();
-
         return this;
     }
     public ContactPage clickOnShopPickUp(){
 
         ShopPickUp.click();
-
         return this;
     }
     public ContactPage clickOnChatButton(){
-
         StartChatButton.click();
         ChatButtonIkon.click();
         return this;
