@@ -179,5 +179,11 @@ public interface IHelper  {
         return true;
     }
 
+    default void swichToIframe(String iframe){
+
+        GetDriver().switchTo().frame(iframe);
+        System.out.print("Script has jumped into Iframe");
+    }
+
     WebDriver GetDriver();
 }

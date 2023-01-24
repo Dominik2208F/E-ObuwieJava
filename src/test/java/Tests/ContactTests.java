@@ -35,7 +35,11 @@ public class ContactTests extends BaseTest implements IHelper {
         mainpage.clickOnSaleBanner();
         contactPage=mainpage.clickOnContactButton();
         mainpage.clickOnSaleBanner();
-        contactPage.clickOnChatButton();
+        contactPage.
+                clickOnChatButton().
+                switchToIframe("chatbotize-iframe").
+                writeTextInChat("Hello");
+        Assert.assertEquals("Hello",contactPage.getChatPlaceholder().getText());
 
     }
 

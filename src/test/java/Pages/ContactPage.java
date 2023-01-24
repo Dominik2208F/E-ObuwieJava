@@ -1,5 +1,6 @@
 package Pages;
 import Base.BasePage;
+import Interfaces.IHelper;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -11,7 +12,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.util.List;
 
-public class ContactPage extends BasePage {
+public class ContactPage extends BasePage implements IHelper {
     public ContactPage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(new AjaxElementLocatorFactory(driver, 10), this);
@@ -44,7 +45,8 @@ public class ContactPage extends BasePage {
     private WebElement StartChatButton;
     @FindBy(xpath="//div[@id='zowieFloatingButton']")
     private WebElement ChatButtonIkon;
-
+    @FindBy(xpath="//textarea[@placeholder='Wpisz swoją wiadomość...']")
+    private WebElement ChatPlaceholder;
 
     public List<WebElement> getInformationPanels(){
 
@@ -89,15 +91,25 @@ public class ContactPage extends BasePage {
         return this;
     }
 
+    public ContactPage switchToIframe(String text){
 
+        swichToIframe(text);
+        return this;
+    }
 
+    public ContactPage writeTextInChat(String text){
+        wait.until(ExpectedConditions.elementToBeClickable(ChatPlaceholder));
+        ChatPlaceholder.sendKeys(text);
+        return this;
+    }
 
+    public WebElement getChatPlaceholder(){
 
+        return ChatPlaceholder;
+    }
 
-
-
-
-
-
-
+    @Override
+    public WebDriver GetDriver() {
+        return this.driver;
+    }
 }
