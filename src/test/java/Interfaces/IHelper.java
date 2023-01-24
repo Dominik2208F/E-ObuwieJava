@@ -163,13 +163,12 @@ public interface IHelper  {
         }
         return true;
     }
-    default boolean verifyElementAttribute(List<WebElement> elements, String attribute, String expectedvalue) throws InterruptedException {
+    default boolean verifyElementAttribute(List<WebElement> elements, String attribute, String expectedvalue) {
 
         for (WebElement x : elements) {
             if(x.isDisplayed()) {
                 String attributevalue = x.getAttribute(attribute);
                 System.out.println("Element attribute value is" + attributevalue);
-               // Thread.sleep(1500);
                 if (!attributevalue.equals(expectedvalue)) {
                     return false;
 
@@ -178,7 +177,6 @@ public interface IHelper  {
         }
         return true;
     }
-
     default void swichToIframe(String iframe){
 
         GetDriver().switchTo().frame(iframe);

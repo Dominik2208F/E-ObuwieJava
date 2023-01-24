@@ -26,7 +26,7 @@ public class ContactTests extends BaseTest implements IHelper {
                 clickOnShopPickUp();
 
         //verify if text under each dropdown list is displayed based on element attribute.
-        Assert.assertTrue(verifyElementAttribute(contactPage.getInformationPanels(),"Style","max-height: 1000px;"));
+        Assert.assertTrue("Elements attributes haven't been changed to required state",verifyElementAttribute(contactPage.getInformationPanels(),"Style","max-height: 1000px;"));
     }
 
     @Test
@@ -39,7 +39,7 @@ public class ContactTests extends BaseTest implements IHelper {
                 clickOnChatButton().
                 switchToIframe("chatbotize-iframe").
                 writeTextInChat("Hello");
-        Assert.assertEquals("Hello",contactPage.getChatPlaceholder().getText());
+        Assert.assertEquals("Elements are not equal -actual should be Hello,but is " + contactPage.getChatPlaceholder().getText(),"Hello",contactPage.getChatPlaceholder().getText());
 
     }
 
