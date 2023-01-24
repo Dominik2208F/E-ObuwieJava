@@ -7,6 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.util.List;
 
@@ -49,27 +50,32 @@ public class ContactPage extends BasePage {
 
         return InformationPanels;
     }
-    public ContactPage clickOnSendProduct(){
+    public ContactPage clickOnSendProduct() throws InterruptedException {
 
         HowToSendBackProduct.click();
+        wait.until(ExpectedConditions.visibilityOf(TermOfDelivery));
         return this;
     }
-    public ContactPage clickOnTermOfDelivery(){
-
+    public ContactPage clickOnTermOfDelivery() throws InterruptedException {
+        TermOfDelivery.click();
+        wait.until(ExpectedConditions.visibilityOf(Payback));
         return this;
     }
-    public ContactPage clickOnPayback(){
+    public ContactPage clickOnPayback() throws InterruptedException {
 
         Payback.click();
+        wait.until(ExpectedConditions.visibilityOf(OrderCancel));
         return this;
     }
-    public ContactPage clickOnOrderCancel(){
+    public ContactPage clickOnOrderCancel() throws InterruptedException {
         OrderCancel.click();
+        wait.until(ExpectedConditions.visibilityOf(Complain));
         return this;
     }
-    public ContactPage clickOnComplain(){
+    public ContactPage clickOnComplain() throws InterruptedException {
 
         Complain.click();
+        wait.until(ExpectedConditions.visibilityOf(ShopPickUp));
         return this;
     }
     public ContactPage clickOnShopPickUp(){

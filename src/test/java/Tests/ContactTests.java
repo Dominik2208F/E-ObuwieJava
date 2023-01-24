@@ -30,7 +30,7 @@ public class ContactTests extends BaseTest implements IHelper {
     }
 
     @Test
-    public void chatVisibility()  {
+    public void chatInteraction()  {
 
         mainpage.clickOnSaleBanner();
         contactPage=mainpage.clickOnContactButton();
