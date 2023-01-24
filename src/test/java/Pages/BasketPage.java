@@ -49,13 +49,13 @@ public class BasketPage extends BasePage implements IHelper {
 
         for (int i = 0; i < ValueofWebsiteElements.size(); i++) {
 
-            IntegerValueofWebElementPrice.add(Double.parseDouble(ValueofWebsiteElements.get(i).replace(',', '.')));
+            IntegerValueofWebElementPrice.add(Double.parseDouble(ValueofWebsiteElements.get(i).replace(',', '.').replaceAll("\\s", "")));
 
         }
         summedvalueofWebElementInBasket = IntegerValueofWebElementPrice.stream().mapToDouble(Double::valueOf).sum();
 
         for (String x : bufferlist) {
-            DoubleValueFromBuffer.add(Double.parseDouble(x.replace(',', '.')));
+            DoubleValueFromBuffer.add(Double.parseDouble(x.replace(',', '.').replaceAll("\\s", "")));
 
         }
 

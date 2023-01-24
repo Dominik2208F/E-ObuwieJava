@@ -12,7 +12,7 @@ import java.util.concurrent.TimeUnit;
 
 public class BaseTest {
 
-   protected  MainPage mainpage;
+   protected MainPage mainpage;
    protected  ManufacturerPage manufacturerPage;
    protected ProductPage productPage;
    protected BasketPage basketPage;
@@ -21,6 +21,7 @@ public class BaseTest {
    protected WebDriver driver;
    protected BasePage basepage;
    protected RegistrationPage registrationPage;
+   protected ContactPage contactPage;
 
     @Before
     public void setUp(){

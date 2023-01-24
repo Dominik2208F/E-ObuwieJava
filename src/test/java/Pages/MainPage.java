@@ -51,6 +51,8 @@ public class MainPage extends BasePage implements IHelper {
     private WebElement Banner;
     @FindBy(xpath="//a[@data-testid='header-register-link']")
     private WebElement RegisterButton;
+    @FindBy(xpath="//a[@data-testid='header-contact-link']")
+    private WebElement ContactButton;
 
     public List<WebElement> GetActualHeaders(){
 
@@ -123,11 +125,15 @@ public class MainPage extends BasePage implements IHelper {
             popup.click();
         }
     }
-
     public RegistrationPage clickInRegistrationButton(){
 
            RegisterButton.click();
            return new RegistrationPage(driver);
+    }
+    public ContactPage clickOnContactButton(){
+
+        ContactButton.click();
+        return  new ContactPage(driver);
     }
 
 }
