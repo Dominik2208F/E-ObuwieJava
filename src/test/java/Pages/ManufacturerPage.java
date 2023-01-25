@@ -71,6 +71,8 @@ public class ManufacturerPage extends BasePage implements IHelper {
     String NumberOfProductOnList = "//a[@data-testid='category-product-item-link%s']";
     String CollectPriceToBuffer = "//a[@data-testid='category-product-item-link%s']//div[@class='products-list__price-box']//div[@class='products-list__special-price']";
 
+    String CollectRegularPriceToBuffer="//a[@data-testid='category-product-item-link%s']//div[@class='products-list__price-box']//div[@class='products-list__regular-price']";
+
     public ManufacturerPage chooseSexCategory(String value) {
 
         clickEqualsListElement(LeftFilterCategory, value);
@@ -122,7 +124,17 @@ public class ManufacturerPage extends BasePage implements IHelper {
     public ProductPage chooseProduct(String numberofproductToConvert, String KeyToBuffer) {
 
         WebElement Product = GetDriver().findElement(ConvertStringToXpath(numberofproductToConvert, NumberOfProductOnList));
-        Buffer.SetValueInBuffer(KeyToBuffer, GetDriver().findElement(ConvertStringToXpath(numberofproductToConvert, CollectPriceToBuffer)).getText().replace("zł", " "));
+
+        if(GetDriver().findElements(ConvertStringToXpath(numberofproductToConvert, CollectPriceToBuffer)).size()==0){
+
+            Buffer.SetValueInBuffer(KeyToBuffer+"Regular", GetDriver().findElement(ConvertStringToXpath(numberofproductToConvert, CollectRegularPriceToBuffer)).getText().replace("zł", " "));
+            System.out.println("Regular price is" + Buffer.GetValueBufferKey(KeyToBuffer+"Regular"));
+        }
+        else{
+            Buffer.SetValueInBuffer(KeyToBuffer+"Special", GetDriver().findElement(ConvertStringToXpath(numberofproductToConvert, CollectPriceToBuffer)).getText().replace("zł", " "));
+            System.out.println("Special price is" + Buffer.GetValueBufferKey(KeyToBuffer+"Special"));
+        }
+
         Product.click();
         return new ProductPage(driver);
     }

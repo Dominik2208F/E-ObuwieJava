@@ -23,6 +23,9 @@ public class ProductPage extends BasePage implements IHelper, IWeiters {
 
     @FindBy(xpath = "//div[@class='e-product-price__special']")
     private WebElement ProductPrice;
+
+    @FindBy(xpath="//div[@class='e-product-price__normal']")
+    private WebElement ProductPriceRegular;
     @FindBy(xpath = "//div[@class='product-right__group']//button[@data-testid='product-add-favourites-button']")
     private WebElement FavouriteButton;
     @FindBy(xpath = "//button[@data-testid='product-add-to-cart-button']")
@@ -53,9 +56,15 @@ public class ProductPage extends BasePage implements IHelper, IWeiters {
     private List<WebElement> CommentsFromCustomers;
     String CounterBuffer = String.format("Ulubione (%s)", Buffer.GetActualSize());
 
-    public String GetCurrentProductPrice() {
+    public String GetCurrentProductPrice(String numberofproduct) {
 
-        return ProductPrice.getText().replace("zł", " ");
+       if(Buffer.Buffer.containsKey("Value"+numberofproduct+"Regular")){
+           return ProductPriceRegular.getText().replace("zł", " ");
+       }
+       else {
+           return ProductPrice.getText().replace("zł", " ");
+       }
+
     }
 
     public WebElement getFavouriteButton() {

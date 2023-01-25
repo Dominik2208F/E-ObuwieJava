@@ -52,29 +52,29 @@ public class ContactPage extends BasePage implements IHelper {
 
         return InformationPanels;
     }
-    public ContactPage clickOnSendProduct() throws InterruptedException {
+    public ContactPage clickOnSendProduct()  {
 
         HowToSendBackProduct.click();
         wait.until(ExpectedConditions.visibilityOf(TermOfDelivery));
         return this;
     }
-    public ContactPage clickOnTermOfDelivery() throws InterruptedException {
+    public ContactPage clickOnTermOfDelivery()  {
         TermOfDelivery.click();
         wait.until(ExpectedConditions.visibilityOf(Payback));
         return this;
     }
-    public ContactPage clickOnPayback() throws InterruptedException {
+    public ContactPage clickOnPayback()  {
 
         Payback.click();
         wait.until(ExpectedConditions.visibilityOf(OrderCancel));
         return this;
     }
-    public ContactPage clickOnOrderCancel() throws InterruptedException {
+    public ContactPage clickOnOrderCancel()  {
         OrderCancel.click();
         wait.until(ExpectedConditions.visibilityOf(Complain));
         return this;
     }
-    public ContactPage clickOnComplain() throws InterruptedException {
+    public ContactPage clickOnComplain() {
 
         Complain.click();
         wait.until(ExpectedConditions.visibilityOf(ShopPickUp));

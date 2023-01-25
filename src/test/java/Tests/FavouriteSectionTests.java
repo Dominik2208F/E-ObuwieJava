@@ -41,6 +41,7 @@ public class FavouriteSectionTests extends BaseTest {
     public void addProductsFromFavouriteSection(){
 
         //First
+        mainpage.clickOnSaleBanner();
         mainpage.mouseHoverOnMenCategory();
         manufacturerPage= mainpage.clickOnSztybletyDropDownList();
         mainpage.clickOnSaleBanner();

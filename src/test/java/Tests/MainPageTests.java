@@ -2,6 +2,8 @@ package Tests;
 import Base.BaseTest;
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.jupiter.api.Tag;
+
 
 import java.util.Arrays;
 

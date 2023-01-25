@@ -26,7 +26,7 @@ public class BasketTests extends BaseTest implements IHelper {
                 chooseProduct("1","Value1");
 
 
-        Assert.assertEquals(productPage.GetCurrentProductPrice(), Buffer.GetValueBufferKey("Value1"));
+        Assert.assertTrue(productPage.GetCurrentProductPrice("1").equals(Buffer.GetValueBufferKey("Value1Regular")) || productPage.GetCurrentProductPrice("1").equals(Buffer.GetValueBufferKey("Value1Special")));
         Assert.assertTrue(verifyElementsAreDisplayed(productPage.getProductAvailability(), productPage.getFavouriteButton(), productPage.getAddToBasketButton(), productPage.getFreeSendandReturnTooltip()));
 
                    productPage.clickOnAddToBasket().
@@ -47,7 +47,7 @@ public class BasketTests extends BaseTest implements IHelper {
                 chooseProduct("2","Value2");
 
 
-        Assert.assertEquals(productPage.GetCurrentProductPrice(), Buffer.GetValueBufferKey("Value2"));
+        Assert.assertTrue(productPage.GetCurrentProductPrice("2").equals(Buffer.GetValueBufferKey("Value2Regular"))|| productPage.GetCurrentProductPrice("2").equals(Buffer.GetValueBufferKey("Value2Special")));
         Assert.assertTrue(verifyElementsAreDisplayed(productPage.getProductAvailability(), productPage.getFavouriteButton(), productPage.getAddToBasketButton(), productPage.getFreeSendandReturnTooltip()));
 
         productPage.clickOnAddToBasket().
@@ -59,14 +59,14 @@ public class BasketTests extends BaseTest implements IHelper {
     }
     @Test //done
     public void checkAddingProductToBasket() {
+        mainpage.clickOnSaleBanner();
         mainpage.
                 mouseHoverOnChildCategory();
-
         manufacturerPage=mainpage.clickOnSneakearsCategoryOnDropDownList();
-
+        mainpage.clickOnSaleBanner();
         productPage =manufacturerPage.chooseProduct("3","Value1");
 
-        Assert.assertEquals(productPage.GetCurrentProductPrice(), Buffer.GetValueBufferKey("Value1"));
+        Assert.assertTrue(productPage.GetCurrentProductPrice("1").equals(Buffer.GetValueBufferKey("Value1Regular")) ||productPage.GetCurrentProductPrice("1").equals(Buffer.GetValueBufferKey("Value1Special")));
         Assert.assertTrue(verifyElementsAreDisplayed(productPage.getProductAvailability(), productPage.getFavouriteButton(), productPage.getAddToBasketButton(), productPage.getFreeSendandReturnTooltip()));
 
         mainpage.CloseNewsLetter();

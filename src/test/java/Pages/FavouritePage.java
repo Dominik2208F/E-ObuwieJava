@@ -1,6 +1,7 @@
 package Pages;
 import Base.BasePage;
 import Interfaces.IHelper;
+import Interfaces.IWeiters;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -9,7 +10,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import java.util.List;
 import static Pages.ProductPage.FavouriteLink;
 
-public class FavouritePage extends BasePage implements IHelper {
+public class FavouritePage extends BasePage implements IHelper, IWeiters {
 
 
     @FindBy(xpath = "//button[@class='favourites__remove-button']")
@@ -19,12 +20,15 @@ public class FavouritePage extends BasePage implements IHelper {
 
     }
     public FavouritePage RemoveFavourites() {
-
+        int favouriteCounterReduction=2;
         for (WebElement we : RemoveButton) {
 
             if (we.isDisplayed()) {
                 we.click();
+                favouriteCounterReduction--;
+                String CounterReduction = String.format("Ulubione (%s)",favouriteCounterReduction);
                wait.until(ExpectedConditions.invisibilityOf(we));
+                waitforElementTextWillBeChanged(FavouriteLink,CounterReduction);
             }
         }
         return this;
@@ -35,6 +39,6 @@ public class FavouritePage extends BasePage implements IHelper {
     }
     @Override
     public WebDriver GetDriver() {
-        return null;
+        return this.driver;
     }
 }
