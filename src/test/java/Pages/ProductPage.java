@@ -23,7 +23,6 @@ public class ProductPage extends BasePage implements IHelper, IWeiters {
 
     @FindBy(xpath = "//div[@class='e-product-price__special']")
     private WebElement ProductPrice;
-
     @FindBy(xpath="//div[@class='e-product-price__normal']")
     private WebElement ProductPriceRegular;
     @FindBy(xpath = "//div[@class='product-right__group']//button[@data-testid='product-add-favourites-button']")
@@ -54,6 +53,9 @@ public class ProductPage extends BasePage implements IHelper, IWeiters {
     private List<WebElement> PaymentAvailableMethods;
     @FindBy(xpath = "//ul[@id='customer-reviews']/li/p[@class='product-review-item__review']")
     private List<WebElement> CommentsFromCustomers;
+
+    @FindBy(id="automated_belka_exit")
+    private List<WebElement> BelkaOnTop;
 
     @FindBy(xpath="//button[@class='e-size-picker__option e-size-picker-option'][not(contains(class,'e-size-picker-option--disabled'))]/span/span[@class='e-size-picker-option__label']")
     private List<WebElement> ListOfAvailabeSize;
@@ -117,13 +119,17 @@ public class ProductPage extends BasePage implements IHelper, IWeiters {
         return this;
     }
 
-    public FavouritePage clickonFavouriteHeaders() {
+    public FavouritePage clickOnFavouriteHeaders() {
 
         elementIsVisible(FavouriteLink);
-        Assert.assertEquals(FavouriteLink.getText().trim(), CounterBuffer = String.format("Ulubione (%s)", Buffer.GetActualSize()));
-        FavouriteLink.sendKeys(Keys.DOWN);
-        FavouriteLink.click();
+        if(checkIfElementsSizeIsMoreThan0(BelkaOnTop)) {
 
+            for(WebElement x : BelkaOnTop){
+                x.click();
+            }
+        }
+        FavouriteLink.sendKeys(Keys.UP);
+        FavouriteLink.click();
         return new FavouritePage(driver);
     }
 

@@ -19,15 +19,6 @@ public class BasketPage extends BasePage implements IHelper {
 
     @FindBy(xpath = "//a[contains(@class,'cart__continue-shopping')]")
     private  WebElement ContinueShoopingButton;
-
-
-   // @FindAll
-   //         ({
-  //                  @FindBy(xpath="//div[contains(normalize-space(@class),'cart-item__price--discounted')]"),
-  //                  @FindBy(xpath= "(//div[contains(normalize-space(@class),'cart-item__price')])[2]"),
-  //          })
-   // private List<WebElement> Reducedprice;
-
     @FindBy(xpath="//*[contains(text(),'Łącznie')]/parent::span/following-sibling::span/child::span")
     private WebElement summaryPriceLabel;
     public MainPage returnToMainPageFromBasket() {
@@ -36,21 +27,26 @@ public class BasketPage extends BasePage implements IHelper {
         ContinueShoopingButton.click();
         return new MainPage(driver);
     }
-    public void compareSumInBasketWithLabelPrice(){
 
-        comparePricesBasedOnList(Buffer.GetValue(),summaryPriceLabel);
+    public static final double DELTA = 1e-15;
+    public double getSummaryOfPriceProducts() {
 
+        return Double.doubleToLongBits(Double.valueOf(summaryPriceLabel.getText().replace("zł", " ").replace(',', '.').replaceAll("\\s", "")));
     }
-    public void comparePricesBasedOnList(List<String> bufferlist, WebElement summarylist) {
-        List<Double> DoubleValueFromBuffer = new ArrayList<>();
 
+    public double BufferSummedValueOfProducts(List<String> bufferlist){
+        List<Double> DoubleValueFromBuffer = new ArrayList<>();
         for (String x : bufferlist) {
             DoubleValueFromBuffer.add(Double.parseDouble(x.replace(',', '.').replaceAll("\\s", "")));
 
         }
         double BufferSumedValue = DoubleValueFromBuffer.stream().mapToDouble(Double::valueOf).sum();
-        Assert.assertEquals(Double.doubleToLongBits(BufferSumedValue), Double.doubleToLongBits(Double.valueOf(summaryPriceLabel.getText().replace("zł", " ").replace(',', '.').replaceAll("\\s", ""))));
+        return BufferSumedValue;
+    }
 
+    public double getSummedValueofProducts(){
+
+       return BufferSummedValueOfProducts(Buffer.GetValue());
     }
 
     @Override

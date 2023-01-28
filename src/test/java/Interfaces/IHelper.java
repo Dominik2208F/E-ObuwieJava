@@ -15,7 +15,7 @@ import java.util.Random;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-public interface IHelper  {
+public interface IHelper   {
 
     // Interface to implement methods when it is required on TestPage
     default boolean verifyElementExistInList(List<WebElement> elementsList, String expectedValue) {
@@ -182,6 +182,8 @@ public interface IHelper  {
             if(x.isDisplayed()) {
                 String attributevalue = x.getAttribute(attribute);
                 System.out.println("Element attribute value is" + attributevalue);
+                new WebDriverWait(GetDriver(),30)
+                        .until(ExpectedConditions.visibilityOf(x));
                 if (!attributevalue.equals(expectedvalue)) {
                     return false;
 

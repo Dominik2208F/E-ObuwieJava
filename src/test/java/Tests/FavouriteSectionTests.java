@@ -19,7 +19,7 @@ public class FavouriteSectionTests extends BaseTest {
 
         productPage.
                 AddToFavourite().
-                clickonFavouriteHeaders();
+                clickOnFavouriteHeaders();
 
         //Second
         mainpage.mouseHoverOnMenCategory();
@@ -29,7 +29,7 @@ public class FavouriteSectionTests extends BaseTest {
 
         favouritePage= productPage.
                 AddToFavourite().
-                clickonFavouriteHeaders();
+                clickOnFavouriteHeaders();
 
         favouritePage.RemoveFavourites();
 
@@ -50,7 +50,7 @@ public class FavouriteSectionTests extends BaseTest {
 
         productPage.
                 AddToFavourite().
-                clickonFavouriteHeaders();
+                clickOnFavouriteHeaders();
 
         //Second
         mainpage.mouseHoverOnMenCategory();
@@ -60,7 +60,7 @@ public class FavouriteSectionTests extends BaseTest {
 
         favouritePage= productPage.
                 AddToFavourite().
-                clickonFavouriteHeaders();
+                clickOnFavouriteHeaders();
 
         Assert.assertEquals(favouritePage.GetValueFromFavouriteLabel(),"Ulubione (2)");
 
