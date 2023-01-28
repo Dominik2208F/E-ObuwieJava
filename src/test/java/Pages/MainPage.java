@@ -31,10 +31,6 @@ public class MainPage extends BasePage implements IHelper {
     private WebElement Manufacturer;
     @FindBy(xpath="//form[@class='header-search snr']//button[@title='Szukaj']")
     private WebElement SearchButton;
-    @FindBy(xpath="//ul[@class='sidebar-section__list filter-link__list']/child::li/a")
-    private List<WebElement> LeftFilterCategory;
-    @FindBy(xpath="//ul[@class='sidebar-section__list filter-link__list']/li/a")
-    private List<WebElement> LeftFilterCategoryModel;
     @FindBy(xpath="//a[@class='e-mega-menu__item-link'][contains(text(),'Męskie')]")
     private WebElement MensLabelHeaders;
     @FindBy( xpath = "//div[@class='e-mega-menu-dropdown']//div[@data-gtm-label='Buty do kostki']//child::ul/li/a[@data-gtm-label='Trampki']")
@@ -46,7 +42,7 @@ public class MainPage extends BasePage implements IHelper {
     @FindBy(xpath="//a[contains(@href,'https://www.eobuwie.com.pl/meskie/kozaki-i-inne/sztyblety.html')]/parent::li")
     private WebElement SztybletyChooseDropDown;
     @FindBy(id="close-promo-popup")
-    private WebElement popup;
+    private List<WebElement> popup;
     @FindBy(id = "newsletter_banner_exit_salomon")
     private WebElement Banner;
     @FindBy(xpath="//a[@data-testid='header-register-link']")
@@ -121,8 +117,14 @@ public class MainPage extends BasePage implements IHelper {
 
     }
     public void CloseNewsLetter(){
-        if(popup.isDisplayed()) {
-            popup.click();
+        if(checkIfElementsSizeIsMoreThan0(popup)) {
+
+            for(WebElement x : popup){
+                x.click();
+            }
+        }
+        else{
+            //nothing
         }
     }
     public RegistrationPage clickInRegistrationButton(){
