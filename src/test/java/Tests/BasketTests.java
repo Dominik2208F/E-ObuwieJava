@@ -11,6 +11,7 @@ public class BasketTests extends BaseTest implements IHelper {
     @Test //done
     public void TwoProductToBasketCheckSummary() {
         mainpage.clickOnSaleBanner();
+        mainpage.clickOnSaleBanner();
         mainpage.
                 mouseHoverOnMenCategory();
 
@@ -72,9 +73,8 @@ public class BasketTests extends BaseTest implements IHelper {
         mainpage.CloseNewsLetter();
 
         productPage.
-                clickOnAddToBasket().
-                chooseSizeFromRightList("32");
-        basketPage= productPage.goToBasket();
+                clickOnAddToBasket().clickRandomSize();
+                basketPage= productPage.goToBasket();
 
 
     }

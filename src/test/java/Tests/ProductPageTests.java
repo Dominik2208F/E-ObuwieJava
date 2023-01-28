@@ -14,7 +14,7 @@ public class ProductPageTests extends BaseTest implements IHelper {
     @Test
     public void checkStoreAvailability(){
 
-
+        mainpage.clickOnSaleBanner();
         mainpage.mouseHoverOnChildCategory();
         manufacturerPage=mainpage.clickOnSneakearsCategoryOnDropDownList();
         mainpage.clickOnSaleBanner();
@@ -22,8 +22,7 @@ public class ProductPageTests extends BaseTest implements IHelper {
         mainpage.CloseNewsLetter();
 
         productPage.
-                clickOnStoreAvailability().
-                chooseSizeFromRightList("36");
+                clickOnStoreAvailability().clickRandomSize();
 
         Assert.assertTrue("Elements is not displayed",productPage.GetStoreAvailability().isDisplayed());
 
@@ -31,7 +30,7 @@ public class ProductPageTests extends BaseTest implements IHelper {
 
     @Test
     public void checkVisibilityOfButtonsOnProductCard(){
-
+        mainpage.clickOnSaleBanner();
         mainpage.mouseHoverOnChildCategory();
         manufacturerPage=mainpage.clickOnSneakearsCategoryOnDropDownList();
         mainpage.clickOnSaleBanner();
@@ -44,7 +43,7 @@ public class ProductPageTests extends BaseTest implements IHelper {
 
     @Test
     public void checkImagesDisplayedOnProductPage()  {
-
+        mainpage.clickOnSaleBanner();
         mainpage.mouseHoverOnChildCategory();
         manufacturerPage=mainpage.clickOnSneakearsCategoryOnDropDownList();
         mainpage.clickOnSaleBanner();
@@ -55,7 +54,7 @@ public class ProductPageTests extends BaseTest implements IHelper {
 
     @Test
     public void checkPaymentMethodToolTip() {
-
+        mainpage.clickOnSaleBanner();
         mainpage.mouseHoverOnChildCategory();
         manufacturerPage=mainpage.clickOnSneakearsCategoryOnDropDownList();
         mainpage.clickOnSaleBanner();
@@ -69,7 +68,7 @@ public class ProductPageTests extends BaseTest implements IHelper {
 
     @Test
     public void checkCommentsSectionIsDisplayed(){
-
+        mainpage.clickOnSaleBanner();
         mainpage.mouseHoverOnChildCategory();
         manufacturerPage=mainpage.clickOnSneakearsCategoryOnDropDownList();
         mainpage.clickOnSaleBanner();

@@ -54,6 +54,9 @@ public class ProductPage extends BasePage implements IHelper, IWeiters {
     private List<WebElement> PaymentAvailableMethods;
     @FindBy(xpath = "//ul[@id='customer-reviews']/li/p[@class='product-review-item__review']")
     private List<WebElement> CommentsFromCustomers;
+
+    @FindBy(xpath="//button[@class='e-size-picker__option e-size-picker-option'][not(contains(class,'e-size-picker-option--disabled'))]/span/span[@class='e-size-picker-option__label']")
+    private List<WebElement> ListOfAvailabeSize;
     String CounterBuffer = String.format("Ulubione (%s)", Buffer.GetActualSize());
 
     public String GetCurrentProductPrice(String numberofproduct) {
@@ -149,6 +152,13 @@ public class ProductPage extends BasePage implements IHelper, IWeiters {
 
         return CommentsFromCustomers;
 
+    }
+
+    public ProductPage clickRandomSize() {
+
+        String randomSize=returnRandomSize(ListOfAvailabeSize);
+        clickEqualsListElement(ListOfAvailabeSize, randomSize);
+        return this;
     }
 
     @Override
