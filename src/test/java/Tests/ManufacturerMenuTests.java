@@ -7,6 +7,20 @@ import java.util.Arrays;
 
 public class ManufacturerMenuTests extends BaseTest {
     // działa wszystko na 1 run
+
+    @Test
+    public void SortingPriceAscending() throws InterruptedException {
+        mainpage.clickOnSaleBanner();
+        mainpage.mouseHoverOnChildCategory();
+        manufacturerPage=mainpage.clickOnSneakearsCategoryOnDropDownList();
+        manufacturerPage.clickPriceFilter();
+        manufacturerPage.chooseWayOfSort("Najniższa cena");
+        Thread.sleep(2000);
+        mainpage.CloseNewsLetter();
+        Assert.assertTrue(manufacturerPage.ascendingCheck(manufacturerPage.getSortedPrices()));
+
+    }
+
     @Test //działa
     public void setPriceRangeBarOnLeftSide() {
         mainpage.clickOnSaleBanner();

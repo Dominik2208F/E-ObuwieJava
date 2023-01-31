@@ -106,10 +106,11 @@ public interface IHelper  {
 
         List<Double> ListofAllPrices = new ArrayList<>();
         for (WebElement x : listofwebelements) {
-            if (x.isDisplayed()) {
-                ListofAllPrices.add((Double.valueOf(x.getText().replace(",", ".").replace(" zł", "").replaceAll("\\s", ""))));
+
+                if (x.isDisplayed()) {
+                    ListofAllPrices.add((Double.valueOf(x.getText().replace(",", ".").replace(" zł", "").replaceAll("\\s", ""))));
+                }
             }
-        }
             return ListofAllPrices;
     }
     default boolean ListAreEqual(List<String>l1, List<String> l2) {

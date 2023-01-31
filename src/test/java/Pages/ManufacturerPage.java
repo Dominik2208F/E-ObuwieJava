@@ -7,6 +7,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
+
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -73,6 +75,43 @@ public class ManufacturerPage extends BasePage implements IHelper {
 
     String CollectRegularPriceToBuffer="//a[@data-testid='category-product-item-link%s']//div[@class='products-list__price-box']//div[@class='products-list__regular-price']";
 
+    @FindBy(xpath="//div[@class='products-list__item-wrapper']//button/following-sibling::a/div[@class='products-list__price-box']/div[@class='products-list__special-price' or @class='products-list__regular-price' ]")
+    private List<WebElement> CollectAllPricesRegularAndReduced;
+
+    @FindBy(xpath="//div[@class='vs__dropdown-toggle']")
+    private WebElement PriceSortingToogle;
+
+    @FindBy(xpath="//ul[@id='vs1__listbox']/li")
+    private List<WebElement> ListOfWayToSortPrice;
+
+    public List<Double> getSortedPrices(){
+
+      List<Double> list= convertWebElementsListToDouble(CollectAllPricesRegularAndReduced);
+        System.out.println(list.size());
+        return convertWebElementsListToDouble(CollectAllPricesRegularAndReduced);
+    }
+
+    public Boolean ascendingCheck(List<Double> data){
+        for (int i = 0; i < data.size()-1; i++) {
+            if (data.get(i) > data.get(i+1)) {
+                return false;
+            }
+        }
+        System.out.println("value are sorted correctly by increasing");
+        return true;
+    }
+    public ManufacturerPage clickPriceFilter(){
+
+        PriceSortingToogle.click();
+
+        return this;
+    }
+
+    public ManufacturerPage chooseWayOfSort(String way){
+
+       clickEqualsListElement(ListOfWayToSortPrice,way);
+        return this;
+    }
     public ManufacturerPage chooseSexCategory(String value) {
 
         clickEqualsListElement(LeftFilterCategory, value);

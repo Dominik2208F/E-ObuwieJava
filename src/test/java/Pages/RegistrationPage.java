@@ -34,7 +34,8 @@ public class RegistrationPage extends BasePage implements IHelper, IWeiters {
     private List<WebElement> ErrorMessage;
     @FindBy(xpath="//button[@data-testid='register-create-account-button']")
     private WebElement CreateAccountButton;
-
+    @FindBy(xpath="//ul[@id='vs1__listbox']/li")
+    private WebElement ListOfWayToSortPrice;
 
 
     public List<WebElement> getErrorMessageList(){
