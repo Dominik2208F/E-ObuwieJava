@@ -8,7 +8,7 @@ import java.util.Arrays;
 public class ManufacturerMenuTests extends BaseTest {
     // działa wszystko na 1 run
 
-    @Test
+    @Test //Działa
     public void SortingPriceAscending() throws InterruptedException {
         mainpage.clickOnSaleBanner();
         mainpage.mouseHoverOnChildCategory();
@@ -20,6 +20,19 @@ public class ManufacturerMenuTests extends BaseTest {
         Assert.assertTrue(manufacturerPage.ascendingCheck(manufacturerPage.getSortedPrices()));
 
     }
+   @Test //Działa
+    public void SortingPriceDescending() throws InterruptedException {
+        mainpage.clickOnSaleBanner();
+        mainpage.mouseHoverOnChildCategory();
+        manufacturerPage=mainpage.clickOnSneakearsCategoryOnDropDownList();
+        manufacturerPage.clickPriceFilter();
+        manufacturerPage.chooseWayOfSort("Najwyższa cena");
+        Thread.sleep(2000);
+        mainpage.CloseNewsLetter();
+        Assert.assertTrue(manufacturerPage.descendingCheck(manufacturerPage.getSortedPrices()));
+
+    }
+
 
     @Test //działa
     public void setPriceRangeBarOnLeftSide() {

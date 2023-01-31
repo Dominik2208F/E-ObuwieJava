@@ -100,6 +100,18 @@ public class ManufacturerPage extends BasePage implements IHelper {
         System.out.println("value are sorted correctly by increasing");
         return true;
     }
+
+    public Boolean descendingCheck(List<Double> data){
+        for (int i = 0; i < data.size()-1; i++) {
+            if (data.get(i) < data.get(i+1)) {
+                return false;
+            }
+        }
+        System.out.println("value are sorted correctly by decreasing");
+        return true;
+    }
+
+
     public ManufacturerPage clickPriceFilter(){
 
         PriceSortingToogle.click();
