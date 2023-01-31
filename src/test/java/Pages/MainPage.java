@@ -121,12 +121,8 @@ public class MainPage extends BasePage implements IHelper {
 
     }
     public void CloseNewsLetter(){
-        try {
-            if (popup.isDisplayed()) {
-                popup.click();
-            }
-        } catch (Exception e) {
-            System.out.println("Sales banner has not been displayed");
+        if(popup.isDisplayed()) {
+            popup.click();
         }
     }
     public RegistrationPage clickInRegistrationButton(){

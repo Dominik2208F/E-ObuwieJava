@@ -74,10 +74,10 @@ public class RegistrationPage extends BasePage implements IHelper, IWeiters {
         return this;
     }
 
-    public RegistrationPage setConfirmationPasswordField(String passwordconfirmation){
+    public RegistrationPage setConfirmationPasswordField(String passwordConfirmation){
         wait.until(ExpectedConditions.elementToBeClickable(ConfirmationPasswordField));
         ConfirmationPasswordField.click();
-        ConfirmationPasswordField.sendKeys(passwordconfirmation);
+        ConfirmationPasswordField.sendKeys(passwordConfirmation);
 
         return this;
     }

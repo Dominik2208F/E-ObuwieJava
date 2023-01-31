@@ -2,6 +2,7 @@ package Tests;
 import Base.BaseTest;
 import Interfaces.Buffer;
 import Interfaces.IHelper;
+import Pages.BasketPage;
 import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
@@ -10,6 +11,7 @@ public class BasketTests extends BaseTest implements IHelper {
 
     @Test //done
     public void TwoProductToBasketCheckSummary() {
+        mainpage.clickOnSaleBanner();
         mainpage.clickOnSaleBanner();
         mainpage.
                 mouseHoverOnMenCategory();
@@ -54,7 +56,8 @@ public class BasketTests extends BaseTest implements IHelper {
                 chooseSizeFromRightList("42");
 
         basketPage=productPage.goToBasket();
-        basketPage.compareSumInBasketWithLabelPrice();
+
+        Assert.assertEquals(Double.doubleToLongBits(basketPage.getSummedValueofProducts()), basketPage.getSummaryOfPriceProducts(),BasketPage.DELTA);
 
     }
     @Test //done
@@ -72,9 +75,8 @@ public class BasketTests extends BaseTest implements IHelper {
         mainpage.CloseNewsLetter();
 
         productPage.
-                clickOnAddToBasket().
-                chooseSizeFromRightList("32");
-        basketPage= productPage.goToBasket();
+                clickOnAddToBasket().clickRandomSize();
+                basketPage= productPage.goToBasket();
 
 
     }

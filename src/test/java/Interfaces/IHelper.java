@@ -10,10 +10,12 @@ import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Random;
+
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-public interface IHelper  {
+public interface IHelper   {
 
     // Interface to implement methods when it is required on TestPage
     default boolean verifyElementExistInList(List<WebElement> elementsList, String expectedValue) {
@@ -60,6 +62,17 @@ public interface IHelper  {
         System.out.println("Element hasn't been found in the list of provided elements.");
         return false;
     }
+
+    default String returnRandomSize(List<WebElement> webElementList){
+
+       List<String> convertedList= convertWebElementsListToString(webElementList);
+        Random r = new Random();
+
+        int randomitem = r.nextInt(convertedList.size());
+        String randomElement = convertedList.get(randomitem);
+        return randomElement;
+    }
+
     default void clickIn(WebElement element, Integer... time) {
         Integer periodOfTime = time.length > 0 ? time[0] : 30;
         new WebDriverWait(GetDriver(),30)
@@ -170,6 +183,8 @@ public interface IHelper  {
             if(x.isDisplayed()) {
                 String attributevalue = x.getAttribute(attribute);
                 System.out.println("Element attribute value is" + attributevalue);
+                new WebDriverWait(GetDriver(),30)
+                        .until(ExpectedConditions.visibilityOf(x));
                 if (!attributevalue.equals(expectedvalue)) {
                     return false;
 
