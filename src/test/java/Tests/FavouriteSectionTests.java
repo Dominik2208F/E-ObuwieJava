@@ -15,10 +15,10 @@ public class FavouriteSectionTests extends BaseTest {
         manufacturerPage= mainpage.clickOnSztybletyDropDownList();
         mainpage.clickOnSaleBanner();
         productPage= manufacturerPage.chooseProduct("2", "Value1");
-        mainpage.CloseNewsLetter();
+        mainpage.closeNewsLetter();
 
         productPage.
-                AddToFavourite().
+                addToFavourite().
                 clickOnFavouriteHeaders();
 
         //Second
@@ -28,12 +28,12 @@ public class FavouriteSectionTests extends BaseTest {
         productPage= manufacturerPage.chooseProduct("4", "Value2");
 
         favouritePage= productPage.
-                AddToFavourite().
+                addToFavourite().
                 clickOnFavouriteHeaders();
 
-        favouritePage.RemoveFavourites();
+        favouritePage.removeFavourites();
 
-        Assert.assertEquals(favouritePage.GetValueFromFavouriteLabel(),"Ulubione (0)");
+        Assert.assertEquals(favouritePage.getValueFromFavouriteLabel(),"Ulubione (0)");
 
     }
 
@@ -46,10 +46,10 @@ public class FavouriteSectionTests extends BaseTest {
         manufacturerPage= mainpage.clickOnSztybletyDropDownList();
         mainpage.clickOnSaleBanner();
         productPage= manufacturerPage.chooseProduct("2", "Value1");
-        mainpage.CloseNewsLetter();
+        mainpage.closeNewsLetter();
 
         productPage.
-                AddToFavourite().
+                addToFavourite().
                 clickOnFavouriteHeaders();
 
         //Second
@@ -59,10 +59,10 @@ public class FavouriteSectionTests extends BaseTest {
         productPage= manufacturerPage.chooseProduct("4", "Value2");
 
         favouritePage= productPage.
-                AddToFavourite().
+                addToFavourite().
                 clickOnFavouriteHeaders();
 
-        Assert.assertEquals(favouritePage.GetValueFromFavouriteLabel(),"Ulubione (2)");
+        Assert.assertEquals(favouritePage.getValueFromFavouriteLabel(),"Ulubione (2)");
 
     }
 

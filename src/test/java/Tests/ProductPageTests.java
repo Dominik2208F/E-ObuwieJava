@@ -19,12 +19,12 @@ public class ProductPageTests extends BaseTest implements IHelper {
         manufacturerPage=mainpage.clickOnSneakearsCategoryOnDropDownList();
         mainpage.clickOnSaleBanner();
         productPage= manufacturerPage.chooseProduct("11","Value1");
-        mainpage.CloseNewsLetter();
+        mainpage.closeNewsLetter();
 
         productPage.
                 clickOnStoreAvailability().clickRandomSize();
 
-        Assert.assertTrue("Elements is not displayed",productPage.GetStoreAvailability().isDisplayed());
+        Assert.assertTrue("Elements is not displayed",productPage.getStoreAvailability().isDisplayed());
 
     }
 
@@ -35,9 +35,9 @@ public class ProductPageTests extends BaseTest implements IHelper {
         manufacturerPage=mainpage.clickOnSneakearsCategoryOnDropDownList();
         mainpage.clickOnSaleBanner();
         productPage= manufacturerPage.chooseProduct("15","Value1");
-        mainpage.CloseNewsLetter();
+        mainpage.closeNewsLetter();
 
-        Assert.assertTrue(verifyElementsAreDisplayed(productPage.getProductAvailability(), productPage.getFavouriteButton(), productPage.getAddToBasketButton(), productPage.getFreeSendandReturnTooltip()));
+        Assert.assertTrue(verifyElementsAreDisplayed(productPage.getProductAvailability(), productPage.getFavouriteButton(), productPage.getAddToBasketButton(), productPage.getFreeSendAndReturnTooltip()));
 
     }
 
@@ -48,7 +48,7 @@ public class ProductPageTests extends BaseTest implements IHelper {
         manufacturerPage=mainpage.clickOnSneakearsCategoryOnDropDownList();
         mainpage.clickOnSaleBanner();
         productPage= manufacturerPage.chooseProduct("15","Value1");
-        mainpage.CloseNewsLetter();
+        mainpage.closeNewsLetter();
         Assert.assertTrue(checkIfElementsSizeIsMoreThan0(productPage.getImage()));
     }
 
@@ -59,7 +59,7 @@ public class ProductPageTests extends BaseTest implements IHelper {
         manufacturerPage=mainpage.clickOnSneakearsCategoryOnDropDownList();
         mainpage.clickOnSaleBanner();
         productPage= manufacturerPage.chooseProduct("26","Value1");
-        mainpage.CloseNewsLetter();
+        mainpage.closeNewsLetter();
         productPage.clickOnPaymentTooltipButton();
 
         Assert.assertTrue(mainpage.checkIfListContainsAllExpectedElements(productPage.getListOfPaymentMethods(), Arrays.asList("Szybki przelew", "Blik", "Płatne przy odbiorze", "PayPal", "PayPo", "Przelew bankowy")));
@@ -73,7 +73,7 @@ public class ProductPageTests extends BaseTest implements IHelper {
         manufacturerPage=mainpage.clickOnSneakearsCategoryOnDropDownList();
         mainpage.clickOnSaleBanner();
         productPage= manufacturerPage.chooseProduct("26","Value1");
-        mainpage.CloseNewsLetter();
+        mainpage.closeNewsLetter();
         Assert.assertTrue(verifyElementsFromListAreDisplayed(productPage.getListOfCommnents()));
     }
 

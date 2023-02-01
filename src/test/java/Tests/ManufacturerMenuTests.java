@@ -16,7 +16,7 @@ public class ManufacturerMenuTests extends BaseTest {
         manufacturerPage.clickPriceFilter();
         manufacturerPage.chooseWayOfSort("Najniższa cena");
         Thread.sleep(2000);
-        mainpage.CloseNewsLetter();
+        mainpage.closeNewsLetter();
         Assert.assertTrue(manufacturerPage.ascendingCheck(manufacturerPage.getSortedPrices()));
 
     }
@@ -28,7 +28,7 @@ public class ManufacturerMenuTests extends BaseTest {
         manufacturerPage.clickPriceFilter();
         manufacturerPage.chooseWayOfSort("Najwyższa cena");
         Thread.sleep(2000);
-        mainpage.CloseNewsLetter();
+        mainpage.closeNewsLetter();
         Assert.assertTrue(manufacturerPage.descendingCheck(manufacturerPage.getSortedPrices()));
 
     }
@@ -45,10 +45,10 @@ public class ManufacturerMenuTests extends BaseTest {
         mainpage.clickOnSaleBanner();
 
         Assert.assertTrue(manufacturerPage.checkPriceHandlerHasBeenMovedToRequestedPriceRange("200.0", "300.0"));
-        mainpage.CloseNewsLetter();
+        mainpage.closeNewsLetter();
 
         manufacturerPage.clickPriceFilterButton();
-        Assert.assertTrue("Prices after handler changes are not correct", manufacturerPage.checkIfPAllRoductsPricesAreInRequestedRange(200.0, 300.0, manufacturerPage.GetPricesFromWebsite()));
+        Assert.assertTrue("Prices after handler changes are not correct", manufacturerPage.checkIfPAllProductsPricesAreInRequestedRange(200.0, 300.0, manufacturerPage.getPricesFromWebsite()));
     }
 
     @Test //done
@@ -87,7 +87,7 @@ public class ManufacturerMenuTests extends BaseTest {
         manufacturerPage = mainpage.selectTopMark("Vans");
         manufacturerPage.chooseSexCategory("Damskie");
 
-        mainpage.CloseNewsLetter();
+        mainpage.closeNewsLetter();
 
         manufacturerPage.
                 chooseModel("Sportowe").
@@ -104,7 +104,7 @@ public class ManufacturerMenuTests extends BaseTest {
         manufacturerPage = mainpage.typeInSearchBox("Vans");
         manufacturerPage.chooseSexCategory("Męskie");
         mainpage.clickOnSaleBanner();
-        mainpage.CloseNewsLetter();
+        mainpage.closeNewsLetter();
         manufacturerPage.chooseModel("Sportowe");
         mainpage.clickOnSaleBanner();
         manufacturerPage.
@@ -124,7 +124,7 @@ public class ManufacturerMenuTests extends BaseTest {
         mainpage.clickOnSaleBanner();
         manufacturerPage.
                 chooseSize("42");
-        mainpage.CloseNewsLetter();
+        mainpage.closeNewsLetter();
         manufacturerPage.searchManufacturer("vans");
 
         Assert.assertTrue(manufacturerPage.ListAreEqual(Arrays.asList("Męskie", "Półbuty", "Trampki"), manufacturerPage.convertWebElementsListToString(manufacturerPage.getFilterHomeTop())));

@@ -53,15 +53,13 @@ public class ProductPage extends BasePage implements IHelper, IWeiters {
     private List<WebElement> PaymentAvailableMethods;
     @FindBy(xpath = "//ul[@id='customer-reviews']/li/p[@class='product-review-item__review']")
     private List<WebElement> CommentsFromCustomers;
-
     @FindBy(id="automated_belka_exit")
     private List<WebElement> BelkaOnTop;
-
     @FindBy(xpath="//button[@class='e-size-picker__option e-size-picker-option'][not(contains(class,'e-size-picker-option--disabled'))]/span/span[@class='e-size-picker-option__label']")
     private List<WebElement> ListOfAvailabeSize;
     String CounterBuffer = String.format("Ulubione (%s)", Buffer.GetActualSize());
 
-    public String GetCurrentProductPrice(String numberofproduct) {
+    public String getCurrentProductPrice(String numberofproduct) {
 
        if(Buffer.Buffer.containsKey("Value"+numberofproduct+"Regular")){
            return ProductPriceRegular.getText().replace("zł", " ");
@@ -86,7 +84,7 @@ public class ProductPage extends BasePage implements IHelper, IWeiters {
         return ProductAvailability;
     }
 
-    public WebElement getFreeSendandReturnTooltip() {
+    public WebElement getFreeSendAndReturnTooltip() {
         return FreeSendandReturnTooltip;
     }
 
@@ -113,7 +111,7 @@ public class ProductPage extends BasePage implements IHelper, IWeiters {
         return new BasketPage(driver);
     }
 
-    public ProductPage AddToFavourite() {
+    public ProductPage addToFavourite() {
         FavouriteButton.click();
         waitforElementTextWillBeChanged(FavouriteLink, CounterBuffer);
         return this;
@@ -139,7 +137,7 @@ public class ProductPage extends BasePage implements IHelper, IWeiters {
         return this;
     }
 
-    public WebElement GetStoreAvailability() {
+    public WebElement getStoreAvailability() {
         return StoreSlider;
     }
 

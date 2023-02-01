@@ -1,4 +1,5 @@
 package Pages;
+
 import Base.BasePage;
 import Interfaces.Buffer;
 import Interfaces.IHelper;
@@ -7,6 +8,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,9 +20,10 @@ public class BasketPage extends BasePage implements IHelper {
     }
 
     @FindBy(xpath = "//a[contains(@class,'cart__continue-shopping')]")
-    private  WebElement ContinueShoopingButton;
-    @FindBy(xpath="//*[contains(text(),'Łącznie')]/parent::span/following-sibling::span/child::span")
+    private WebElement ContinueShoopingButton;
+    @FindBy(xpath = "//*[contains(text(),'Łącznie')]/parent::span/following-sibling::span/child::span")
     private WebElement summaryPriceLabel;
+
     public MainPage returnToMainPageFromBasket() {
 
 
@@ -29,24 +32,24 @@ public class BasketPage extends BasePage implements IHelper {
     }
 
     public static final double DELTA = 1e-15;
+
     public double getSummaryOfPriceProducts() {
 
         return Double.doubleToLongBits(Double.valueOf(summaryPriceLabel.getText().replace("zł", " ").replace(',', '.').replaceAll("\\s", "")));
     }
 
-    public double BufferSummedValueOfProducts(List<String> bufferlist){
+    public double bufferSummedValueOfProducts(List<String> bufferlist) {
         List<Double> DoubleValueFromBuffer = new ArrayList<>();
         for (String x : bufferlist) {
             DoubleValueFromBuffer.add(Double.parseDouble(x.replace(',', '.').replaceAll("\\s", "")));
 
         }
-        double BufferSumedValue = DoubleValueFromBuffer.stream().mapToDouble(Double::valueOf).sum();
-        return BufferSumedValue;
+        return DoubleValueFromBuffer.stream().mapToDouble(Double::valueOf).sum();
     }
 
-    public double getSummedValueofProducts(){
+    public double getSummedValueOfProducts() {
 
-       return BufferSummedValueOfProducts(Buffer.GetValue());
+        return bufferSummedValueOfProducts(Buffer.GetValue());
     }
 
     @Override

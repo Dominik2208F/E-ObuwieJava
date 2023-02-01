@@ -1,4 +1,5 @@
 package Pages;
+
 import Base.BasePage;
 import Interfaces.Buffer;
 import Interfaces.IHelper;
@@ -10,7 +11,6 @@ import org.openqa.selenium.support.FindBy;
 
 import java.util.ArrayList;
 import java.util.List;
-
 
 
 public class ManufacturerPage extends BasePage implements IHelper {
@@ -61,39 +61,39 @@ public class ManufacturerPage extends BasePage implements IHelper {
     private List<WebElement> NewsLebel;
     @FindBy(xpath = "(//a[contains(text(),'Nowość')])[7]")
     private WebElement NewButton;
-   @FindAll
+    @FindAll
             ({
-                    @FindBy(xpath="(//span[@class='current-filters__text current-filters__text--value'])[2]"),
-                    @FindBy(xpath= "(//span[@class='current-filters__text current-filters__text--value'])[1]"),
+                    @FindBy(xpath = "(//span[@class='current-filters__text current-filters__text--value'])[2]"),
+                    @FindBy(xpath = "(//span[@class='current-filters__text current-filters__text--value'])[1]"),
             })
-     private List<WebElement> FilterSummary;
+    private List<WebElement> FilterSummary;
 
     //String are used to choose element on website be argument in function(1,2,3). No need to do a path related to every product on ManufacturerPage.
     String DropdownList = "//button[@data-href-slug='%s']";
     String NumberOfProductOnList = "//a[@data-testid='category-product-item-link%s']";
     String CollectPriceToBuffer = "//a[@data-testid='category-product-item-link%s']//div[@class='products-list__price-box']//div[@class='products-list__special-price']";
 
-    String CollectRegularPriceToBuffer="//a[@data-testid='category-product-item-link%s']//div[@class='products-list__price-box']//div[@class='products-list__regular-price']";
+    String CollectRegularPriceToBuffer = "//a[@data-testid='category-product-item-link%s']//div[@class='products-list__price-box']//div[@class='products-list__regular-price']";
 
-    @FindBy(xpath="//div[@class='products-list__item-wrapper']//button/following-sibling::a/div[@class='products-list__price-box']/div[@class='products-list__special-price' or @class='products-list__regular-price' ]")
+    @FindBy(xpath = "//div[@class='products-list__item-wrapper']//button/following-sibling::a/div[@class='products-list__price-box']/div[@class='products-list__special-price' or @class='products-list__regular-price' ]")
     private List<WebElement> CollectAllPricesRegularAndReduced;
 
-    @FindBy(xpath="//div[@class='vs__dropdown-toggle']")
+    @FindBy(xpath = "//div[@class='vs__dropdown-toggle']")
     private WebElement PriceSortingToogle;
 
-    @FindBy(xpath="//ul[@id='vs1__listbox']/li")
+    @FindBy(xpath = "//ul[@id='vs1__listbox']/li")
     private List<WebElement> ListOfWayToSortPrice;
 
-    public List<Double> getSortedPrices(){
+    public List<Double> getSortedPrices() {
 
-      List<Double> list= convertWebElementsListToDouble(CollectAllPricesRegularAndReduced);
+        List<Double> list = convertWebElementsListToDouble(CollectAllPricesRegularAndReduced);
         System.out.println(list.size());
         return convertWebElementsListToDouble(CollectAllPricesRegularAndReduced);
     }
 
-    public Boolean ascendingCheck(List<Double> data){
-        for (int i = 0; i < data.size()-1; i++) {
-            if (data.get(i) > data.get(i+1)) {
+    public Boolean ascendingCheck(List<Double> data) {
+        for (int i = 0; i < data.size() - 1; i++) {
+            if (data.get(i) > data.get(i + 1)) {
                 return false;
             }
         }
@@ -101,9 +101,9 @@ public class ManufacturerPage extends BasePage implements IHelper {
         return true;
     }
 
-    public Boolean descendingCheck(List<Double> data){
-        for (int i = 0; i < data.size()-1; i++) {
-            if (data.get(i) < data.get(i+1)) {
+    public Boolean descendingCheck(List<Double> data) {
+        for (int i = 0; i < data.size() - 1; i++) {
+            if (data.get(i) < data.get(i + 1)) {
                 return false;
             }
         }
@@ -112,18 +112,19 @@ public class ManufacturerPage extends BasePage implements IHelper {
     }
 
 
-    public ManufacturerPage clickPriceFilter(){
+    public ManufacturerPage clickPriceFilter() {
 
         PriceSortingToogle.click();
 
         return this;
     }
 
-    public ManufacturerPage chooseWayOfSort(String way){
+    public ManufacturerPage chooseWayOfSort(String way) {
 
-       clickEqualsListElement(ListOfWayToSortPrice,way);
+        clickEqualsListElement(ListOfWayToSortPrice, way);
         return this;
     }
+
     public ManufacturerPage chooseSexCategory(String value) {
 
         clickEqualsListElement(LeftFilterCategory, value);
@@ -176,14 +177,13 @@ public class ManufacturerPage extends BasePage implements IHelper {
 
         WebElement Product = GetDriver().findElement(ConvertStringToXpath(numberofproductToConvert, NumberOfProductOnList));
 
-        if(GetDriver().findElements(ConvertStringToXpath(numberofproductToConvert, CollectPriceToBuffer)).size()==0){
+        if (GetDriver().findElements(ConvertStringToXpath(numberofproductToConvert, CollectPriceToBuffer)).size() == 0) {
 
-            Buffer.SetValueInBuffer(KeyToBuffer+"Regular", GetDriver().findElement(ConvertStringToXpath(numberofproductToConvert, CollectRegularPriceToBuffer)).getText().replace("zł", " "));
-            System.out.println("Regular price is" + Buffer.GetValueBufferKey(KeyToBuffer+"Regular"));
-        }
-        else{
-            Buffer.SetValueInBuffer(KeyToBuffer+"Special", GetDriver().findElement(ConvertStringToXpath(numberofproductToConvert, CollectPriceToBuffer)).getText().replace("zł", " "));
-            System.out.println("Special price is" + Buffer.GetValueBufferKey(KeyToBuffer+"Special"));
+            Buffer.SetValueInBuffer(KeyToBuffer + "Regular", GetDriver().findElement(ConvertStringToXpath(numberofproductToConvert, CollectRegularPriceToBuffer)).getText().replace("zł", " "));
+            System.out.println("Regular price is" + Buffer.GetValueBufferKey(KeyToBuffer + "Regular"));
+        } else {
+            Buffer.SetValueInBuffer(KeyToBuffer + "Special", GetDriver().findElement(ConvertStringToXpath(numberofproductToConvert, CollectPriceToBuffer)).getText().replace("zł", " "));
+            System.out.println("Special price is" + Buffer.GetValueBufferKey(KeyToBuffer + "Special"));
         }
 
         Product.click();
@@ -192,35 +192,35 @@ public class ManufacturerPage extends BasePage implements IHelper {
 
     public ManufacturerPage setMaxAndMinPrice(String value1, String value2) {
 
-        MoveForward(value1,value2);
+        moveForward(value1, value2);
         return this;
     }
-    public void MoveForward(String value1,String value2){
 
-        for(int i=1; i<=2; i++){
+    public void moveForward(String value1, String value2) {
 
-                if(i==1) {
-                    MinPrice.sendKeys(Keys.CONTROL + "a", Keys.DELETE);
-                    MinPrice.sendKeys(value1);
-                    MinPrice.sendKeys(Keys.TAB);
-                }
-                else{
-                    Maxprice.sendKeys(Keys.CONTROL + "a", Keys.DELETE);
-                    Maxprice.sendKeys(value2);
-                    MinPrice.sendKeys(Keys.TAB);
-                }
+        for (int i = 1; i <= 2; i++) {
 
-
+            if (i == 1) {
+                MinPrice.sendKeys(Keys.CONTROL + "a", Keys.DELETE);
+                MinPrice.sendKeys(value1);
+                MinPrice.sendKeys(Keys.TAB);
+            } else {
+                Maxprice.sendKeys(Keys.CONTROL + "a", Keys.DELETE);
+                Maxprice.sendKeys(value2);
+                MinPrice.sendKeys(Keys.TAB);
             }
+
+
         }
+    }
 
     public boolean checkPriceHandlerHasBeenMovedToRequestedPriceRange(String value1, String value2) {
 
         String PriceHandlerUpperValue = PriceHandlerUpper.getAttribute("aria-valuenow");
-        String PricehandlerLowerValue = PricehandlerLower.getAttribute("aria-valuenow");
+        String PriceHandlerLowerValue = PricehandlerLower.getAttribute("aria-valuenow");
 
         PriceFilterButton.click();
-        if (value2.equals(PriceHandlerUpperValue) && (value1.equals(PricehandlerLowerValue))) {
+        if (value2.equals(PriceHandlerUpperValue) && (value1.equals(PriceHandlerLowerValue))) {
             return true;
         } else {
             System.out.println("Handler don't have required value");
@@ -229,13 +229,13 @@ public class ManufacturerPage extends BasePage implements IHelper {
 
     }
 
-    public List<Double> GetPricesFromWebsite() {
+    public List<Double> getPricesFromWebsite() {
 
         convertWebElementsListToDouble(PricesOnWebsiteRegularAndReduced);
         return convertWebElementsListToDouble(PricesOnWebsiteRegularAndReduced);
     }
 
-    public boolean checkIfPAllRoductsPricesAreInRequestedRange(double min, double max, List<Double> listofdoubles) {
+    public boolean checkIfPAllProductsPricesAreInRequestedRange(double min, double max, List<Double> listofdoubles) {
 
         for (Double currentwebsitevalue : listofdoubles) {
 
@@ -272,7 +272,7 @@ public class ManufacturerPage extends BasePage implements IHelper {
                 return false;
 
         }
-        System.out.println("Lebels has been updated");
+        System.out.println("Labels has been updated");
         return true;
 
     }
@@ -289,7 +289,7 @@ public class ManufacturerPage extends BasePage implements IHelper {
         return this;
     }
 
-    public List<WebElement> getListOfFilterSummarry(){
+    public List<WebElement> getListOfFilterSummarry() {
 
         return FilterSummary;
     }

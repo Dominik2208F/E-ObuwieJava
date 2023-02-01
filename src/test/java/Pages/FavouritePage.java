@@ -19,7 +19,7 @@ public class FavouritePage extends BasePage implements IHelper, IWeiters {
         super(driver);
 
     }
-    public FavouritePage RemoveFavourites() {
+    public FavouritePage removeFavourites() {
         int favouriteCounterReduction=2;
         for (WebElement we : RemoveButton) {
 
@@ -33,7 +33,7 @@ public class FavouritePage extends BasePage implements IHelper, IWeiters {
         }
         return this;
     }
-    public String GetValueFromFavouriteLabel() {
+    public String getValueFromFavouriteLabel() {
 
         return FavouriteLink.getText().trim();
     }
