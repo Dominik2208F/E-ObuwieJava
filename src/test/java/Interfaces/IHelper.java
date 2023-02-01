@@ -21,7 +21,7 @@ public interface IHelper   {
     default boolean verifyElementExistInList(List<WebElement> elementsList, String expectedValue) {
 
         if (convertWebElementsListToString(elementsList).contains(expectedValue)) {
-            System.out.println("value " + expectedValue + "is in the list of elements");
+            System.out.println("value " + expectedValue + " is in the list of elements");
             return true;
         } else {
             System.out.println("no value " + expectedValue + " in the list of elements");

@@ -111,8 +111,8 @@ public class MainPage extends BasePage implements IHelper {
 
     public MainPage mouseHoverOnMenCategory() {
         for (int i = 0; i < 2; i++) {
-            wait.until(ExpectedConditions.visibilityOf(MensLabelHeaders));
             try {
+                wait.until(ExpectedConditions.visibilityOf(MensLabelHeaders));
                 mouseHover(MensLabelHeaders);
                 break;
             } catch (Exception exception) {
@@ -138,8 +138,8 @@ public class MainPage extends BasePage implements IHelper {
 
         for (int i = 0; i < 2; i++) {
             try {
+                wait.until(ExpectedConditions.visibilityOf(ChildLabelHeaders));
                 mouseHover(ChildLabelHeaders);
-                ;
                 break;
             } catch (Exception exception) {
 

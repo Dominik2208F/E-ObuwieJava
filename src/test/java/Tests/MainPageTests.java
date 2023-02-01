@@ -1,15 +1,14 @@
 package Tests;
 import Base.BaseTest;
+import Pages.ProductPage;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.jupiter.api.Tag;
-
-
 import java.util.Arrays;
-
 import static org.junit.Assert.assertEquals;
 
 public class MainPageTests extends BaseTest {
+
 
 //działa wszystko na raz
     @Test

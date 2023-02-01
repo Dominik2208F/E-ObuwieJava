@@ -21,6 +21,7 @@ public class ProductPage extends BasePage implements IHelper, IWeiters {
         super(driver);
     }
 
+    public static int x=10;
     @FindBy(xpath = "//div[@class='e-product-price__special']")
     private WebElement ProductPrice;
     @FindBy(xpath="//div[@class='e-product-price__normal']")
@@ -40,7 +41,7 @@ public class ProductPage extends BasePage implements IHelper, IWeiters {
     @FindBy(xpath = "//a[@data-testid='product-go-to-cart-link']")
     private WebElement GotoBasket;
     @FindBy(xpath = "//a[@data-testid='header-favourites-link']")
-    static WebElement FavouriteLink;
+    static public WebElement FavouriteLink;
     @FindBy(xpath = "//button[@class='availability-sidebar__trigger']")
     private WebElement StoreAvailability;
     @FindBy(xpath = "//div[@class='availability-sidebar__wrapper']")

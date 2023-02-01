@@ -1,5 +1,4 @@
 package Pages;
-
 import Base.BasePage;
 import Interfaces.Buffer;
 import Interfaces.IHelper;
@@ -8,13 +7,14 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.util.ArrayList;
+
 import java.util.List;
 
 
 public class ManufacturerPage extends BasePage implements IHelper {
-
 
     public ManufacturerPage(WebDriver driver) {
         super(driver);
@@ -120,8 +120,8 @@ public class ManufacturerPage extends BasePage implements IHelper {
     }
 
     public ManufacturerPage chooseWayOfSort(String way) {
-
         clickEqualsListElement(ListOfWayToSortPrice, way);
+        new WebDriverWait(driver,10).until(ExpectedConditions.visibilityOfAllElements(LeftFiiferSize));
         return this;
     }
 

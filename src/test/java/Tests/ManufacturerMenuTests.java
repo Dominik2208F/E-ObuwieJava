@@ -9,25 +9,23 @@ public class ManufacturerMenuTests extends BaseTest {
     // działa wszystko na 1 run
 
     @Test //Działa
-    public void SortingPriceAscending() throws InterruptedException {
+    public void SortingPriceAscending() {
         mainpage.clickOnSaleBanner();
         mainpage.mouseHoverOnChildCategory();
         manufacturerPage=mainpage.clickOnSneakearsCategoryOnDropDownList();
         manufacturerPage.clickPriceFilter();
         manufacturerPage.chooseWayOfSort("Najniższa cena");
-        Thread.sleep(2000);
         mainpage.closeNewsLetter();
         Assert.assertTrue(manufacturerPage.ascendingCheck(manufacturerPage.getSortedPrices()));
 
     }
    @Test //Działa
-    public void SortingPriceDescending() throws InterruptedException {
+    public void SortingPriceDescending()  {
         mainpage.clickOnSaleBanner();
         mainpage.mouseHoverOnChildCategory();
         manufacturerPage=mainpage.clickOnSneakearsCategoryOnDropDownList();
         manufacturerPage.clickPriceFilter();
         manufacturerPage.chooseWayOfSort("Najwyższa cena");
-        Thread.sleep(2000);
         mainpage.closeNewsLetter();
         Assert.assertTrue(manufacturerPage.descendingCheck(manufacturerPage.getSortedPrices()));
 
