@@ -4,15 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6ad0fbd7-17e6-49ec-a959-040d4af90de3" name="Changes" comment="RegistrationTests/Assertions">
-      <change afterPath="$PROJECT_DIR$/src/test/java/Pages/ContactPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/Tests/ContactTests.java" afterDir="false" />
+    <list default="true" id="6ad0fbd7-17e6-49ec-a959-040d4af90de3" name="Changes" comment="new assertion">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Base/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Base/BaseTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Interfaces/IHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Interfaces/IHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Pages/BasketPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Pages/BasketPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Pages/MainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Pages/MainPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Tests/BasketTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Tests/BasketTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,9 +64,9 @@
       <command value="mvn -Dtest=MainPageTests test" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.ContactTests.chatVisibility">
+  <component name="RunManager" selected="JUnit.BasketTests.TwoProductToBasketCheckSummary">
     <configuration name="BasketTests.TwoProductToBasketCheckSummary" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="E-ObuwiePOPJava-master" />
+      <module name="Eobuwie" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="Tests.*" />
@@ -87,8 +81,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ContactTests.chatVisibility" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="E-ObuwiePOPJava-master" />
+    <configuration name="FavouriteSectionTests.deleteProductsFromFavourite" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Eobuwie" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="Tests.*" />
@@ -96,15 +90,15 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="Tests" />
-      <option name="MAIN_CLASS_NAME" value="Tests.ContactTests" />
-      <option name="METHOD_NAME" value="chatVisibility" />
+      <option name="MAIN_CLASS_NAME" value="Tests.FavouriteSectionTests" />
+      <option name="METHOD_NAME" value="deleteProductsFromFavourite" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ContactTests.contactDetails" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="E-ObuwiePOPJava-master" />
+    <configuration name="ManufacturerMenuTests.SearchingVansNumber42ByHeaders" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Eobuwie" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="Tests.*" />
@@ -112,15 +106,15 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="Tests" />
-      <option name="MAIN_CLASS_NAME" value="Tests.ContactTests" />
-      <option name="METHOD_NAME" value="contactDetails" />
+      <option name="MAIN_CLASS_NAME" value="Tests.ManufacturerMenuTests" />
+      <option name="METHOD_NAME" value="SearchingVansNumber42ByHeaders" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ContactTests.contactForm" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="E-ObuwiePOPJava-master" />
+    <configuration name="ManufacturerMenuTests.setPriceRangeBarOnLeftSide" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Eobuwie" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="Tests.*" />
@@ -128,15 +122,15 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="Tests" />
-      <option name="MAIN_CLASS_NAME" value="Tests.ContactTests" />
-      <option name="METHOD_NAME" value="contactForm" />
+      <option name="MAIN_CLASS_NAME" value="Tests.ManufacturerMenuTests" />
+      <option name="METHOD_NAME" value="setPriceRangeBarOnLeftSide" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MainPageTests.checkHeaders" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="E-ObuwiePOPJava-master" />
+    <configuration name="Tests in Eobuwie" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Eobuwie" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="Tests.*" />
@@ -144,20 +138,18 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="Tests" />
-      <option name="MAIN_CLASS_NAME" value="Tests.MainPageTests" />
-      <option name="METHOD_NAME" value="checkHeaders" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ContactTests.chatVisibility" />
-        <item itemvalue="JUnit.ContactTests.contactDetails" />
-        <item itemvalue="JUnit.ContactTests.contactForm" />
         <item itemvalue="JUnit.BasketTests.TwoProductToBasketCheckSummary" />
-        <item itemvalue="JUnit.MainPageTests.checkHeaders" />
+        <item itemvalue="JUnit.FavouriteSectionTests.deleteProductsFromFavourite" />
+        <item itemvalue="JUnit.ManufacturerMenuTests.setPriceRangeBarOnLeftSide" />
+        <item itemvalue="JUnit.ManufacturerMenuTests.SearchingVansNumber42ByHeaders" />
+        <item itemvalue="JUnit.Tests in Eobuwie" />
       </list>
     </recent_temporary>
   </component>
@@ -289,7 +281,28 @@
       <option name="project" value="LOCAL" />
       <updated>1674225998780</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="randomSizeFunction">
+      <created>1674914772706</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1674914772706</updated>
+    </task>
+    <task id="LOCAL-00019" summary="new assertion">
+      <created>1674930306807</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1674930306807</updated>
+    </task>
+    <task id="LOCAL-00020" summary="new assertion">
+      <created>1674930314838</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1674930314838</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -321,60 +334,42 @@
     <MESSAGE value="." />
     <MESSAGE value="assertion add" />
     <MESSAGE value="RegistrationTests/Assertions" />
-    <option name="LAST_COMMIT_MESSAGE" value="RegistrationTests/Assertions" />
+    <MESSAGE value="randomSizeFunction" />
+    <MESSAGE value="new assertion" />
+    <option name="LAST_COMMIT_MESSAGE" value="new assertion" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/Pages/MainPage.java</url>
-          <line>76</line>
-          <option name="timeStamp" value="21" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/Pages/MainPage.java</url>
-          <line>110</line>
-          <option name="timeStamp" value="22" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/Pages/ManufacturerPage.java</url>
-          <line>218</line>
-          <option name="timeStamp" value="24" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-method">
           <url>file://$PROJECT_DIR$/src/test/java/Interfaces/IWeiters.java</url>
-          <line>22</line>
-          <option name="timeStamp" value="25" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/Pages/RegistrationPage.java</url>
-          <line>89</line>
-          <option name="timeStamp" value="27" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/Interfaces/IHelper.java</url>
-          <line>53</line>
-          <option name="timeStamp" value="31" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/Pages/ProductPage.java</url>
-          <line>85</line>
-          <option name="timeStamp" value="32" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/test/java/Pages/ContactPage.java</url>
-          <line>85</line>
-          <properties class="Pages.ContactPage" method="clickOnChatButton">
+          <line>11</line>
+          <properties class="Interfaces.IWeiters" method="elementIsVisible">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
-          <option name="timeStamp" value="47" />
+          <option name="timeStamp" value="54" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/Pages/BasketPage.java</url>
+          <line>23</line>
+          <properties class="Pages.BasketPage" method="returnToMainPageFromBasket">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="58" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/Pages/ProductPage.java</url>
+          <line>124</line>
+          <option name="timeStamp" value="55" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
       <configuration name="JUnit">
-        <watch expression="contactPage" language="JAVA" />
+        <watch expression="Double.doubleToLongBits(BufferSumedValue)" />
+        <watch expression="Double.doubleToLongBits(Double.valueOf(summaryPriceLabel.getText().replace(&quot;zł&quot;, &quot; &quot;).replace(',', '.').replaceAll(&quot;\\s&quot;, &quot;&quot;)))" />
       </configuration>
     </watches-manager>
   </component>
